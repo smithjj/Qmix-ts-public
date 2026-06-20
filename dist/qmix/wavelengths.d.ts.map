@@ -1,0 +1,1 @@
+{"version":3,"file":"wavelengths.d.ts","sourceRoot":"","sources":["../../src/qmix/wavelengths.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,SAAS,EAAE,OAAO,EAAE,MAAM,YAAY,CAAC;AAErD,MAAM,WAAW,mBAAoB,SAAQ,SAAS;IACpD,QAAQ,CAAC,aAAa,EAAE,OAAO,CAAC;CACjC;AAED,wBAAgB,cAAc,CAAC,KAAK,EAAE,SAAS,GAAG,mBAAmB,CAKpE;AAED,wBAAgB,2BAA2B,CAAC,KAAK,EAAE,SAAS,GAAG,OAAO,CA0ErE"}

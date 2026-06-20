@@ -3,7 +3,7 @@ node_modules/
 .pnpm-store/
 
 # Build outputs
-dist/
+# dist/ is intentionally tracked so git installs work without a build step
 *.tsbuildinfo
 
 # Tauri build outputs

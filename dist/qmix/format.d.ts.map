@@ -1,0 +1,1 @@
+{"version":3,"file":"format.d.ts","sourceRoot":"","sources":["../../src/qmix/format.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,UAAU,EAAE,MAAM,YAAY,CAAC;AAEzD,wBAAgB,iBAAiB,CAC/B,OAAO,EAAE,SAAS,UAAU,EAAE,EAC9B,OAAO,EAAE,UAAU,GAClB,MAAM,EAAE,CAEV;AAED,wBAAgB,gBAAgB,CAAC,MAAM,EAAE,UAAU,EAAE,OAAO,EAAE,UAAU,GAAG,MAAM,EAAE,CAkClF"}
