@@ -2,6 +2,11 @@
 
 Thank you for your interest in improving Qmix TypeScript! This project is a TypeScript port of a nonlinear-crystal phase-matching engine. Contributions are welcome under the GNU General Public License v3.0 (GPL-3.0).
 
+## Maintainers
+
+- Jesse Smith — jesse.smith@as-photonics.com
+- Arlee Smith — arlee.smith@as-photonics.com
+
 ## Getting started
 
 1. **Fork** the repository on GitHub and clone your fork locally.
