@@ -1,5 +1,5 @@
 import { CrystalDB } from "./crystal-db.js";
-import type { MixingType, PolarizationTriplet, QmixInput, QmixResult, Vector2, Vector3 } from "./types.js";
+import type { BiNlEntry, DTensor, MixingType, PolarizationTriplet, QmixInput, QmixResult, UniNlEntry, Vector2, Vector3 } from "./types.js";
 import { computeCanonicalWavelengths } from "./wavelengths.js";
 
 /** Main phase-matching engine. Given crystal, wavelengths, and temperature,
@@ -1078,11 +1078,34 @@ export function biNl(crystal: string, wavelengthNm: number, angleMatrix: Matrix3
   return rawDEff * (np / nsh) * (n2p / nfun) ** 2;
 }
 
-export type DTensorRow = readonly [number, number, number, number, number, number];
-export type DTensor = readonly [DTensorRow, DTensorRow, DTensorRow];
-export interface BiNlEntry {
-  readonly dTensor: DTensor | null;
-  readonly lambdaRef: number;
+/** Compute squared refractive index at 300K for Miller scaling. */
+export function firstSquaredIndex(crystal: string, wavelengthNm: number): number {
+  const index = CrystalDB.compute(crystal, 300, wavelengthNm)[0];
+  if (index === undefined || index === 0) {
+    throw new Error(`Could not compute ${crystal} Miller scaling`);
+  }
+  return index ** 2;
+}
+
+function dot6(left: readonly [number, number, number, number, number, number], right: readonly [number, number, number, number, number, number]): number {
+  return left[0] * right[0] + left[1] * right[1] + left[2] * right[2] + left[3] * right[3] + left[4] * right[4] + left[5] * right[5];
+}
+
+function uniNl(crystal: string, wavelengthNm: number, angleRad: number): Vector2 {
+  const entry = UNI_NL_DATA[crystal];
+  if (entry === undefined) {
+    throw new Error(`Uniaxial crystal ${crystal} is not implemented in QmixEngine yet`);
+  }
+
+  const d1 = entry.d1Cos * Math.cos(angleRad) + entry.d1Sin * Math.sin(angleRad);
+  const d2 = entry.d2Cos2 * Math.cos(angleRad) ** 2 + entry.d2Sin2 * Math.sin(2 * angleRad);
+
+  const nsh = firstSquaredIndex(crystal, entry.lambdaRef) - 1;
+  const nfun = firstSquaredIndex(crystal, 2 * entry.lambdaRef) - 1;
+  const np = firstSquaredIndex(crystal, wavelengthNm) - 1;
+  const n2p = firstSquaredIndex(crystal, 2 * wavelengthNm) - 1;
+  const scale = (np / nsh) * (n2p / nfun) ** 2;
+  return [d1 * scale, d2 * scale];
 }
 
 const BI_NL_DATA: Record<string, BiNlEntry> = {
@@ -1117,48 +1140,6 @@ const BI_NL_DATA: Record<string, BiNlEntry> = {
   YCOB:  { dTensor: [[0.155, 0.235, -0.59, 0, -0.30, 0], [0, 0, 0, 1.62, 0, 0.24], [-0.30, 1.62, -1.2, 0, -0.59, 0]] as DTensor, lambdaRef: 532 },
   ZZ_B:  { dTensor: null, lambdaRef: 0 },
 };
-
-/** Compute squared refractive index at 300K for Miller scaling. */
-export function firstSquaredIndex(crystal: string, wavelengthNm: number): number {
-  const index = CrystalDB.compute(crystal, 300, wavelengthNm)[0];
-  if (index === undefined || index === 0) {
-    throw new Error(`Could not compute ${crystal} Miller scaling`);
-  }
-  return index ** 2;
-}
-
-function dot6(left: readonly [number, number, number, number, number, number], right: readonly [number, number, number, number, number, number]): number {
-  return left[0] * right[0] + left[1] * right[1] + left[2] * right[2] + left[3] * right[3] + left[4] * right[4] + left[5] * right[5];
-}
-
-function uniNl(crystal: string, wavelengthNm: number, angleRad: number): Vector2 {
-  const entry = UNI_NL_DATA[crystal];
-  if (entry === undefined) {
-    throw new Error(`Uniaxial crystal ${crystal} is not implemented in QmixEngine yet`);
-  }
-
-  const d1 = entry.d1Cos * Math.cos(angleRad) + entry.d1Sin * Math.sin(angleRad);
-  const d2 = entry.d2Cos2 * Math.cos(angleRad) ** 2 + entry.d2Sin2 * Math.sin(2 * angleRad);
-
-  const nsh = firstSquaredIndex(crystal, entry.lambdaRef) - 1;
-  const nfun = firstSquaredIndex(crystal, 2 * entry.lambdaRef) - 1;
-  const np = firstSquaredIndex(crystal, wavelengthNm) - 1;
-  const n2p = firstSquaredIndex(crystal, 2 * wavelengthNm) - 1;
-  const scale = (np / nsh) * (n2p / nfun) ** 2;
-  return [d1 * scale, d2 * scale];
-}
-
-/** Uniaxial nonlinear-optical coefficients.
- * d₁ = d1Cos·cosθ + d1Sin·sinθ  (type-1, one e-wave)
- * d₂ = d2Cos2·cos²θ + d2Sin2·sin2θ  (type-2, two e-waves)
- * Both are scaled by the Miller-δ factor at the operating wavelength. */
-export interface UniNlEntry {
-  readonly d1Cos: number;
-  readonly d1Sin: number;
-  readonly d2Cos2: number;
-  readonly d2Sin2: number;
-  readonly lambdaRef: number;
-}
 
 const UNI_NL_DATA: Record<string, UniNlEntry> = {
   AAS:    { d1Cos: 18.0, d1Sin: 11.3, d2Cos2: 18.0, d2Sin2: 0,    lambdaRef: 5300 },

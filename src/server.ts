@@ -72,7 +72,7 @@ import { QmixEngine, registerUniaxialNlData } from "./qmix/engine.js";
 import { CrystalDB } from "./qmix/crystal-db.js";
 import { n12 } from "./qmix/n12.js";
 import { calculateQpm, listQpmCrystals, getQpmPolarizations, qpmSweep, qpmTempTune, qpmPumpTune } from "./qmix/qpm.js";
-import type { QmixInput } from "./qmix/types.js";
+import type { CrystalInfo, QmixInput } from "./qmix/types.js";
 
 const app = express();
 const port = Number(process.env.PORT) || 3001;
@@ -85,20 +85,12 @@ interface TransmissionCurve {
 }
 
 let transmissionData: Record<string, TransmissionCurve> = {};
-let crystalInfoData: Record<string, Record<string, unknown>> = {};
 
 try {
   const fixturePath = resolve(rootDir, "fixtures", "transmission-golden.json");
   transmissionData = JSON.parse(readFileSync(fixturePath, "utf8")) as Record<string, TransmissionCurve>;
 } catch {
   console.warn("Warning: transmission-golden.json not found; transmission endpoint disabled");
-}
-
-try {
-  const fixturePath = resolve(rootDir, "fixtures", "crystal-info-golden.json");
-  crystalInfoData = JSON.parse(readFileSync(fixturePath, "utf8")) as Record<string, Record<string, unknown>>;
-} catch {
-  console.warn("Warning: crystal-info-golden.json not found; crystal info endpoint disabled");
 }
 
 app.use(express.json());
@@ -112,44 +104,67 @@ app.get("/api/crystals/detail", (_req, res) => {
   const all = CrystalDB.list();
   const detail: Array<{ name: string; type: string }> = [];
   for (const name of all) {
-    let type = "unknown";
-    try {
-      const idx = CrystalDB.compute(name, 300, 1000);
-      if (idx.length === 2) type = "uniaxial";
-      else if (idx.length === 3) type = "biaxial";
-    } catch {
-      type = "error";
-    }
-    detail.push({ name, type });
+    const info = CrystalDB.getCrystalInfo(name);
+    detail.push({ name, type: info?.kind ?? "unknown" });
   }
   res.json(detail);
 });
 
 const variantSuffixes = ["_1", "_2", "_3", "_F", "_H", "_K", "_C", "_M", "_S"];
 
-function resolveCrystal(name: string): string {
-  if (crystalInfoData[name] || transmissionData[name]) return name;
+function resolveCrystalName(name: string): string {
+  if (CrystalDB.hasCrystal(name)) return name;
   for (const suffix of variantSuffixes) {
     if (name.endsWith(suffix)) {
       const base = name.slice(0, -suffix.length);
-      if (crystalInfoData[base] || transmissionData[base]) return base;
+      if (CrystalDB.hasCrystal(base)) return base;
     }
   }
   return name;
 }
 
+function opticalSign(name: string): string {
+  try {
+    const indices = CrystalDB.compute(name, 300, 1064);
+    if (indices.length === 2) {
+      return indices[1]! > indices[0]! ? "pos. uniaxial" : "neg. uniaxial";
+    }
+    return indices.length === 1 ? "isotropic" : "biaxial";
+  } catch {
+    return "";
+  }
+}
+
+function toLegacyCrystalInfo(info: CrystalInfo): Record<string, unknown> {
+  const kindLabel = info.kind === "uniaxial" ? opticalSign(info.name) : info.kind;
+  return {
+    crystal_description: info.description,
+    iso_uni_or_bi: kindLabel || info.kind,
+    crystal_class: info.crystalClass,
+    wavelength_range: info.wavelengthRangeNm,
+    ref_ind_source: info.referenceCitations?.refractiveIndex,
+    thermo_optic_source: info.referenceCitations?.thermoOptic,
+    d_source: info.referenceCitations?.dTensor,
+    transmission_source: info.referenceCitations?.transmission,
+    thermal_conductivity: info.thermalProperties?.conductivityWattPerMeterK,
+    thermal_expansion: info.thermalProperties?.expansionCoefficients10Per6K,
+    specific_heat: info.thermalProperties?.specificHeatJoulePerKgK,
+    density: info.thermalProperties?.densityKgPerM3,
+  };
+}
+
 app.get("/api/crystal-info/:crystal", (req, res) => {
-  const crystal = resolveCrystal(req.params.crystal);
-  const info = crystalInfoData[crystal];
+  const crystal = resolveCrystalName(req.params.crystal);
+  const info = CrystalDB.getCrystalInfo(crystal);
   if (!info) {
     res.status(404).json({ error: `No info data for ${req.params.crystal}` });
     return;
   }
-  res.json(info);
+  res.json(toLegacyCrystalInfo(info));
 });
 
 app.get("/api/transmission/:crystal", (req, res) => {
-  const crystal = resolveCrystal(req.params.crystal);
+  const crystal = resolveCrystalName(req.params.crystal);
   const curve = transmissionData[crystal];
   if (!curve) {
     res.status(404).json({ error: `No transmission data for ${req.params.crystal}` });

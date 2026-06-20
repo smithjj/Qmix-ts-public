@@ -1,7 +1,7 @@
 {
   "name": "qmix-typescript",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
   "description": "TypeScript port of the Qmix nonlinear crystal phase-matching engine.",
   "scripts": {
@@ -23,17 +23,23 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "browser": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./standalone": {
+      "types": "./dist/standalone-entry.d.ts",
+      "default": "./dist/standalone-entry.js"
     }
   },
   "license": "GPL-3.0",
-  "author": "",
+  "author": "Jesse Smith <jesse.smith@as-photonics.com>",
   "files": [
+    "bin",
     "dist",
     "fixtures"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=18"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.11.3",

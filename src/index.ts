@@ -16,8 +16,18 @@ export type {
   QmixInput,
   QmixResult,
   Vector2,
-  Vector3
+  Vector3,
+  DTensor,
+  DTensorRow,
+  UniNlEntry,
+  BiNlEntry,
+  CrystalKind,
+  CrystalMetadata,
+  CrystalInfo,
+  CrystalReferenceCitations,
+  CrystalThermalProperties,
+  SellmeierDefinition,
+  TemperatureCorrectionDefinition
 } from "./qmix/types.js";
 
 export type { NormalizedQmixInput } from "./qmix/wavelengths.js";
-export type { UniNlEntry, BiNlEntry } from "./qmix/engine.js";

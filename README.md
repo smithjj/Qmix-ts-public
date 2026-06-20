@@ -5,7 +5,95 @@ TypeScript port of the Qmix nonlinear crystal phase-matching engine.
 This is free software, licensed under the GNU General Public License v3.0 (GPL-3.0).
 See [LICENSE](LICENSE) for the full license text.
 
-Reference behavior is captured in golden fixture JSON files.
+## Quick start as a library
+
+Install from npm (when published) or add it as a local dependency, then use the core API in your own project:
+
+```ts
+import { CrystalDB, QmixEngine, calculateQpm, formatQmixResult } from "qmix-typescript";
+
+// List every built-in crystal
+console.log(CrystalDB.list());
+// => ["AAS", "ADA", "ADP", "AGGS", "AGGSE", "AGS", "AGSE", ...]
+
+// Refractive indices at 300 K, 1064 nm
+const n = CrystalDB.compute("BBO", 300, 1064);
+console.log(n); // => [1.6559..., 1.5425...]  (uniaxial: [n_o, n_e])
+
+// Find phase-matching solutions for SHG in BBO
+const results = new QmixEngine().calculate({
+  selectedCrystal: "BBO",
+  temperatureKelvin: 300,
+  wavelengthRed1Nm: 1064,
+  wavelengthRed2Nm: 1064,
+  wavelengthBlueNm: 0,        // 0 = auto-compute via energy conservation
+  principalPlane: "XY",
+  type: "Mix"
+});
+
+for (const result of results) {
+  console.log(formatQmixResult(result, "Mix").join("\n"));
+}
+
+// Quasi-phase-matching grating period for periodically poled lithium niobate
+const qpm = calculateQpm("LNB_C", 300, 532, 1064, 1064);
+console.log(qpm);
+```
+
+The core engine is pure TypeScript math — no filesystem, no server, no native dependencies — so it runs in **Node.js, Deno, Bun, and modern browsers**. Only the terminal UI (OpenTUI) and desktop wrapper (Tauri) require Bun or Rust.
+
+### Registering your own crystals
+
+You can add custom crystals at runtime:
+
+```ts
+import { CrystalDB, QmixEngine, registerUniaxialNlData } from "qmix-typescript";
+
+CrystalDB.registerFromJson({
+  name: "MyCrystal",
+  numPolarizations: 2,                  // uniaxial
+  rangeNm: [200, 5000],
+  sellmeierFunction: 1,
+  coefficients: [
+    [2.7359, 0.01878, 0.01822, 0.01471],   // n_o
+    [2.3753, 0.01224, 0.01667, 0.01627]    // n_e
+  ],
+  temperatureCoefficients: [
+    [-0.0137, 0.0607, -0.1334, -1.5287],
+    [0.0413, -0.2119, 0.4408, -1.2749]
+  ],
+  temperatureReferenceKelvin: 293
+});
+
+registerUniaxialNlData("MyCrystal", {
+  d1Cos: 0,
+  d1Sin: 0.39,
+  d2Cos2: 0,
+  d2Sin2: 0.39,
+  lambdaRef: 532
+});
+
+const solutions = new QmixEngine().calculate({
+  selectedCrystal: "MyCrystal",
+  /* ... */
+});
+```
+
+See the **Custom crystals** section below and `public/custom.html` for the interactive editor.
+
+## Built-in crystal database
+
+The package includes **89 distinct nonlinear-optical crystal entries** with temperature-dependent Sellmeier equations (counting BBO as one entry rather than its three coefficient variants, and excluding the `ZZ_B`/`ZZ_U` placeholder entries). **85 of those entries** ship with full metadata: description, chemical formula, crystal class, source citations for the refractive-index and thermo-optic equations, d-tensor source, plus thermal conductivity, expansion, specific heat, and density where available. Coverage spans common oxides, borates, phosphates, arsenides/selenides, and mid/far-IR materials.
+
+For each crystal, the entry stores:
+
+- Transmission range (nm)
+- One to three refractive-index curves (isotropic, uniaxial, or biaxial)
+- Temperature-correction coefficients where available
+- Nonlinear d-tensor and Miller-scaling reference wavelength
+- d_eff formulas and source citations (shown in the UI and TUI)
+
+Popular crystals include: BBO, LBO, KTP (Flux/HT/KT variants), KDP, DKDP, ADP, BIBO, lithium niobate (congruent, MgO-doped, stoichiometric), ZnGeP₂, AgGaS₂, GaAs, GaP, and ZnSe. Use `CrystalDB.list()` to enumerate all entries, or `CrystalDB.getCrystalInfo(name)` to retrieve metadata for a specific crystal.
 
 ## Test Coverage
 

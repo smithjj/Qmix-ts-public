@@ -1,6 +1,6 @@
 [package]
 name = "qmix-desktop"
-version = "0.1.0"
+version = "1.0.0"
 description = "Qmix nonlinear crystal phase-matching desktop app"
 authors = ["AS-Photonics"]
 edition = "2021"

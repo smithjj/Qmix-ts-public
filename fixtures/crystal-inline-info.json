@@ -1,0 +1,1991 @@
+{
+  "AAS": {
+    "name": "AAS",
+    "description": "Ag_3AsS_3 or Proustite",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      600,
+      13000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Lucy, Appl. Opt. vol 11, 1329 (1972)",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Hulme, Appl. Phys. Lett. v10, p133 (1967); Chemla, Opt. Comm. v7 p225 (1973)"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        0.092,
+        1.11
+      ],
+      "expansionCoefficients10Per6K": [
+        16,
+        12
+      ],
+      "densityKgPerM3": 5615
+    }
+  },
+  "ADA": {
+    "name": "ADA",
+    "description": "NH_4H_2AsO_4 or Ammonium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      220,
+      1200
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72, p95 (1987)",
+      "thermoOptic": "Barnes, JOSA v72, p895 (1982)",
+      "dTensor": "estimated"
+    }
+  },
+  "ADP": {
+    "name": "ADP",
+    "description": "NH_4H_2PO_4 or Ammonium dihydrogen phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      184,
+      1500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Ghosh, IEEE JQE v18, p143 (1982)",
+      "thermoOptic": "same",
+      "dTensor": "Levine, Appl. Phys. Lett. v20 p272 (1972)"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.3,
+        0.7
+      ],
+      "expansionCoefficients10Per6K": [
+        27.2,
+        10.7
+      ],
+      "specificHeatJoulePerKgK": 508,
+      "densityKgPerM3": 1799
+    }
+  },
+  "AGGS": {
+    "name": "AGGS",
+    "description": "AgGaGeS_4",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      700,
+      13000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Miyata, Appl. Opt. v46, p5728 (2007)",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Petrov, Opt. Mat. v26, p217 (2004)",
+      "transmission": "Petrov, Opt. Mat. v26, p217 (2004)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        0.629,
+        0.495,
+        0.336
+      ],
+      "specificHeatJoulePerKgK": 448,
+      "densityKgPerM3": 3800
+    }
+  },
+  "AGGSE": {
+    "name": "AGGSE",
+    "description": "AgGaGe5_Se_12",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      600,
+      16000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Petrov, Appl. Opt. v43 p4590 (2004)",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Petrov, Appl. Opt. v43 p4590 (2004)",
+      "transmission": "Petrov, Appl. Opt. v43 p4590 (2004)."
+    },
+    "thermalProperties": {
+      "densityKgPerM3": 4780
+    }
+  },
+  "AGS": {
+    "name": "AGS",
+    "description": "AgGaS_2 Silver thiogallate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      500,
+      13000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Appl. Opt. v62, p6375 (2023).",
+      "thermoOptic": "same",
+      "dTensor": "Levine, Appl. Phys. Lett. v20, p272 (1972); Kupecek, IEEE JQE v10, p540 (1974).",
+      "transmission": "Rotermund, Opt. Comm. v185 p177 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.5,
+        1.4
+      ],
+      "expansionCoefficients10Per6K": [
+        12.7,
+        -13.2
+      ],
+      "specificHeatJoulePerKgK": 400,
+      "densityKgPerM3": 4701
+    }
+  },
+  "AGSE": {
+    "name": "AGSE",
+    "description": "AgGaSe_2 Silver gallium selenide",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      710,
+      18000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Roberts, Appl. Opt. v35, p4677 (1996).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Levine, Appl. Phys. Lett. v20, p272 (1972); Boyd, IEEE JQE v8, p900 (1972)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.1,
+        1
+      ],
+      "expansionCoefficients10Per6K": [
+        14,
+        -11.7
+      ],
+      "specificHeatJoulePerKgK": 290,
+      "densityKgPerM3": 5741
+    }
+  },
+  "ASS": {
+    "name": "ASS",
+    "description": "Ag_3SbS_3 or Pyrargyrite",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      700,
+      14000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Feichtner, Appl. Opt. v9, p1716 (1970).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Levine, Appl. Phys. Lett. v20, p272 (1972); Feichtner, Appl. Opt. v11, p993 (1972); Gandrud, Opt. Comm. v1, p187 (1970)."
+    }
+  },
+  "BBO": {
+    "name": "BBO",
+    "description": "beta-BaB_2O_4 or beta-borium borate",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      185,
+      2600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Tamosauskas, Opt. Mat. Exp. 8, p1410 (2018)",
+      "thermoOptic": "Kato, SPIE v. 11670 (2021)",
+      "dTensor": "Eckardt, IEEE JQE v26 p922 (1990).",
+      "transmission": "Bhar, Appl. Phys. Lett. v58 p231 (1991)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.2,
+        1.6
+      ],
+      "expansionCoefficients10Per6K": [
+        0.5,
+        33.3
+      ],
+      "specificHeatJoulePerKgK": 490,
+      "densityKgPerM3": 3850
+    }
+  },
+  "BBPO": {
+    "name": "BBPO",
+    "description": "BaBPO_5 or borium borophosphate",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      180,
+      3300
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Pan, JOSAB v21 p761 (2004). Sellmeier range = 400-1000 nm.",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Pan, JOSAB v21 p761 (2004).",
+      "transmission": "Pan, JOSAB v21 p761 (2004)."
+    }
+  },
+  "BPO": {
+    "name": "BPO",
+    "description": "BPO_4 or boron phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)",
+    "wavelengthRangeNm": [
+      135,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Zhang, JOSAB v28 p2236 (2011). Sellmeier range = 250 - 1500 nm.",
+      "thermoOptic": "unknown",
+      "dTensor": "Zhang, JOSAB v28 p2236 (2011).",
+      "transmission": "Zhang, JOSAB v28 p2236 (2011)."
+    }
+  },
+  "B2GGS": {
+    "name": "B2GGS",
+    "description": "Ba_2Ga_8GeS_16",
+    "kind": "uniaxial",
+    "crystalClass": "6mm",
+    "wavelengthRangeNm": [
+      420,
+      12000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, JOSAB v40 pA17 (2023).",
+      "thermoOptic": "ref_ind_source",
+      "dTensor": "Badikov, J. Alloys and Compounds v907 164378 (2022).",
+      "transmission": "d_source"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        0,
+        0
+      ]
+    }
+  },
+  "BGS": {
+    "name": "BGS",
+    "description": "BaGa_4S_7 Barium thiogallate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      620,
+      9200
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, AO v60, p6600 (2021).",
+      "thermoOptic": "Umemura, SPIE v9347 p93470N-1 (2015).",
+      "dTensor": "Badikov, Opt. Mat. Exp. v1 p316 (2011). Lin, Cryst. Growth & Design v9 p1186 (2009).",
+      "transmission": "Badikov, Opt. Mat. Exp. v1 p316 (2011)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.68,
+        1.45,
+        1.58
+      ]
+    }
+  },
+  "BGGSE": {
+    "name": "BGGSE",
+    "description": "BaGa_2GeSe_6",
+    "kind": "uniaxial",
+    "crystalClass": "3",
+    "wavelengthRangeNm": [
+      580,
+      16000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Appl. Opt. v57 p7440 (2018).",
+      "thermoOptic": "Kato, Appl. Opt. v58 p9709 (2019).",
+      "dTensor": "Kato, Opt. Lett. v45, p2136 (2020).",
+      "transmission": "Badikov, Opt. Mat. Exp. v6 p2933 (2016)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.88,
+        2.17
+      ]
+    }
+  },
+  "BGSE": {
+    "name": "BGSE",
+    "description": "BaGa_4Se_7 Barium gallium selenate",
+    "kind": "biaxial",
+    "crystalClass": "m",
+    "wavelengthRangeNm": [
+      470,
+      17000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Opt. Mat. Exp. v13, p1852 (2023).",
+      "thermoOptic": "same",
+      "dTensor": "Guo, Opt. Lett. v47, p842-845 (2022)",
+      "transmission": "Boursier, Opt. Lett. v41, p2731 (2016)."
+    }
+  },
+  "BIBO": {
+    "name": "BIBO",
+    "description": "BiB_3O_6 or bismuth borate",
+    "kind": "biaxial",
+    "crystalClass": "2",
+    "wavelengthRangeNm": [
+      286,
+      2500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Umemura, Opt. Mater. v30 p532 (2007).",
+      "thermoOptic": "same",
+      "dTensor": "Ghotbi, Opt. Exp. v12 p6002 (2004).",
+      "transmission": "Teng, J. Crystal Growth v233 p282 (2001)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        7.8,
+        6.95,
+        17.3
+      ],
+      "expansionCoefficients10Per6K": [
+        50.4,
+        0,
+        -16.1,
+        -7.26,
+        0,
+        -7.26
+      ],
+      "specificHeatJoulePerKgK": 500,
+      "densityKgPerM3": 5033
+    }
+  },
+  "CBBF": {
+    "name": "CBBF",
+    "description": "CsBe_2BO_3F_2 or cesium fluoroboratoberyllate",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      150,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Huang, JOSAB v28 p2186 (2011).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Huang, JOSAB v28 p2186 (2011).",
+      "transmission": "Huang, JOSAB v28 p2186 (2011)."
+    }
+  },
+  "CBO": {
+    "name": "CBO",
+    "description": "CsB_3O_5 or cesium triborate",
+    "kind": "biaxial",
+    "crystalClass": "222",
+    "wavelengthRangeNm": [
+      170,
+      3000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, IEEE JQE v31 p169 (1995).",
+      "thermoOptic": "Zhang, Opt. Lett. v38 p1594 (2013).",
+      "dTensor": "Wu, Opt. Lett. v22 p1840 (1997).",
+      "transmission": "Chang, J. Crystal Growth v277 p298 (2005)."
+    }
+  },
+  "CDA": {
+    "name": "CDA",
+    "description": "CsH_2AsO_4 or cesium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      260,
+      1430
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "Barnes, JOSA v72 p895 (1982).",
+      "dTensor": "Kato, IEEE JQE v16 p1288 (1980)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.5
+      ],
+      "specificHeatJoulePerKgK": 484,
+      "densityKgPerM3": 3620
+    }
+  },
+  "CDSE": {
+    "name": "CDSE",
+    "description": "CdSe or cadmium selenide",
+    "kind": "uniaxial",
+    "crystalClass": "6mm",
+    "wavelengthRangeNm": [
+      750,
+      16500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Miyata, Opt. Mat. Exp. v12, p 963 (2022)",
+      "thermoOptic": "Miyata, Opt. Mat. Exp. v12, p 963 (2022)",
+      "dTensor": "Boyd, Appl. Phys. Lett. v18 p446 (1971).",
+      "transmission": "Finsterbusch, Appl. Phys. B v79 p457 (2004)"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        6.2,
+        6.9
+      ],
+      "expansionCoefficients10Per6K": [
+        4.4,
+        2.45
+      ],
+      "specificHeatJoulePerKgK": 258,
+      "densityKgPerM3": 5672
+    }
+  },
+  "CGA": {
+    "name": "CGA",
+    "description": "CdGeAs_2 or cadmium germanium arsenide",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      2400,
+      18000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, JOSAB v42 7, A24-A28 (2025)",
+      "thermoOptic": "Kato, JOSAB v42 7, A24-A28 (2025)",
+      "dTensor": "Levine, Appl. Phys. Lett. v20 p272 (1972); Boyd, IEEE JQE v8 p900 (1972).",
+      "transmission": "Vodopyanov, Opt. Comm. v202 p205 (2002)."
+    },
+    "thermalProperties": {
+      "expansionCoefficients10Per6K": [
+        8.4,
+        0.25
+      ],
+      "densityKgPerM3": 5615
+    }
+  },
+  "CLBO": {
+    "name": "CLBO",
+    "description": "CsLiB_6O_10 or cesium lithium borate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      180,
+      2750
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Umemura, Opt. Soc. Am. proceedings ASSL p715 (1999).",
+      "thermoOptic": "same",
+      "dTensor": "Shoji, JOSAB v18 p302 (2001)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2,
+        2.2
+      ],
+      "expansionCoefficients10Per6K": [
+        21,
+        -17
+      ],
+      "specificHeatJoulePerKgK": 930,
+      "densityKgPerM3": 2461
+    }
+  },
+  "CSP": {
+    "name": "CSP",
+    "description": "CdSiP_2 or cadmium silica phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      950,
+      9500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Wei, Opt. Mat. Exp. v8 p235 (2018).",
+      "thermoOptic": "same",
+      "dTensor": "Schunemann, Proc. ASSP paper MG6 (2008).",
+      "transmission": "Peremans, Opt. Lett. v43 p3053 (2009)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        13.6
+      ],
+      "expansionCoefficients10Per6K": [
+        21,
+        -17
+      ],
+      "specificHeatJoulePerKgK": 446,
+      "densityKgPerM3": 4700
+    }
+  },
+  "CTA": {
+    "name": "CTA",
+    "description": "CsTiOAsO_4 or cesium titanyl arsenate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      5300
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Mikami, J. Appl. Phys. v109 p23108 (2011).",
+      "thermoOptic": "same",
+      "dTensor": "Cheng, Appl. Phys. Lett. v63 p2618 (1993)."
+    }
+  },
+  "CTW": {
+    "name": "CTW",
+    "description": "Cs_2TeW_3O_12",
+    "kind": "uniaxial",
+    "crystalClass": "6",
+    "wavelengthRangeNm": [
+      410,
+      5310
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Zhao, Opt. Mat. Exp. v6 p451 (2016).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Zhao, Opt. Mat. Exp. v6 p451 (2016)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2.33,
+        0.8
+      ]
+    }
+  },
+  "DADA": {
+    "name": "DADA",
+    "description": "ND_4D_2AsO_4 or deuterated ammonium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      220,
+      1200
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "estimated"
+    }
+  },
+  "DADP": {
+    "name": "DADP",
+    "description": "ND_4D_2PO_4 or deuterated ammonium dihydrogen phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      220,
+      1700
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Suvorov, JETP v26 p23 (1968).",
+      "transmission": "Genbo, J. Crystal Growth v242 p129 (2002)."
+    },
+    "thermalProperties": {
+      "densityKgPerM3": 1885
+    }
+  },
+  "DCDA": {
+    "name": "DCDA",
+    "description": "CsD_2AsO_4 or deuterated cesium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      270,
+      1660
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "Barnes, JOSA v72 p895 (1982).",
+      "dTensor": "Kato, IEEE JQE v10 p616 (1974)."
+    },
+    "thermalProperties": {
+      "densityKgPerM3": 3640
+    }
+  },
+  "DKDP": {
+    "name": "DKDP",
+    "description": "KD_2PO_4 or deuterated potassium dihydrogen phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      200,
+      2000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kirby, JOSAB v4 p1072 (1987).",
+      "thermoOptic": "Ghosh, IEEE JQE v18 p143 (1982).",
+      "dTensor": "Levine, Appl. Phys. Lett. v20 p272 1972; Kielich, Opto-electr. v2 p125 (1970).",
+      "transmission": "unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.9,
+        2.1
+      ],
+      "expansionCoefficients10Per6K": [
+        19,
+        44
+      ],
+      "densityKgPerM3": 2355
+    }
+  },
+  "DLAP": {
+    "name": "DLAP",
+    "description": "L-Arginine phosphate",
+    "kind": "biaxial",
+    "crystalClass": "2",
+    "wavelengthRangeNm": [
+      230,
+      1200
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, IEE JQE v25 p179 (1989).",
+      "thermoOptic": "same",
+      "dTensor": "Eimerl, IEEE JQE v25 p179 (1989).",
+      "transmission": "Eimerl, IEEE JQE v25 p179 (1989)."
+    }
+  },
+  "DRDA": {
+    "name": "DRDA",
+    "description": "RhD_2AsO_4 or deuterated rubidium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      260,
+      1700
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Kato, IEEE JQE v10 p622 (1974)."
+    }
+  },
+  "DRDP": {
+    "name": "DRDP",
+    "description": "RhD_2PO_4 or deuterated rubidium dihydrogen phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      220,
+      1500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "estimated"
+    }
+  },
+  "GAAS": {
+    "name": "GAAS",
+    "description": "GaAs or gallium arsenide",
+    "kind": "isotropic",
+    "crystalClass": "4(bar)3m",
+    "wavelengthRangeNm": [
+      997,
+      17000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Skauli, J. Appl. Phys. v94 p6447 (2003).",
+      "thermoOptic": "n(T) same",
+      "dTensor": "Skauli, J. Appl. Phys. v94 p6447 (2003).",
+      "transmission": "unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        46
+      ],
+      "expansionCoefficients10Per6K": [
+        5.73
+      ],
+      "specificHeatJoulePerKgK": 345,
+      "densityKgPerM3": 5317
+    }
+  },
+  "GAP": {
+    "name": "GAP",
+    "description": "GaP or gallium phosphide",
+    "kind": "isotropic",
+    "crystalClass": "4(bar)3m",
+    "wavelengthRangeNm": [
+      700,
+      12500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Wei, Opt. Mat. Exp. v8 p485 (2018).",
+      "thermoOptic": "same",
+      "dTensor": "Shoji, JOSAB v14 p2268 (1997).",
+      "transmission": "unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        110
+      ],
+      "expansionCoefficients10Per6K": [
+        5.3
+      ],
+      "specificHeatJoulePerKgK": 435,
+      "densityKgPerM3": 4133
+    }
+  },
+  "GCOB": {
+    "name": "GCOB",
+    "description": "GdCa_4O(BO_3)_3 or gadolinium calcium oxyborate",
+    "kind": "biaxial",
+    "crystalClass": "m",
+    "wavelengthRangeNm": [
+      320,
+      2700
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Guo, et al., Opt. Lett. v41 p5290 (2016).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Pack, JOSAB v22 p417 (2005).",
+      "transmission": "Unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2.5,
+        1.2,
+        1.8
+      ],
+      "expansionCoefficients10Per6K": [
+        7,
+        5,
+        11.3
+      ]
+    }
+  },
+  "GEO": {
+    "name": "GEO",
+    "description": "GeO_2 alpha-Germanium dioxide",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      400,
+      5100
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Remark, Opt. Mat. Exp. v11, p3520 (2021).",
+      "thermoOptic": "unknown",
+      "dTensor": "Remark, Opt. Mat. Exp v11 p3520 (2021)",
+      "transmission": "Remat, Opt. Mat. Exp v11, p3520 (2021)"
+    }
+  },
+  "GS": {
+    "name": "GS",
+    "description": "GaSe or gallium selenide",
+    "kind": "uniaxial",
+    "crystalClass": "6m2",
+    "wavelengthRangeNm": [
+      650,
+      18000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Appl. Opt. v52 p2325 (2013).",
+      "thermoOptic": "same",
+      "dTensor": "Levine, Appl. Phys. Lett. v20 p272 (1972); Boyd Appl. Phys. Lett. v18 p301 (1971); Abdullaev, JETP Lett. v16 p90 (1972).",
+      "transmission": "Vodopyanov, JOSAB v10 p1723 (1993)"
+    },
+    "thermalProperties": {
+      "expansionCoefficients10Per6K": [
+        9,
+        8.25
+      ],
+      "densityKgPerM3": 5030
+    }
+  },
+  "HGS": {
+    "name": "HGS",
+    "description": "HgGa_2S_4 or mercury thiogallate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)",
+    "wavelengthRangeNm": [
+      500,
+      13000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato et al., Appl. Opt. v55 p3145 (2016).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Petrov, Opt. Lett. v27 n.19 p1705 (2002)",
+      "transmission": "Badikov, Quant. Elec. v34, p451 (2004)"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2.5
+      ],
+      "specificHeatJoulePerKgK": 400
+    }
+  },
+  "HS": {
+    "name": "HS",
+    "description": "HgS or cinnabar",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      630,
+      13500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Bhar, Appl. Opt. v15 p305 (1976).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Boyd, IEEE JQE v4 p515 (1964)."
+    }
+  },
+  "KABO": {
+    "name": "KABO",
+    "description": "K_2Al_2B_2O_7 or potassium aluminum borate",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      180,
+      3600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Umemura, Appl. Opt. v42 p2716 (2003).",
+      "thermoOptic": "same",
+      "dTensor": "Ye.",
+      "transmission": "Chen, Appl. Phys. B v80 p1 (2005)."
+    },
+    "thermalProperties": {
+      "expansionCoefficients10Per6K": [
+        8.4,
+        16.5
+      ],
+      "specificHeatJoulePerKgK": 1000,
+      "densityKgPerM3": 2470
+    }
+  },
+  "KBBF": {
+    "name": "KBBF",
+    "description": "KBe_2BO_3F_2 or potassium fluoroboratoberyllate",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      147,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Chen, Appl. Phys. B v97 p9 (2009).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Chen, Appl. Phys. B v97 p9 (2009).",
+      "transmission": "Chen, Opt. Lett. v27 p637 (2002)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2.5
+      ]
+    }
+  },
+  "KBO": {
+    "name": "KBO",
+    "description": "KB_5O_8:4H_2O or potassium pentaborate tetrahydrate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      165,
+      1400
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Umemura, Appl. Opt. v35 p5332 (1996).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Dmitriev Handbook of nonlinear optical crystals"
+    }
+  },
+  "KDA": {
+    "name": "KDA",
+    "description": "KH_2AsO_4 or potassium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      216,
+      1700
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "Barnes, JOSA v72 p895 (1982).",
+      "dTensor": "Suvarov, Sov. Phys. Crystallog. v11 p711 (1966).",
+      "transmission": "unknown"
+    }
+  },
+  "KDP": {
+    "name": "KDP",
+    "description": "KH_2PO_4 or potassium dihydrogen phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      177,
+      1700
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Ghosh, IEEE JQE v18 p143 (1983).",
+      "thermoOptic": "same",
+      "dTensor": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "transmission": "unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.3,
+        1.2
+      ],
+      "expansionCoefficients10Per6K": [
+        26.8,
+        42.4
+      ],
+      "specificHeatJoulePerKgK": 879,
+      "densityKgPerM3": 2332
+    }
+  },
+  "KNBO3": {
+    "name": "KNBO3",
+    "description": "KNbO_3 or potassium niobate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      400,
+      4500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Umemura, Appl. Opt. v38 p991 (1999).",
+      "thermoOptic": "Ghosh, Appl. Phys. Lett. v65 p3311 (1995).",
+      "dTensor": "Pack, JOSAB v20 p2109 (2003).",
+      "transmission": "Umemura, Appl. Opt. v38 p991 (1999)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        4
+      ],
+      "expansionCoefficients10Per6K": [
+        0.5,
+        5,
+        2.5
+      ],
+      "specificHeatJoulePerKgK": 767,
+      "densityKgPerM3": 4621
+    }
+  },
+  "KTA_1": {
+    "name": "KTA_1",
+    "description": "KTiOAsO_4 or potassium titanyl arsenate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Fenemore, JOSAB v12 p794 (1995).",
+      "thermoOptic": "unknown;uses KTP data",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.8,
+        1.9,
+        2.1
+      ],
+      "expansionCoefficients10Per6K": [
+        7.8,
+        10.8,
+        -0.65
+      ],
+      "densityKgPerM3": 3454
+    }
+  },
+  "KTA_2": {
+    "name": "KTA_2",
+    "description": "KTiOAsO_4 or potassium titanyl arsenate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Feve, JOSAB v17 p775 (2000).",
+      "thermoOptic": "unknown;uses KTP data",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.8,
+        1.9,
+        2.1
+      ],
+      "expansionCoefficients10Per6K": [
+        7.8,
+        10.8,
+        -0.65
+      ],
+      "densityKgPerM3": 3454
+    }
+  },
+  "KTA_3": {
+    "name": "KTA_3",
+    "description": "KTiOAsO_4 or potassium titanyl arsenate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, CLEO 2004.",
+      "thermoOptic": "same",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.8,
+        1.9,
+        2.1
+      ],
+      "expansionCoefficients10Per6K": [
+        7.8,
+        10.8,
+        -0.65
+      ],
+      "densityKgPerM3": 3454
+    }
+  },
+  "KTP_F": {
+    "name": "KTP_F",
+    "description": "KTiOPO_4 or potassium titanyl phosphate (flux grown)",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Bonnin, unpublished (from Cristal Laser).",
+      "thermoOptic": "Weichmann, Opt. Lett. v18 p1208 (1993).",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2,
+        2.3,
+        2.6
+      ],
+      "expansionCoefficients10Per6K": [
+        7.88,
+        9.48,
+        0.02
+      ],
+      "specificHeatJoulePerKgK": 728,
+      "densityKgPerM3": 3025
+    }
+  },
+  "KTP_H": {
+    "name": "KTP_H",
+    "description": "KTiOPO_4 or potassium titanyl phosphate (hydrothermally grown)",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Vanherzeele, Appl. Opt. v27 p3314 (1988).",
+      "thermoOptic": "Weichmann, Opt. Lett. v18 p1208 (1993).",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2,
+        2.3,
+        2.6
+      ],
+      "expansionCoefficients10Per6K": [
+        7.88,
+        9.48,
+        0.02
+      ],
+      "specificHeatJoulePerKgK": 728,
+      "densityKgPerM3": 3025
+    }
+  },
+  "KTP_K": {
+    "name": "KTP_K",
+    "description": "KTiOPO_4 or potassium titanyl phosphate (flux grown)",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Appl. Opt. v41 p5040 (2002).",
+      "thermoOptic": "same",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2,
+        2.3,
+        2.6
+      ],
+      "expansionCoefficients10Per6K": [
+        7.88,
+        9.48,
+        0.02
+      ],
+      "specificHeatJoulePerKgK": 728,
+      "densityKgPerM3": 3025
+    }
+  },
+  "LB4": {
+    "name": "LB4",
+    "description": "Li_2B_4O_7 or lithium tetraborate",
+    "kind": "uniaxial",
+    "crystalClass": "4mm",
+    "wavelengthRangeNm": [
+      160,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Sugawara, Sol. St. Comm. v107 p233 (1989).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Sugawara, Sol. St. Comm. v107 p233 (1989).",
+      "transmission": "Roy, Appl. Phys. B (2009)."
+    }
+  },
+  "LBGO": {
+    "name": "LBGO",
+    "description": "LaBGeO_5 lanthanum borogermanate",
+    "kind": "uniaxial",
+    "crystalClass": "3",
+    "wavelengthRangeNm": [
+      195,
+      2600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Umemura, Opt. Mat. Exp. v9 p2159 (2020).",
+      "thermoOptic": "same",
+      "dTensor": "Shoji, OSA Adv. Phot. Cong NoM3J.5 (2018)",
+      "transmission": "Hirohashi, OSA ASSL AM3A.2 (2013)"
+    }
+  },
+  "LBO": {
+    "name": "LBO",
+    "description": "LiB_3O_5 or lithium triborate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      160,
+      2600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, IEEE JQE v30 p2950 (1994).",
+      "thermoOptic": "same",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992).",
+      "transmission": "unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2.7,
+        3.1,
+        4.5
+      ],
+      "expansionCoefficients10Per6K": [
+        58,
+        -53,
+        25
+      ],
+      "specificHeatJoulePerKgK": 1060,
+      "densityKgPerM3": 2474
+    }
+  },
+  "LCB": {
+    "name": "LCB",
+    "description": "La_2CaB_10O_19 or lanthanum calcium borate",
+    "kind": "biaxial",
+    "crystalClass": "2",
+    "wavelengthRangeNm": [
+      180,
+      3300
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Zhang, Opt. Exp. v19 p16722 (2011).",
+      "thermoOptic": "Zhai, Opt. Exp. v21 p20641 (2013).",
+      "dTensor": "Zhang, Opt. Exp. v19 p16722 (2011).",
+      "transmission": "Wang, Opt. Comm. v209 p481 (2002)."
+    },
+    "thermalProperties": {
+      "expansionCoefficients10Per6K": [
+        8.6,
+        8.4,
+        2.3
+      ]
+    }
+  },
+  "LFM": {
+    "name": "LFM",
+    "description": "LiCOOH-H_2O or lithium formate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      230,
+      1200
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Naito, Opto-electr. v5 p256 (1973).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Sing, Appl. Phys. Lett. v17 p292 (1970).",
+      "transmission": "unknown"
+    }
+  },
+  "LGN": {
+    "name": "LGN",
+    "description": "La_3 Ga_5.5 Nb_0.5 O_14",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      430,
+      6800
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Guo, Opt. Mat. Ex v8 p858 (2018)",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Guo, Opt. Mat. Ex v8 p858 (2018).",
+      "transmission": "Lu, Op Ex v24 p17603 (2016)."
+    }
+  },
+  "LGS": {
+    "name": "LGS",
+    "description": "LiGaS_2 or lithium gallium sulfide",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      320,
+      11600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Petrov, Appl. Phys. B v78 p543 (2004).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Petrov, Appl. Phys. B v78 p543 (2004).",
+      "transmission": "Yelisseyev, JOSA B v29 p1003 (2012)."
+    }
+  },
+  "LGSE": {
+    "name": "LGSE",
+    "description": "LiGaSe_2 or lithium gallium selenide",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      370,
+      13200
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Myata, Appl. Opt. v56 p6126 (2017).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Petrov, Appl. Phys. B v78 p543 (2004)."
+    }
+  },
+  "LGT": {
+    "name": "LGT",
+    "description": "LiGaTe_2 or lithium gallium teluride",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      500,
+      15000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Isaenko, Crystal Growth & Design v5 p1325 (2005).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Isaenko, Crystal Growth & Design v5 p1325 (2005).",
+      "transmission": "unknown"
+    }
+  },
+  "LGTO": {
+    "name": "LGTO",
+    "description": "La_3Ga_5.5Ta_0.5O_14 or langate",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      500,
+      6000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Boursier, Opt. Lett. v39 p4033 (2014).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Boursier, Opt. Lett. v39 p4033 (2014)",
+      "transmission": "Boursier, Opt. Lett. v39 p4033 (2014)"
+    }
+  },
+  "LIIO3": {
+    "name": "LIIO3",
+    "description": "LiIO_3 or lithium iodate",
+    "kind": "uniaxial",
+    "crystalClass": "6",
+    "wavelengthRangeNm": [
+      300,
+      6000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, IEEE QE v21 p119 (1985).",
+      "thermoOptic": "Ghosh Opt. Lett. v19 p1391 (1994).",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992); Okada, Phys. Lett. v34A p63 (1971).",
+      "transmission": "unknown"
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        3.9,
+        3.1
+      ],
+      "expansionCoefficients10Per6K": [
+        28,
+        48
+      ],
+      "densityKgPerM3": 4487
+    }
+  },
+  "LIS": {
+    "name": "LIS",
+    "description": "LiInS_2 or lithium thioindate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      400,
+      12000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Appl. Opt. v53 p7998 (2014).",
+      "thermoOptic": "same",
+      "dTensor": "Fossier, JOSAB v21 p1981 (2004).",
+      "transmission": "Fossier, JOSAB v21 p1981 (2004)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        6.2,
+        6,
+        7.6
+      ],
+      "expansionCoefficients10Per6K": [
+        16.4,
+        9.6,
+        6.8
+      ],
+      "specificHeatJoulePerKgK": 535,
+      "densityKgPerM3": 3540
+    }
+  },
+  "LISE": {
+    "name": "LISE",
+    "description": "LiInSe_2 or lithium selenoindate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      500,
+      12000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Appl. Opt. v53 p1063 (2014).",
+      "thermoOptic": "same",
+      "dTensor": "Petrov, JOSAB v27 p1902 (2010).",
+      "transmission": "Petrov, JOSAB v27 p1902 (2010)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        4.74,
+        4.68,
+        5.46
+      ],
+      "expansionCoefficients10Per6K": [
+        17.6,
+        11,
+        8.7
+      ],
+      "specificHeatJoulePerKgK": 343,
+      "densityKgPerM3": 3540
+    }
+  },
+  "LITA_C": {
+    "name": "LITA_C",
+    "description": "LiTaO_3 congruent, or congruent lithium tantalate",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      280,
+      5500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Iwasaki, Jap. J. Appl. Phys. v7 p185 (1968).",
+      "thermoOptic": "Meyn, Opt. Lett. v22 p1214 (1997) for n_z(T).",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997); Dolev, Appl. Phys. B v96 p423 (2009).",
+      "transmission": "Hum, J. Appl. Phys. v101 p09318 (2007)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        8.4
+      ],
+      "expansionCoefficients10Per6K": [
+        16,
+        2.2
+      ]
+    }
+  },
+  "LITA_S": {
+    "name": "LITA_S",
+    "description": "LiTaO_3 stoichiometric, or stoichiometric lithium tantalate",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      280,
+      5500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Bruner, Opt. Lett. v28 p194 (2003).",
+      "thermoOptic": "same (Caution: QPM temperature tuning is accurate but individual dn/dT values are not.)",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997); Dolev, Appl. Phys. B v96 p423 (2009).",
+      "transmission": "Hum, J. Appl. Phys. v101 p09318 (2007)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        8.4
+      ],
+      "expansionCoefficients10Per6K": [
+        16,
+        2.2
+      ]
+    }
+  },
+  "LITA_M": {
+    "name": "LITA_M",
+    "description": "0.5% MgO doped LiTaO_3 stoichiometric, or 0.5% MgO doped stoichiometric lithium tantalate",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      280,
+      5500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Dolev, Appl. Phys. B v96 p423 (2009).",
+      "thermoOptic": "same",
+      "dTensor": "Dolev, Appl. Phys. B v96 p423 (2009).",
+      "transmission": "Hum, J. Appl. Phys. v101 p09318 (2007)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        8.4
+      ],
+      "expansionCoefficients10Per6K": [
+        14.6,
+        2.2
+      ]
+    }
+  },
+  "LNB_C": {
+    "name": "LNB_C",
+    "description": "LiNbO_3 congruent or lithium niobate (congruent)",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      330,
+      5500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Edwards, Opt. Quant. Electron. v16 p373 (1984); Jundt, Opt. Lett. v22 p1553 (1997) for n(e)",
+      "thermoOptic": "Edwards, Opt. Quant. Electron. v16 p373 (1984)",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997).",
+      "transmission": "Lin, IEEE JQE v32 p124 (1996)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        5.4,
+        5.3
+      ],
+      "expansionCoefficients10Per6K": [
+        17,
+        1.7
+      ],
+      "specificHeatJoulePerKgK": 684,
+      "densityKgPerM3": 4629
+    }
+  },
+  "LNB_M": {
+    "name": "LNB_M",
+    "description": "LiNbO_3 5% MgO doped congruent lithium niobate",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      330,
+      5500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Zelmon, JOSAB v14 p3319 (1997).",
+      "thermoOptic": "unknown",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997).",
+      "transmission": "Lin, IEEE JQE v32 p124 (1996)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        5.4,
+        5.3
+      ],
+      "expansionCoefficients10Per6K": [
+        14.8,
+        4.1
+      ],
+      "specificHeatJoulePerKgK": 684,
+      "densityKgPerM3": 4629
+    }
+  },
+  "LNB_S": {
+    "name": "LNB_S",
+    "description": "stoichiometric LiNbO_3 or stoichiometric lithium niobate",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      330,
+      5500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Hobden, Phys. Lett. v22 p243 (1966).",
+      "thermoOptic": "same",
+      "dTensor": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997).",
+      "transmission": "Lin, IEEE JQE v32 p124 (1996)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        5.4,
+        5.3
+      ],
+      "expansionCoefficients10Per6K": [
+        16.7,
+        2.5
+      ],
+      "specificHeatJoulePerKgK": 684,
+      "densityKgPerM3": 4629
+    }
+  },
+  "NLBO": {
+    "name": "NLBO",
+    "description": "Na_3La_9O_3(BO_3)_8 or sodium lanthanum oxyborate",
+    "kind": "uniaxial",
+    "crystalClass": "6m2",
+    "wavelengthRangeNm": [
+      200,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Zhang, Opt. Exp. v18 p237 (2010).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Zhang, Opt. Exp. v18 p237 (2010).",
+      "transmission": "Zhang, Opt. Exp. v18 p237 (2010)."
+    }
+  },
+  "NTW": {
+    "name": "NTW",
+    "description": "Na_2TeW_2O_9 or Sodium tellurium tungstate",
+    "kind": "biaxial",
+    "crystalClass": "m",
+    "wavelengthRangeNm": [
+      450,
+      5000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Gao, Opt. Mat. Exp. v6 p106 (2016)",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Gao, Opt. Mat. Exp. v6 p106 (2016).",
+      "transmission": "Gao, Opt. Mat. Exp. v6 p106 (2016)."
+    }
+  },
+  "RBBF": {
+    "name": "RBBF",
+    "description": "RBe_2BO_3F_2 or rubidium fluoroboratoberyllate",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      165,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Chen, JOSAB v26 p1519 (2009).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Chen, JOSAB v26 p1519 (2009).",
+      "transmission": "Chen, JOSAB v26 p1519 (2009)."
+    }
+  },
+  "RDA": {
+    "name": "RDA",
+    "description": "RbH_2AsO_4 or rubidium dihydrogen arsenate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      260,
+      1460
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "Barnes, JOSA v72 p895 (1982).",
+      "dTensor": "Kato, IEEE JQE v10 p622 (1974)."
+    }
+  },
+  "RDP": {
+    "name": "RDP",
+    "description": "RbH_2PO_4 or rubidium dihydrogen phosphate",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      220,
+      1500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Eimerl, Ferroelectrics v72 p95 (1987).",
+      "thermoOptic": "Barnes, JOSA v72 p895 (1982).",
+      "dTensor": "Pearson, Opt. Comm. v4 p366 (1972)."
+    },
+    "thermalProperties": {
+      "expansionCoefficients10Per6K": [
+        22,
+        46
+      ]
+    }
+  },
+  "RTA": {
+    "name": "RTA",
+    "description": "RbTiOAsO_4 or rubidium titanyl arsenate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Kato, Jap. J. Appl. Phys. v42 p6420 (2003).",
+      "thermoOptic": "same",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.6,
+        1.6,
+        1.7
+      ],
+      "expansionCoefficients10Per6K": [
+        14.5
+      ]
+    }
+  },
+  "RTP": {
+    "name": "RTP",
+    "description": "RbTiOPO_4 or rubidium titanyl phosphate",
+    "kind": "biaxial",
+    "crystalClass": "mm2",
+    "wavelengthRangeNm": [
+      350,
+      4500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Mikami, Opt. Mat. v31 p1628 (2009).",
+      "thermoOptic": "Mangin, JOSAB v28 p873 (2011).",
+      "dTensor": "Pack, Appl. Opt. v43 p3319 (2004).",
+      "transmission": "Hansson, Appl. Opt. v39 p5058 (2000)."
+    },
+    "thermalProperties": {
+      "expansionCoefficients10Per6K": [
+        9.44,
+        12.49,
+        -4.16
+      ],
+      "densityKgPerM3": 3654
+    }
+  },
+  "SC4H": {
+    "name": "SC4H",
+    "description": "SiC-4H or silicon carbide 4H polytype",
+    "kind": "uniaxial",
+    "crystalClass": "6mm",
+    "wavelengthRangeNm": [
+      370,
+      5800
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Wang, Las. & Phot. Rev. v7 p831 (2013).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Sato, JOSAB v26 p1892 (2009).",
+      "transmission": "Fan, Opt. Lett. v39 p6249 (2014)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        120
+      ],
+      "expansionCoefficients10Per6K": [
+        4
+      ],
+      "specificHeatJoulePerKgK": 750,
+      "densityKgPerM3": 3210
+    }
+  },
+  "SC6H": {
+    "name": "SC6H",
+    "description": "SiC-6H or silicon carbide 6H polytype",
+    "kind": "uniaxial",
+    "crystalClass": "6mm",
+    "wavelengthRangeNm": [
+      400,
+      5800
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Wang, Las. & Phot. Rev. v7 p831 (2013).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Sato, JOSAB v26 p1892 (2009).",
+      "transmission": "Fan, Opt. Lett. v39 p6249 (2014)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        120
+      ],
+      "expansionCoefficients10Per6K": [
+        4
+      ],
+      "specificHeatJoulePerKgK": 750,
+      "densityKgPerM3": 3210
+    }
+  },
+  "TAS": {
+    "name": "TAS",
+    "description": "Tl_3AsSe_3",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      1250,
+      20000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Ewbank, J. Appl. Phys. v51 p3848 (1980).",
+      "thermoOptic": "same",
+      "dTensor": "Feichtner, Appl. Opt. v11 p993 (1972)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        0.35
+      ],
+      "expansionCoefficients10Per6K": [
+        28,
+        18
+      ],
+      "specificHeatJoulePerKgK": 190,
+      "densityKgPerM3": 7830
+    }
+  },
+  "TCOB": {
+    "name": "TCOB",
+    "description": "TbCa_4O(BO_3)_3 or terbium calcium oxyborate",
+    "kind": "biaxial",
+    "crystalClass": "m",
+    "wavelengthRangeNm": [
+      520,
+      1600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Yuan, Opt. Exp. v22 p27606 (2014).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Yuan, Opt. Exp. v22 p27606 (2014)."
+    }
+  },
+  "TE": {
+    "name": "TE",
+    "description": "Te or tellurium",
+    "kind": "uniaxial",
+    "crystalClass": "32",
+    "wavelengthRangeNm": [
+      3800,
+      32000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Bhar, Appl. Opt. v15 p305 (1976).",
+      "thermoOptic": "n(T) unknown",
+      "dTensor": "Sherman, IEEE JQE v9 p403 (1973)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        6.3
+      ],
+      "expansionCoefficients10Per6K": [
+        27.5,
+        -1.6
+      ],
+      "specificHeatJoulePerKgK": 202
+    }
+  },
+  "YCOB": {
+    "name": "YCOB",
+    "description": "YCa_4O(BO_3)_3 or yttrium calcium oxyborate",
+    "kind": "biaxial",
+    "crystalClass": "m",
+    "wavelengthRangeNm": [
+      220,
+      3500
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Segonds, Opt. Mat. v29 p975 (2007).",
+      "thermoOptic": "Umemura, Jpn. J. Appl. Phys. v42 p5040 (2003).",
+      "dTensor": "Pack, JOSAB v22 p417 (2005).",
+      "transmission": "Segonds, Opt. Mat. v29 p975 (2007)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        2.6,
+        2.33,
+        3.01
+      ],
+      "expansionCoefficients10Per6K": [
+        10.9,
+        4.2,
+        5.9
+      ],
+      "specificHeatJoulePerKgK": 700,
+      "densityKgPerM3": 3300
+    }
+  },
+  "ZGP": {
+    "name": "ZGP",
+    "description": "ZnGeP_2 or zinc germanium phosphide",
+    "kind": "uniaxial",
+    "crystalClass": "4(bar)2m",
+    "wavelengthRangeNm": [
+      740,
+      12000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Zelmon, JOSAB v17 p1307 (2001).",
+      "thermoOptic": "Fischer, J. Appl. Phys. v71 p425 (1997); Ghosh, Appl. Opt. v37 p1205 (1998).",
+      "dTensor": "Boyd, Appl. Phys. Lett. v18 p301 (1971).",
+      "transmission": "Vodopyanov, JOSA B v10 p1723 (1993)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        35,
+        36
+      ],
+      "expansionCoefficients10Per6K": [
+        7.8,
+        5
+      ],
+      "specificHeatJoulePerKgK": 464,
+      "densityKgPerM3": 4175
+    }
+  },
+  "ZNSE": {
+    "name": "ZNSE",
+    "description": "ZnSe or zinc selenide",
+    "kind": "isotropic",
+    "crystalClass": "4(bar)3m",
+    "wavelengthRangeNm": [
+      450,
+      18000
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Tropf, Opt. Eng. v34 p1369 (1995).",
+      "thermoOptic": "same",
+      "dTensor": "Shoji, JOSAB v14 p2268 (1997).",
+      "transmission": "Gavruschuk, Inorganic. Mat. v39 p883 (2003)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        13
+      ],
+      "expansionCoefficients10Per6K": [
+        7.1
+      ],
+      "specificHeatJoulePerKgK": 339,
+      "densityKgPerM3": 5264
+    }
+  },
+  "BBO_1": {
+    "name": "BBO_1",
+    "description": "beta-BaB_2O_4 or beta-borium borate (coefficient set 1)",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      185,
+      2600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Tamosauskas, Opt. Mat. Exp. 8, p1410 (2018)",
+      "thermoOptic": "Kato, SPIE v. 11670 (2021)",
+      "dTensor": "Eckardt, IEEE JQE v26 p922 (1990).",
+      "transmission": "Bhar, Appl. Phys. Lett. v58 p231 (1991)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.2,
+        1.6
+      ],
+      "expansionCoefficients10Per6K": [
+        0.5,
+        33.3
+      ],
+      "specificHeatJoulePerKgK": 490,
+      "densityKgPerM3": 3850
+    }
+  },
+  "BBO_2": {
+    "name": "BBO_2",
+    "description": "beta-BaB_2O_4 or beta-borium borate (coefficient set 2)",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      185,
+      2600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Tamosauskas, Opt. Mat. Exp. 8, p1410 (2018)",
+      "thermoOptic": "Kato, SPIE v. 11670 (2021)",
+      "dTensor": "Eckardt, IEEE JQE v26 p922 (1990).",
+      "transmission": "Bhar, Appl. Phys. Lett. v58 p231 (1991)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.2,
+        1.6
+      ],
+      "expansionCoefficients10Per6K": [
+        0.5,
+        33.3
+      ],
+      "specificHeatJoulePerKgK": 490,
+      "densityKgPerM3": 3850
+    }
+  },
+  "BBO_3": {
+    "name": "BBO_3",
+    "description": "beta-BaB_2O_4 or beta-borium borate (coefficient set 3)",
+    "kind": "uniaxial",
+    "crystalClass": "3m",
+    "wavelengthRangeNm": [
+      185,
+      2600
+    ],
+    "referenceCitations": {
+      "refractiveIndex": "Tamosauskas, Opt. Mat. Exp. 8, p1410 (2018)",
+      "thermoOptic": "Kato, SPIE v. 11670 (2021)",
+      "dTensor": "Eckardt, IEEE JQE v26 p922 (1990).",
+      "transmission": "Bhar, Appl. Phys. Lett. v58 p231 (1991)."
+    },
+    "thermalProperties": {
+      "conductivityWattPerMeterK": [
+        1.2,
+        1.6
+      ],
+      "expansionCoefficients10Per6K": [
+        0.5,
+        33.3
+      ],
+      "specificHeatJoulePerKgK": 490,
+      "densityKgPerM3": 3850
+    }
+  }
+}

@@ -87,3 +87,108 @@ export interface GoldenFixtureCase {
     readonly formattedText: readonly string[];
   };
 }
+
+/** One row of a 3×6 contracted d-tensor (Voigt notation). */
+export type DTensorRow = readonly [number, number, number, number, number, number];
+/** 3×6 contracted nonlinear d-tensor. Use `null` when coefficients are unavailable. */
+export type DTensor = readonly [DTensorRow, DTensorRow, DTensorRow];
+
+/** Uniaxial nonlinear-optical coefficients.
+ * d₁ = d1Cos·cosθ + d1Sin·sinθ  (type-1, one e-wave)
+ * d₂ = d2Cos2·cos²θ + d2Sin2·sin2θ  (type-2, two e-waves)
+ * Both are scaled by the Miller-δ factor at the operating wavelength. */
+export interface UniNlEntry {
+  readonly d1Cos: number;
+  readonly d1Sin: number;
+  readonly d2Cos2: number;
+  readonly d2Sin2: number;
+  readonly lambdaRef: number;
+}
+
+/** Biaxial nonlinear-optical data.
+ * @param dTensor - 3×6 contracted d-tensor in Voigt notation, or `null` if unavailable.
+ * @param lambdaRef - Wavelength (nm) at which the quoted d values were measured. */
+export interface BiNlEntry {
+  readonly dTensor: DTensor | null;
+  readonly lambdaRef: number;
+}
+
+/** Literature/source citations for a crystal entry. */
+export interface CrystalReferenceCitations {
+  /** Citation for the Sellmeier / refractive-index equation. */
+  readonly refractiveIndex?: string;
+  /** Citation for the thermo-optic correction coefficients. */
+  readonly thermoOptic?: string;
+  /** Citation for the nonlinear d-tensor values. */
+  readonly dTensor?: string;
+  /** Citation or note describing the transmission range. */
+  readonly transmission?: string;
+}
+
+/** Optional thermal and material properties for a crystal. */
+export interface CrystalThermalProperties {
+  /** Thermal conductivity in W·m⁻¹·K⁻¹. May be anisotropic (principal values). */
+  readonly conductivityWattPerMeterK?: number | readonly number[];
+  /** Linear thermal-expansion coefficients in 10⁻⁶·K⁻¹. */
+  readonly expansionCoefficients10Per6K?: readonly number[];
+  /** Specific heat in J·kg⁻¹·K⁻¹. */
+  readonly specificHeatJoulePerKgK?: number;
+  /** Density in kg·m⁻³. */
+  readonly densityKgPerM3?: number;
+}
+
+/** Crystal symmetry / optical class. */
+export type CrystalKind = "isotropic" | "uniaxial" | "biaxial";
+
+/** Complete metadata for a crystal entry, suitable for display and export. */
+export interface CrystalMetadata {
+  /** Crystal identifier (matches the key in CrystalDB.list()). */
+  readonly name: string;
+  /** Human-readable description e.g. "Beta-barium borate". */
+  readonly description?: string | undefined;
+  /** Chemical formula e.g. "β-BaB₂O₄". */
+  readonly formula?: string | undefined;
+  /** Optical kind: isotropic (1 index), uniaxial (2), or biaxial (3). */
+  readonly kind: CrystalKind;
+  /** Crystallographic point group / class e.g. "3m". */
+  readonly crystalClass?: string | undefined;
+  /** Transmission / usable wavelength range in nm. */
+  readonly wavelengthRangeNm: readonly [number, number];
+  /** Source citations. */
+  readonly referenceCitations?: CrystalReferenceCitations | undefined;
+  /** Thermal/material properties. */
+  readonly thermalProperties?: CrystalThermalProperties | undefined;
+}
+
+/** Definition of a Sellmeier equation and its coefficients.
+ *
+ * - Function 1: n² = A + B / (λ² − C) + D / (λ² − E)
+ * - Function 2: n² = A + B / (λ² − C) − D·λ²
+ * - Function 3: n² = A + B / (λ² − C) + D·λ² / (λ² − E)
+ * - Function 4: n² = A + B / (λ² − C) + D / (λ² − E)    (with different default exponents; handled internally)
+ * - Function 5: Custom / legacy forms used by selected built-in crystals
+ *
+ * λ is in micrometers. Each inner array is one set of coefficients for a principal index. */
+export interface SellmeierDefinition {
+  readonly function: 1 | 2 | 3 | 4 | 5;
+  readonly coefficients: readonly (readonly number[])[];
+}
+
+/** Definition of a temperature-correction model.
+ *
+ * - Function 1: Δn = (T − Tref)·(a/λ³ + b/λ² + c/λ + d)·10⁻⁵
+ * - Function 2: ternary material form (same structure as function 1 internally)
+ * - Function 3: alternative bilinear / higher-order form (used internally)
+ *
+ * λ is in micrometers. */
+export interface TemperatureCorrectionDefinition {
+  readonly function: 1 | 2 | 3;
+  readonly coefficients: readonly (readonly number[])[];
+  readonly referenceKelvin: number;
+}
+
+/** Information returned by `CrystalDB.getCrystalInfo()`. */
+export interface CrystalInfo extends CrystalMetadata {
+  /** True if this crystal was added at runtime rather than shipped built-in. */
+  readonly isCustom: boolean;
+}

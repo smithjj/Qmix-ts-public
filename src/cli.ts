@@ -383,25 +383,25 @@ async function main(): Promise<void> {
 
   if (args.info !== undefined) {
     const crystal = args.info;
-    const fixturePath = new URL("../fixtures/crystal-info-golden.json", import.meta.url);
-    const data = JSON.parse(readFileSync(fixturePath, "utf8")) as Record<string, Record<string, unknown>>;
-    const info = data[crystal];
+    const info = CrystalDB.getCrystalInfo(crystal);
     if (!info) {
       console.error(`Error: No information available for "${crystal}"`);
       process.exit(1);
     }
     console.log(`Crystal: ${crystal}`);
-    if (info.crystal_description) console.log(`  Description: ${info.crystal_description}`);
-    if (info.iso_uni_or_bi) console.log(`  Type: ${info.iso_uni_or_bi}`);
-    if (info.crystal_class) console.log(`  Class: ${info.crystal_class}`);
-    if (info.wavelength_range) console.log(`  Wavelength range: ${(info.wavelength_range as number[]).join(" - ")} nm`);
-    if (info.ref_ind_source) console.log(`  Refractive index source: ${info.ref_ind_source}`);
-    if (info.thermo_optic_source) console.log(`  Thermo-optic source: ${info.thermo_optic_source}`);
-    if (info.d_source) console.log(`  d-tensor source: ${info.d_source}`);
-    if (info.density) console.log(`  Density: ${info.density} kg/m^3`);
-    if (info.specific_heat) console.log(`  Specific heat: ${info.specific_heat} J/kg-K`);
-    if (info.thermal_conductivity) console.log(`  Thermal conductivity: ${JSON.stringify(info.thermal_conductivity)} W/m-K`);
-    if (info.thermal_expansion) console.log(`  Thermal expansion: ${JSON.stringify(info.thermal_expansion)} 1e-6/K`);
+    if (info.description) console.log(`  Description: ${info.description}`);
+    const kindLabel = opticalSign(crystal) || info.kind;
+    if (kindLabel) console.log(`  Type: ${kindLabel}`);
+    if (info.crystalClass) console.log(`  Class: ${info.crystalClass}`);
+    if (info.wavelengthRangeNm) console.log(`  Wavelength range: ${info.wavelengthRangeNm.join(" - ")} nm`);
+    if (info.referenceCitations?.refractiveIndex) console.log(`  Refractive index source: ${info.referenceCitations.refractiveIndex}`);
+    if (info.referenceCitations?.thermoOptic) console.log(`  Thermo-optic source: ${info.referenceCitations.thermoOptic}`);
+    if (info.referenceCitations?.dTensor) console.log(`  d-tensor source: ${info.referenceCitations.dTensor}`);
+    if (info.referenceCitations?.transmission) console.log(`  Transmission source: ${info.referenceCitations.transmission}`);
+    if (info.thermalProperties?.densityKgPerM3) console.log(`  Density: ${info.thermalProperties.densityKgPerM3} kg/m^3`);
+    if (info.thermalProperties?.specificHeatJoulePerKgK) console.log(`  Specific heat: ${info.thermalProperties.specificHeatJoulePerKgK} J/kg-K`);
+    if (info.thermalProperties?.conductivityWattPerMeterK) console.log(`  Thermal conductivity: ${JSON.stringify(info.thermalProperties.conductivityWattPerMeterK)} W/m-K`);
+    if (info.thermalProperties?.expansionCoefficients10Per6K) console.log(`  Thermal expansion: ${JSON.stringify(info.thermalProperties.expansionCoefficients10Per6K)} 1e-6/K`);
     process.exit(0);
   }
 
@@ -447,6 +447,18 @@ async function main(): Promise<void> {
     }
     process.exit(1);
   }
+}
+
+function opticalSign(crystal: string): string {
+  try {
+    const indices = CrystalDB.compute(crystal, 300, 1064);
+    if (indices.length === 2) {
+      return indices[1]! > indices[0]! ? "pos. uniaxial" : "neg. uniaxial";
+    }
+  } catch {
+    // ignore; fall back to plain kind label
+  }
+  return "";
 }
 
 main();

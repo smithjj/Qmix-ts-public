@@ -1,0 +1,23 @@
+Qmix TypeScript Changelog
+=========================
+
+Version 1.0.0 - 2026-06-20
+--------------------------
+
+Initial public release.
+
+New features:
+- TypeScript port of the Qmix nonlinear crystal phase-matching engine.
+- Phase-matching calculator supporting uniaxial and biaxial crystals.
+- Quasi-phase-matching (QPM) calculator with period, temperature, and pump tuning.
+- Refractive-index lookup with temperature and optional angle support.
+- Crystal comparison tool and custom-crystal definition with Sellmeier coefficients.
+- 85 built-in nonlinear-optical crystals with metadata, source citations, and thermal properties.
+- Programmatic CrystalDB API for custom crystal registration with full metadata.
+- OpenTUI-based terminal interface.
+- Tauri v2 desktop application wrapper (macOS bundles included).
+- Self-contained standalone HTML pages that run without a server.
+- Command-line tool: qmix-ts.
+- 332 golden-fixture tests passing against MATLAB reference output.
+
+License: GNU General Public License v3.0 (GPL-3.0)

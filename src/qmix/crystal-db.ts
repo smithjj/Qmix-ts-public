@@ -3,12 +3,16 @@ export type CrystalName = string;
 /** Type for crystal transmission ranges as [minNm, maxNm]. */
 export type CrystalRange = readonly number[];
 
-type SellmeierFunction = 1 | 2 | 3 | 4 | 5;
-type TempFunction = 1 | 2 | 3;
+import type { BiNlEntry, CrystalInfo, CrystalKind, CrystalMetadata, CrystalReferenceCitations, CrystalThermalProperties, SellmeierDefinition, TemperatureCorrectionDefinition, UniNlEntry } from "./types.js";
+import { registerBiaxialNlData, registerUniaxialNlData } from "./engine.js";
+import { BUILT_IN_CRYSTAL_METADATA } from "./crystal-metadata.js";
+type SellmeierFunction = SellmeierDefinition["function"];
+type TempFunction = TemperatureCorrectionDefinition["function"];
 
 interface BaseEntry {
   readonly rangeNm: CrystalRange;
   readonly numPolarizations: number;
+  readonly metadata?: CrystalMetadata;
 }
 
 interface GenericEntry extends BaseEntry {
@@ -217,6 +221,26 @@ const entries: Record<string, CrystalEntry> = {
   ZZ_U: makeCustomEntry(computeMatlabReferenceError, 2, [])
 };
 
+for (const [name, entry] of Object.entries(entries)) {
+  const inline = BUILT_IN_CRYSTAL_METADATA[name as keyof typeof BUILT_IN_CRYSTAL_METADATA];
+  if (inline !== undefined) {
+    const kind = numPolarizationsToKind(entry.numPolarizations);
+    entries[name] = {
+      ...entry,
+      metadata: {
+        name,
+        description: inline.description,
+        formula: undefined,
+        kind,
+        crystalClass: inline.crystalClass,
+        wavelengthRangeNm: [entry.rangeNm[0]!, entry.rangeNm[1]!] as const,
+        ...(inline.referenceCitations !== undefined ? { referenceCitations: inline.referenceCitations } : {}),
+        ...(inline.thermalProperties !== undefined ? { thermalProperties: inline.thermalProperties } : {}),
+      }
+    };
+  }
+}
+
 const builtInEntries = new Set(Object.keys(entries));
 
 /** Database of nonlinear-crystal refractive indices.
@@ -260,6 +284,36 @@ export class CrystalDB {
     return Object.keys(entries).sort();
   }
 
+  /** List only built-in crystals in alphabetical order. */
+  static listBuiltins(): CrystalName[] {
+    return Object.keys(entries).filter((name) => builtInEntries.has(name)).sort();
+  }
+
+  /** List only custom crystals registered at runtime. */
+  static listCustom(): CrystalName[] {
+    return Object.keys(entries).filter((name) => !builtInEntries.has(name)).sort();
+  }
+
+  /** Return true if the crystal name is known (built-in or custom). */
+  static hasCrystal(crystalName: string): boolean {
+    return entries[crystalName] !== undefined;
+  }
+
+  /** Get metadata and classification information for a crystal.
+   * @returns CrystalInfo if the crystal exists, otherwise undefined. */
+  static getCrystalInfo(crystalName: string): CrystalInfo | undefined {
+    const entry = entries[crystalName];
+    if (entry === undefined) return undefined;
+    const kind = numPolarizationsToKind(entry.numPolarizations);
+    return {
+      name: crystalName,
+      kind,
+      wavelengthRangeNm: [entry.rangeNm[0]!, entry.rangeNm[1]!] as const,
+      ...entry.metadata,
+      isCustom: !builtInEntries.has(crystalName),
+    };
+  }
+
   /** Get the transmission range for a crystal.
    * @returns [minNm, maxNm] or an empty array if unbounded. */
   static getRange(crystalName: string): CrystalRange {
@@ -277,16 +331,24 @@ export class CrystalDB {
    *   "sellmeierFunction": 1,
    *   "coefficients": [[A, B, C, D, E], [A, B, C, D, E]],
    *   "temperatureCoefficients": [[a, b, c, d], [a, b, c, d]],
-   *   "temperatureReferenceKelvin": 293
+   *   "temperatureReferenceKelvin": 293,
+   *   "temperatureFunction": 1
    * }
    * ```
-   * Sellmeier function 1: n² = A + B·λ²/(λ²−C) + D/(λ²−E)  (λ in µm).
-   * Temperature correction: Δn = (T−Tref)·(a/λ³ + b/λ² + c/λ + d)·10⁻⁵.
+   * Sellmeier function 1: n² = A + B/(λ²−C) + D/(λ²−E)  (λ in µm).
+   * Sellmeier function 2: n² = A + B·λ²/(λ²−C) + D·λ²/(λ²−E).
+   * Sellmeier function 3: n² = A + B/(λ²−C) + D/(λ²−E)  (legacy format).
+   * Sellmeier function 4: n² = A + B·λ²/(λ²−C) + D·λ²/(λ²−E) + F·λ²/(λ²−G).
+   * Sellmeier function 5: n² = A + B/(λ²−C) + D·λ² + E·λ⁴ + F·λ⁶.
+   * Temperature function 1: Δn = (T−Tref)·(a/λ³ + b/λ² + c/λ + d)·10⁻⁵.
+   * Temperature function 2: Δn = (T−Tref)·a.
+   * Temperature function 3: Δn = (T−Tref)·a + (T−Tref)²·b.
    * @throws If the name is missing, already registered, or coefficients are invalid.
    */
   static registerFromJson(json: Record<string, unknown>): void {
     const name = String(json.name ?? "");
     if (!name) throw new Error("Crystal name is required");
+    ensureNotRegistered(name);
     const numPol = Number(json.numPolarizations ?? 2);
     const range = json.rangeNm as number[];
     if (!Array.isArray(range) || range.length < 2) {
@@ -299,8 +361,21 @@ export class CrystalDB {
     }
     const tempCoeffs = json.temperatureCoefficients as readonly (readonly number[])[];
     const tempRef = Number(json.temperatureReferenceKelvin ?? 293);
+    const tempFunction = Number(json.temperatureFunction ?? 1) as TempFunction;
     const tempCorrection = Array.isArray(tempCoeffs) && tempCoeffs.length === numPol
-      ? { tempFunction: 1 as TempFunction, coeffs: tempCoeffs, referenceKelvin: tempRef }
+      ? { tempFunction, coeffs: tempCoeffs, referenceKelvin: tempRef }
+      : undefined;
+    const metadata: CrystalMetadata | undefined = json.description || json.formula || json.crystalClass || json.referenceCitations || json.thermalProperties
+      ? {
+          name,
+          kind: numPolarizationsToKind(numPol),
+          wavelengthRangeNm: [range[0]!, range[1]!] as const,
+          description: json.description as string | undefined,
+          formula: json.formula as string | undefined,
+          crystalClass: json.crystalClass as string | undefined,
+          referenceCitations: json.referenceCitations as CrystalReferenceCitations | undefined,
+          thermalProperties: json.thermalProperties as CrystalThermalProperties | undefined,
+        }
       : undefined;
     const entry: GenericEntry = {
       kind: "generic",
@@ -309,11 +384,84 @@ export class CrystalDB {
       rangeNm: range,
       coeffs,
       ...(tempCorrection !== undefined ? { tempCorrection } : {}),
+      ...(metadata !== undefined ? { metadata } : {}),
     };
     entries[name] = entry;
   }
 
-  /** Remove a custom crystal registered with `registerFromJson`.
+  /** Register a complete crystal entry with Sellmeier coefficients and optional metadata.
+   *
+   * This is the recommended programmatic API for adding custom crystals because it
+   * carries the crystal description, citations, thermal properties, and nonlinear
+   * data in a single typed object.
+   *
+   * @param def - Complete crystal definition. The `nonlinear` field is automatically
+   *              routed to `registerUniaxialNlData()` or `registerBiaxialNlData()`.
+   * @throws If the name conflicts with an existing built-in or custom crystal.
+   */
+  static register(def: {
+    readonly name: string;
+    readonly description?: string;
+    readonly formula?: string;
+    readonly crystalClass?: string;
+    readonly kind: CrystalKind;
+    readonly wavelengthRangeNm: readonly [number, number];
+    readonly references?: CrystalReferenceCitations;
+    readonly thermalProperties?: CrystalThermalProperties;
+    readonly sellmeier: SellmeierDefinition;
+    readonly temperatureCorrection?: TemperatureCorrectionDefinition;
+    readonly nonlinear?: UniNlEntry | BiNlEntry;
+  }): void {
+    const { name, kind, wavelengthRangeNm, sellmeier, temperatureCorrection, nonlinear } = def;
+    ensureNotRegistered(name);
+    const numPol = kindToNumPolarizations(kind);
+    if (sellmeier.coefficients.length !== numPol) {
+      throw new Error(`sellmeier.coefficients must have ${numPol} rows for ${kind} crystal`);
+    }
+    if (temperatureCorrection !== undefined && temperatureCorrection.coefficients.length !== numPol) {
+      throw new Error(`temperatureCorrection.coefficients must have ${numPol} rows for ${kind} crystal`);
+    }
+
+    const metadata: CrystalMetadata = {
+      name,
+      description: def.description,
+      formula: def.formula,
+      kind,
+      crystalClass: def.crystalClass,
+      wavelengthRangeNm,
+      referenceCitations: def.references,
+      thermalProperties: def.thermalProperties,
+    };
+
+    const entry: GenericEntry = {
+      kind: "generic",
+      sellmeierFunction: sellmeier.function,
+      numPolarizations: numPol,
+      rangeNm: wavelengthRangeNm,
+      coeffs: sellmeier.coefficients,
+      metadata,
+      ...(temperatureCorrection !== undefined
+        ? {
+            tempCorrection: {
+              tempFunction: temperatureCorrection.function,
+              coeffs: temperatureCorrection.coefficients,
+              referenceKelvin: temperatureCorrection.referenceKelvin,
+            }
+          }
+        : {}),
+    };
+    entries[name] = entry;
+
+    if (nonlinear !== undefined) {
+      if (kind === "uniaxial" || kind === "isotropic") {
+        registerUniaxialNlData(name, nonlinear as UniNlEntry);
+      } else {
+        registerBiaxialNlData(name, nonlinear as BiNlEntry);
+      }
+    }
+  }
+
+  /** Remove a custom crystal registered with `registerFromJson` or `register`.
    * Built-in crystals cannot be unregistered.
    * @returns true if the crystal existed and was removed. */
   static unregister(crystalName: string): boolean {
@@ -321,6 +469,26 @@ export class CrystalDB {
     if (entries[crystalName] === undefined) return false;
     delete entries[crystalName];
     return true;
+  }
+}
+
+function numPolarizationsToKind(numPolarizations: number): CrystalKind {
+  if (numPolarizations === 1) return "isotropic";
+  if (numPolarizations === 2) return "uniaxial";
+  return "biaxial";
+}
+
+function kindToNumPolarizations(kind: CrystalKind): number {
+  switch (kind) {
+    case "isotropic": return 1;
+    case "uniaxial": return 2;
+    case "biaxial": return 3;
+  }
+}
+
+function ensureNotRegistered(name: string): void {
+  if (entries[name] !== undefined) {
+    throw new Error(`Crystal '${name}' is already registered`);
   }
 }
 
