@@ -226,12 +226,17 @@ function buildJsonInput(json) {
  */
 async function main() {
     const args = parseArgs();
-    if (args.tui !== undefined || (Object.keys(args).length === 0 && process.stdout.isTTY)) {
+    const isBun = process.versions.bun !== undefined;
+    if (args.tui !== undefined) {
+        if (!isBun) {
+            console.error("Error: the TUI requires Bun. Install from https://bun.sh or use --help for CLI usage.");
+            process.exit(1);
+        }
         const { startTui } = await import("./tui.js");
         startTui();
         return;
     }
-    if (args.help !== undefined) {
+    if (Object.keys(args).length === 0) {
         console.log(USAGE);
         process.exit(0);
     }
