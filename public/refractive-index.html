@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qmix — Refractive index</title>
+<link rel="stylesheet" href="styles/qmix-shared.css">
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0; padding: 1.5rem;
+    background: #f5f5f7; color: #1d1d1f;
+  }
+  .container { max-width: 520px; margin: 0 auto; }
+  .top-nav { margin: 0 0 1rem; }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    color: #0071e3; text-decoration: none; font-weight: 600; font-size: 0.875rem;
+    background: #fff; border: 1px solid #d2d2d7; border-radius: 999px;
+    padding: 0.4rem 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .top-nav a:hover { background: #f0f7ff; border-color: #0071e3; }
+  h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 0.25rem; }
+  p.sub { color: #6e6e73; margin: 0 0 1rem; font-size: 0.875rem; }
+  .card {
+    background: #fff; border-radius: 12px; padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1rem;
+  }
+  .row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: end; }
+  .row > div { flex: 1; min-width: 100px; }
+  label { display: block; font-size: 0.8125rem; font-weight: 500; margin-bottom: 0.25rem; color: #6e6e73; }
+  select, input:not([type="radio"]):not([type="checkbox"]) {
+    width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d2d2d7;
+    border-radius: 8px; font-size: 0.9375rem; background: #fff; font-family: inherit;
+  }
+  select:focus, input:not([type="radio"]):not([type="checkbox"]):focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,.2); }
+  input[type="checkbox"] { width: auto; height: auto; margin: 0 0.35rem 0 0; padding: 0; border: 0; flex: 0 0 auto; accent-color: #0071e3; }
+  button {
+    padding: 0.5rem 1.25rem; background: #0071e3; color: #fff;
+    border: none; border-radius: 8px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
+  }
+  button:hover { background: #0060c4; }
+  .result {
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", monospace;
+    font-size: 1rem; line-height: 2;
+  }
+  .result .val { font-weight: 600; color: #0071e3; font-size: 1.1rem; }
+  .error { color: #d32f2f; font-size: 0.875rem; }
+  .small { font-size: 0.8125rem; color: #6e6e73; }
+
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar sidebar-left">
+  <a class="ad-card" href="https://as-photonics.com/book" target="_blank" rel="noopener">
+    <span class="ad-kicker">Textbook</span>
+    <img src="thebook.webp" alt="The Book">
+    <strong class="ad-title">Crystal Nonlinear Optics</strong>
+    <p><em>Crystal Nonlinear Optics: with SNLO examples (second edition)</em> teaches advanced crystal nonlinear optics from the ground up, so you can get the most out of Qmix.</p>
+    <span class="ad-cta">Learn more</span>
+  </a>
+</div>
+<div class="container">
+<header class="page-header">
+    <div class="page-kicker">Qmix toolkit</div>
+    <h1>Refractive-index</h1>
+    <p class="sub">Look up refractive index at any wavelength, temperature, and angle</p>
+    <nav class="module-nav" aria-label="Qmix modules">
+      <a href="index.html">Qmix</a>
+      <a href="compare.html">Compare crystals</a>
+      <a href="qpm.html">QPM</a>
+      <span class="nav-current">Refractive index</span>
+      <a href="custom.html">Custom crystals</a>
+    </nav>
+  </header>
+
+<div class="container">
+      
+  <div class="card">
+    <div class="row">
+      <div><label for="crystal">Crystal</label><select id="crystal"></select></div>
+      <div><label for="wavelength">Wavelength (nm)</label><input id="wavelength" type="number" value="1064" step="any"></div>
+      <div><label for="temperature">Temperature (K)</label><input id="temperature" type="number" value="300" step="any"></div>
+    </div>
+    <div class="row" style="margin-top:0.75rem">
+      <div><label for="theta">&theta; (&deg;) <span class="small">optional</span></label><input id="theta" type="number" step="any" placeholder=" - "></div>
+      <div><label for="phi">&phi; (&deg;) <span class="small">optional, biaxial</span></label><input id="phi" type="number" step="any" placeholder=" - "></div>
+      <div>
+        <label>&nbsp;</label>
+        <button id="calc">Calculate</button>
+      </div>
+    </div>
+    <div id="result" class="result" style="margin-top:0.75rem;display:none"></div>
+    <div id="error" class="error" style="margin-top:0.75rem;display:none"></div>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const resp = await fetch("/api/crystals");
+  let all = await resp.json();
+  const custom = getCustomCrystals();
+  all = [...all, ...Object.keys(custom)];
+  const sel = document.getElementById("crystal");
+  sel.innerHTML = all.map(c => `<option value="${c}">${c}${custom[c] ? " \u2606" : ""}</option>`).join("");
+  sel.value = "BBO";
+})();
+
+function getCustomCrystals() {
+  try { return JSON.parse(localStorage.getItem("qmix-custom-crystals")) || {}; }
+  catch { return {}; }
+}
+
+document.getElementById("calc").addEventListener("click", async () => {
+  const crystal = document.getElementById("crystal").value;
+  const wavelength = parseFloat(document.getElementById("wavelength").value);
+  const temperature = parseFloat(document.getElementById("temperature").value);
+  const thetaVal = document.getElementById("theta").value;
+  const phiVal = document.getElementById("phi").value;
+
+  document.getElementById("error").style.display = "none";
+  document.getElementById("result").style.display = "none";
+
+  const body = { crystal, wavelength, temperature };
+  if (thetaVal) body.theta = parseFloat(thetaVal) * Math.PI / 180;
+  if (phiVal) body.phi = parseFloat(phiVal) * Math.PI / 180;
+  const custom = getCustomCrystals();
+  if (Object.keys(custom).length > 0) body.customCrystals = custom;
+
+  try {
+    const resp = await fetch("/api/refractive-index", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await resp.json();
+
+    if (data.error) {
+      document.getElementById("error").textContent = data.error;
+      document.getElementById("error").style.display = "block";
+      return;
+    }
+
+      const lines = [];
+      if (data.no !== undefined) {
+        lines.push(`n<sub>o</sub> = <span class="val">${data.no.toFixed(6)}</span>`);
+        lines.push(`n<sub>e</sub> = <span class="val">${data.ne.toFixed(6)}</span>`);
+        if (data.n_e_theta !== undefined) {
+          const t = parseFloat(document.getElementById("theta").value) || 0;
+          lines.push(`n<sub>e</sub>(${t.toFixed(2)}&deg;) = <span class="val">${data.n_e_theta.toFixed(6)}</span>`);
+          lines.push(`n<sub>o</sub>(${t.toFixed(2)}&deg;) = <span class="val">${data.n_o_theta.toFixed(6)}</span>`);
+        }
+      } else if (data.nx !== undefined) {
+        lines.push(`n<sub>x</sub> = <span class="val">${data.nx.toFixed(6)}</span>`);
+        lines.push(`n<sub>y</sub> = <span class="val">${data.ny.toFixed(6)}</span>`);
+        lines.push(`n<sub>z</sub> = <span class="val">${data.nz.toFixed(6)}</span>`);
+        if (data.n_hi !== undefined) {
+          const t = parseFloat(document.getElementById("theta").value) || 0;
+          const p = parseFloat(document.getElementById("phi").value) || 0;
+          lines.push(`n<sub>hi</sub>(${t.toFixed(2)}&deg;, ${p.toFixed(2)}&deg;) = <span class="val">${data.n_hi.toFixed(6)}</span>`);
+          lines.push(`n<sub>lo</sub>(${t.toFixed(2)}&deg;, ${p.toFixed(2)}&deg;) = <span class="val">${data.n_lo.toFixed(6)}</span>`);
+        }
+      }
+    document.getElementById("result").innerHTML = lines.join("<br>");
+    document.getElementById("result").style.display = "block";
+  } catch (e) {
+    document.getElementById("error").textContent = "Error: " + e.message;
+    document.getElementById("error").style.display = "block";
+  }
+});
+</script>
+</div>
+<div class="sidebar sidebar-right">
+  <a class="ad-card" href="https://as-photonics.com/mlSNLO" target="_blank" rel="noopener">
+    <span class="ad-kicker">Software</span>
+    <img src="mlSNLO.webp" alt="mlSNLO">
+    <strong class="ad-title">Automate design scans</strong>
+    <p><strong>mlSNLO</strong> is a versatile MATLAB App for nonlinear optics. Write batch scripts to automate calculations and explore design spaces.</p>
+    <span class="ad-cta">Explore mlSNLO</span>
+  </a>
+</div>
+</div>
+<script>
+(async () => {
+  const resp = await fetch("/api/crystals");
+  let all = await resp.json();
+  const custom = getCustomCrystals();
+  all = [...all, ...Object.keys(custom)];
+  const sel = document.getElementById("crystal");
+  sel.innerHTML = all.map(c => `<option value="${c}">${c}${custom[c] ? " \u2606" : ""}</option>`).join("");
+  sel.value = "BBO";
+})();
+
+function getCustomCrystals() {
+  try { return JSON.parse(localStorage.getItem("qmix-custom-crystals")) || {}; }
+  catch { return {}; }
+}
+
+document.getElementById("calc").addEventListener("click", async () => {
+  const crystal = document.getElementById("crystal").value;
+  const wavelength = parseFloat(document.getElementById("wavelength").value);
+  const temperature = parseFloat(document.getElementById("temperature").value);
+  const thetaVal = document.getElementById("theta").value;
+  const phiVal = document.getElementById("phi").value;
+
+  document.getElementById("error").style.display = "none";
+  document.getElementById("result").style.display = "none";
+
+  const body = { crystal, wavelength, temperature };
+  if (thetaVal) body.theta = parseFloat(thetaVal) * Math.PI / 180;
+  if (phiVal) body.phi = parseFloat(phiVal) * Math.PI / 180;
+  const custom = getCustomCrystals();
+  if (Object.keys(custom).length > 0) body.customCrystals = custom;
+
+  try {
+    const resp = await fetch("/api/refractive-index", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await resp.json();
+
+    if (data.error) {
+      document.getElementById("error").textContent = data.error;
+      document.getElementById("error").style.display = "block";
+      return;
+    }
+
+      const lines = [];
+      if (data.no !== undefined) {
+        lines.push(`n<sub>o</sub> = <span class="val">${data.no.toFixed(6)}</span>`);
+        lines.push(`n<sub>e</sub> = <span class="val">${data.ne.toFixed(6)}</span>`);
+        if (data.n_e_theta !== undefined) {
+          const t = parseFloat(document.getElementById("theta").value) || 0;
+          lines.push(`n<sub>e</sub>(${t.toFixed(2)}&deg;) = <span class="val">${data.n_e_theta.toFixed(6)}</span>`);
+          lines.push(`n<sub>o</sub>(${t.toFixed(2)}&deg;) = <span class="val">${data.n_o_theta.toFixed(6)}</span>`);
+        }
+      } else if (data.nx !== undefined) {
+        lines.push(`n<sub>x</sub> = <span class="val">${data.nx.toFixed(6)}</span>`);
+        lines.push(`n<sub>y</sub> = <span class="val">${data.ny.toFixed(6)}</span>`);
+        lines.push(`n<sub>z</sub> = <span class="val">${data.nz.toFixed(6)}</span>`);
+        if (data.n_hi !== undefined) {
+          const t = parseFloat(document.getElementById("theta").value) || 0;
+          const p = parseFloat(document.getElementById("phi").value) || 0;
+          lines.push(`n<sub>hi</sub>(${t.toFixed(2)}&deg;, ${p.toFixed(2)}&deg;) = <span class="val">${data.n_hi.toFixed(6)}</span>`);
+          lines.push(`n<sub>lo</sub>(${t.toFixed(2)}&deg;, ${p.toFixed(2)}&deg;) = <span class="val">${data.n_lo.toFixed(6)}</span>`);
+        }
+      }
+    document.getElementById("result").innerHTML = lines.join("<br>");
+    document.getElementById("result").style.display = "block";
+  } catch (e) {
+    document.getElementById("error").textContent = "Error: " + e.message;
+    document.getElementById("error").style.display = "block";
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2468 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/generate_qmix_comprehensive_fixture.m",
+  "source": {
+    "matlabVersion": "26.1.0.3251617 (R2026a) Update 2",
+    "engine": "QmixEngine.m"
+  },
+  "numericTolerance": {
+    "absolute": 1E-9,
+    "relative": 1E-9
+  },
+  "cases": [
+    {
+      "name": "BBO_1064_1064_0_300K",
+      "description": "BBO SHG 1064 nm at 300K",
+      "input": {
+        "selectedCrystal": "BBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 22.836667170440727,
+            "phiDeg": 0,
+            "dEffPmPerV": 2.011942024498794,
+            "walkoffMrad": [
+              0,
+              0,
+              55.741977216279373
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6542503265005448,
+              1.654250326500545
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6738448647348743,
+              1.6993939846419899
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              41.770471885429011,
+              128.89912612488138
+            ],
+            "s0L2Watt": 4.2539785554546706E+7,
+            "angleToleranceMradCm": 0.57693652425433273,
+            "temperatureRangeKCm": 60.873989952778651,
+            "acceptanceAngleMradCm": [
+              1.1538730485086657,
+              1.1538730485086657
+            ],
+            "acceptanceBW": [
+              39.140291471311805,
+              39.140291471311805
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 32.448495322504982,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.4251080321746246,
+            "walkoffMrad": [
+              65.492269407738391,
+              0,
+              69.048046802387645
+            ],
+            "phaseVelocityIndex": [
+              1.6194552437988536,
+              1.6542503265005448,
+              1.636852785149699
+            ],
+            "groupVelocityIndex": [
+              1.6357362931315997,
+              1.6738448647348743,
+              1.6798102196466296
+            ],
+            "gddFs2PerMm": [
+              41.365693538381258,
+              41.770471885429011,
+              123.14986247107653
+            ],
+            "s0L2Watt": 8.2130933384669945E+7,
+            "angleToleranceMradCm": 0.88680577460744736,
+            "temperatureRangeKCm": 52.415604691076474,
+            "acceptanceAngleMradCm": [
+              18.477283113028395,
+              0.93151317320426708
+            ],
+            "acceptanceBW": [
+              22.689151593039611,
+              167.6346193634518
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   55.742",
+            "Phase velocities    = c/  1.6543   1.6543   1.6543",
+            "Group velocities    = c/  1.6738   1.6738   1.6994",
+            "GrpDelDisp(fs^2/mm) =     41.77    41.77   128.90",
+            "At theta,phi        =    22.84    0.00 deg.",
+            "d_eff               =     2.012E+00    pm/V",
+            "S_o * L^2           =     4.254E+07    watt",
+            "Crystal ang. tol.   =     0.577        mrad-cm",
+            "Temperature range   =    60.874        K-cm",
+            "Mix accpt ang   =     1.154    1.154  mrad-cm",
+            "Mix accpt bw    =  1174.209 1174.209  GHz-cm",
+            " ",
+            "    1064.00(e) + 1064.00(o)  =  532.00(e)",
+            "Walkoff [mrad]      =   65.4923   0.0000   69.048",
+            "Phase velocities    = c/  1.6195   1.6543   1.6369",
+            "Group velocities    = c/  1.6357   1.6738   1.6798",
+            "GrpDelDisp(fs^2/mm) =     41.37    41.77   123.15",
+            "At theta,phi        =    32.45    0.00 deg.",
+            "d_eff               =     1.425E+00    pm/V",
+            "S_o * L^2           =     8.213E+07    watt",
+            "Crystal ang. tol.   =     0.887        mrad-cm",
+            "Temperature range   =    52.416        K-cm",
+            "Mix accpt ang   =    18.477    0.932  mrad-cm",
+            "Mix accpt bw    =   680.675 5029.039  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "BBO_1064_1064_0_400K",
+      "description": "BBO SHG 1064 nm at 400K",
+      "input": {
+        "selectedCrystal": "BBO",
+        "temperatureKelvin": 400,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 22.89129596369871,
+            "phiDeg": 0,
+            "dEffPmPerV": 2.0112837290985461,
+            "walkoffMrad": [
+              0,
+              0,
+              55.524607551490774
+            ],
+            "phaseVelocityIndex": [
+              1.65263849438114,
+              1.65263849438114,
+              1.65263849438114
+            ],
+            "groupVelocityIndex": [
+              1.6721807672900106,
+              1.6721807672900106,
+              1.6977233563950886
+            ],
+            "gddFs2PerMm": [
+              41.647151767571337,
+              41.647151767571337,
+              128.71813391210517
+            ],
+            "s0L2Watt": 4.2443329589874372E+7,
+            "angleToleranceMradCm": 0.579760029275902,
+            "temperatureRangeKCm": 60.551433764826655,
+            "acceptanceAngleMradCm": [
+              1.1595200585518037,
+              1.1595200585518037
+            ],
+            "acceptanceBW": [
+              39.150298972675188,
+              39.150298972675188
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 32.546051352923108,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.4221347439550842,
+            "walkoffMrad": [
+              65.277290843420332,
+              0,
+              68.759450219491285
+            ],
+            "phaseVelocityIndex": [
+              1.6178606751740974,
+              1.65263849438114,
+              1.6352495847776185
+            ],
+            "groupVelocityIndex": [
+              1.6341398841539514,
+              1.6721807672900106,
+              1.6781751406757426
+            ],
+            "gddFs2PerMm": [
+              41.357564227129444,
+              41.647151767571337,
+              123.05016337081847
+            ],
+            "s0L2Watt": 8.2232609245475352E+7,
+            "angleToleranceMradCm": 0.8921073094420936,
+            "temperatureRangeKCm": 52.099809225044936,
+            "acceptanceAngleMradCm": [
+              18.886516590347103,
+              0.93633523819130449
+            ],
+            "acceptanceBW": [
+              22.709076294471959,
+              166.82310821348591
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   55.525",
+            "Phase velocities    = c/  1.6526   1.6526   1.6526",
+            "Group velocities    = c/  1.6722   1.6722   1.6977",
+            "GrpDelDisp(fs^2/mm) =     41.65    41.65   128.72",
+            "At theta,phi        =    22.89    0.00 deg.",
+            "d_eff               =     2.011E+00    pm/V",
+            "S_o * L^2           =     4.244E+07    watt",
+            "Crystal ang. tol.   =     0.580        mrad-cm",
+            "Temperature range   =    60.551        K-cm",
+            "Mix accpt ang   =     1.160    1.160  mrad-cm",
+            "Mix accpt bw    =  1174.509 1174.509  GHz-cm",
+            " ",
+            "    1064.00(e) + 1064.00(o)  =  532.00(e)",
+            "Walkoff [mrad]      =   65.2773   0.0000   68.759",
+            "Phase velocities    = c/  1.6179   1.6526   1.6352",
+            "Group velocities    = c/  1.6341   1.6722   1.6782",
+            "GrpDelDisp(fs^2/mm) =     41.36    41.65   123.05",
+            "At theta,phi        =    32.55    0.00 deg.",
+            "d_eff               =     1.422E+00    pm/V",
+            "S_o * L^2           =     8.223E+07    watt",
+            "Crystal ang. tol.   =     0.892        mrad-cm",
+            "Temperature range   =    52.100        K-cm",
+            "Mix accpt ang   =    18.887    0.936  mrad-cm",
+            "Mix accpt bw    =   681.272 5004.693  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "BBO_800_1064_0_300K",
+      "description": "BBO SFG 800+1064 nm",
+      "input": {
+        "selectedCrystal": "BBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 3,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 25.5705530447404,
+            "phiDeg": 0,
+            "dEffPmPerV": 2.0161827162823385,
+            "walkoffMrad": [
+              0,
+              0,
+              61.385784012592474
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6602864071501839,
+              1.6576958145966907
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6842871504929029,
+              1.7193116131420521
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              75.430805422942143,
+              159.3234569428644
+            ],
+            "s0L2Watt": 3.2033190744423136E+7,
+            "angleToleranceMradCm": 0.44875888367013123,
+            "temperatureRangeKCm": 38.296785836954236,
+            "acceptanceAngleMradCm": [
+              1.047786001515508,
+              0.78494489207191553
+            ],
+            "acceptanceBW": [
+              21.99409535611592,
+              28.551473009516474
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 33.930726958589858,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.4030382710787013,
+            "walkoffMrad": [
+              66.758422542411523,
+              0,
+              71.576933553352163
+            ],
+            "phaseVelocityIndex": [
+              1.616687557261115,
+              1.6602864071501839,
+              1.6415744544080941
+            ],
+            "groupVelocityIndex": [
+              1.6327130399322554,
+              1.6842871504929029,
+              1.7005235370662559
+            ],
+            "gddFs2PerMm": [
+              41.334710125685675,
+              75.430805422942143,
+              152.541310610386
+            ],
+            "s0L2Watt": 6.4017918684475012E+7,
+            "angleToleranceMradCm": 0.64156350129489415,
+            "temperatureRangeKCm": 33.523547114559193,
+            "acceptanceAngleMradCm": [
+              13.658489603118783,
+              0.67318415604656323
+            ],
+            "acceptanceBW": [
+              14.746979336014844,
+              61.590058568892964
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "oee",
+            "thetaDeg": 39.965417360556096,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.1600457635536878,
+            "walkoffMrad": [
+              0,
+              71.380315118905216,
+              74.897089925541835
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6098635301421973,
+              1.6289136573346208
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6296652387448485,
+              1.6858109777367578
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              67.759189732930608,
+              147.33164916382407
+            ],
+            "s0L2Watt": 9.2195346985137E+7,
+            "angleToleranceMradCm": 0.80956647634307244,
+            "temperatureRangeKCm": 33.062018531962636,
+            "acceptanceAngleMradCm": [
+              0.85876721304380577,
+              14.130462128882499
+            ],
+            "acceptanceBW": [
+              83.569326133105463,
+              17.810790595241809
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  800.00(o)  =  456.65(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   61.386",
+            "Phase velocities    = c/  1.6543   1.6603   1.6577",
+            "Group velocities    = c/  1.6738   1.6843   1.7193",
+            "GrpDelDisp(fs^2/mm) =     41.77    75.43   159.32",
+            "At theta,phi        =    25.57    0.00 deg.",
+            "d_eff               =     2.016E+00    pm/V",
+            "S_o * L^2           =     3.203E+07    watt",
+            "Crystal ang. tol.   =     0.449        mrad-cm",
+            "Temperature range   =    38.297        K-cm",
+            "Mix accpt ang   =     1.048    0.785  mrad-cm",
+            "Mix accpt bw    =   659.823  856.544  GHz-cm",
+            " ",
+            "    1064.00(e) +  800.00(o)  =  456.65(e)",
+            "Walkoff [mrad]      =   66.7584   0.0000   71.577",
+            "Phase velocities    = c/  1.6167   1.6603   1.6416",
+            "Group velocities    = c/  1.6327   1.6843   1.7005",
+            "GrpDelDisp(fs^2/mm) =     41.33    75.43   152.54",
+            "At theta,phi        =    33.93    0.00 deg.",
+            "d_eff               =     1.403E+00    pm/V",
+            "S_o * L^2           =     6.402E+07    watt",
+            "Crystal ang. tol.   =     0.642        mrad-cm",
+            "Temperature range   =    33.524        K-cm",
+            "Mix accpt ang   =    13.658    0.673  mrad-cm",
+            "Mix accpt bw    =   442.409 1847.702  GHz-cm",
+            " ",
+            "    1064.00(o) +  800.00(e)  =  456.65(e)",
+            "Walkoff [mrad]      =    0.0000  71.3803   74.897",
+            "Phase velocities    = c/  1.6543   1.6099   1.6289",
+            "Group velocities    = c/  1.6738   1.6297   1.6858",
+            "GrpDelDisp(fs^2/mm) =     41.77    67.76   147.33",
+            "At theta,phi        =    39.97    0.00 deg.",
+            "d_eff               =     1.160E+00    pm/V",
+            "S_o * L^2           =     9.220E+07    watt",
+            "Crystal ang. tol.   =     0.810        mrad-cm",
+            "Temperature range   =    33.062        K-cm",
+            "Mix accpt ang   =     0.859   14.130  mrad-cm",
+            "Mix accpt bw    =  2507.080  534.324  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "ADA_1064_532_0_300K",
+      "description": "ADA SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "ADA",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 52.491436608390174,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.35913530274545108,
+            "walkoffMrad": [
+              0,
+              0,
+              36.79437857649858
+            ],
+            "phaseVelocityIndex": [
+              1.555058989118314,
+              1.5801328090774478,
+              1.5717748690910693
+            ],
+            "groupVelocityIndex": [
+              1.591315414909751,
+              1.6292672131998986,
+              1.6736151673821913
+            ],
+            "gddFs2PerMm": [
+              1.4425692891186523,
+              124.48491011514764,
+              219.62239307833056
+            ],
+            "s0L2Watt": 5.6951758827781129E+8,
+            "angleToleranceMradCm": 0.61326553746524537,
+            "temperatureRangeKCm": 0.93096796766359624,
+            "acceptanceAngleMradCm": [
+              1.8595732379528962,
+              0.91503260453494129
+            ],
+            "acceptanceBW": [
+              12.150704831522674,
+              22.548954476896306
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 67.852869819795487,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.29079357840729991,
+            "walkoffMrad": [
+              20.925184919197246,
+              0,
+              26.12456676353143
+            ],
+            "phaseVelocityIndex": [
+              1.5145144506762944,
+              1.5801328090774478,
+              1.5582600229437298
+            ],
+            "groupVelocityIndex": [
+              1.5351023634742766,
+              1.6292672131998986,
+              1.6554209442877279
+            ],
+            "gddFs2PerMm": [
+              26.242183637003841,
+              124.48491011514764,
+              208.19933032045469
+            ],
+            "s0L2Watt": 8.387448281543479E+8,
+            "angleToleranceMradCm": 1.1765342143599102,
+            "temperatureRangeKCm": 1.0491824149332261,
+            "acceptanceAngleMradCm": [
+              13.511902200250814,
+              1.2887507902369137
+            ],
+            "acceptanceBW": [
+              8.311268245014098,
+              38.235462337737118
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   36.794",
+            "Phase velocities    = c/  1.5551   1.5801   1.5718",
+            "Group velocities    = c/  1.5913   1.6293   1.6736",
+            "GrpDelDisp(fs^2/mm) =      1.44   124.48   219.62",
+            "At theta,phi        =    52.49    0.00 deg.",
+            "d_eff               =     3.591E-01    pm/V",
+            "S_o * L^2           =     5.695E+08    watt",
+            "Crystal ang. tol.   =     0.613        mrad-cm",
+            "Temperature range   =     0.931        K-cm",
+            "Mix accpt ang   =     1.860    0.915  mrad-cm",
+            "Mix accpt bw    =   364.521  676.469  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   20.9252   0.0000   26.125",
+            "Phase velocities    = c/  1.5145   1.5801   1.5583",
+            "Group velocities    = c/  1.5351   1.6293   1.6554",
+            "GrpDelDisp(fs^2/mm) =     26.24   124.48   208.20",
+            "At theta,phi        =    67.85    0.00 deg.",
+            "d_eff               =     2.908E-01    pm/V",
+            "S_o * L^2           =     8.387E+08    watt",
+            "Crystal ang. tol.   =     1.177        mrad-cm",
+            "Temperature range   =     1.049        K-cm",
+            "Mix accpt ang   =    13.512    1.289  mrad-cm",
+            "Mix accpt bw    =   249.338 1147.064  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "ADA_800_532_0_350K",
+      "description": "ADA SFG 800+532 nm at 350K",
+      "input": {
+        "selectedCrystal": "ADA",
+        "temperatureKelvin": 350,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              800,
+              532,
+              319.51951951951952
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 65.739879921330413,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.42475369779667171,
+            "walkoffMrad": [
+              0,
+              0,
+              27.773444970933234
+            ],
+            "phaseVelocityIndex": [
+              1.5622720678073609,
+              1.5778528090774477,
+              1.5716298703719775
+            ],
+            "groupVelocityIndex": [
+              1.5945993705935126,
+              1.6269872131998988,
+              1.6983734130679644
+            ],
+            "gddFs2PerMm": [
+              55.698129425018692,
+              124.48475673191649,
+              255.7248177308573
+            ],
+            "s0L2Watt": 3.0707183877961564E+8,
+            "angleToleranceMradCm": 0.73201059633011689,
+            "temperatureRangeKCm": 0.64958759598775317,
+            "acceptanceAngleMradCm": [
+              1.8437565100539219,
+              1.2139907920969473
+            ],
+            "acceptanceBW": [
+              9.63632114693991,
+              14.008309755221289
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "     800.00(o) +  532.00(o)  =  319.52(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   27.773",
+            "Phase velocities    = c/  1.5623   1.5779   1.5716",
+            "Group velocities    = c/  1.5946   1.6270   1.6984",
+            "GrpDelDisp(fs^2/mm) =     55.70   124.48   255.72",
+            "At theta,phi        =    65.74    0.00 deg.",
+            "d_eff               =     4.248E-01    pm/V",
+            "S_o * L^2           =     3.071E+08    watt",
+            "Crystal ang. tol.   =     0.732        mrad-cm",
+            "Temperature range   =     0.650        K-cm",
+            "Mix accpt ang   =     1.844    1.214  mrad-cm",
+            "Mix accpt bw    =   289.090  420.249  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "ADP_1064_532_0_300K",
+      "description": "ADP SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "ADP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 47.906934670189194,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.46560250124618835,
+            "walkoffMrad": [
+              0,
+              0,
+              32.067822756580732
+            ],
+            "phaseVelocityIndex": [
+              1.5065644211650573,
+              1.5274772560321761,
+              1.5205063110764698
+            ],
+            "groupVelocityIndex": [
+              1.5422911519684064,
+              1.5628493358922251,
+              1.5895809992248433
+            ],
+            "gddFs2PerMm": [
+              -25.904970603284823,
+              78.641116451251918,
+              142.475229298638
+            ],
+            "s0L2Watt": 3.0698179038063437E+8,
+            "angleToleranceMradCm": 0.727382204252797,
+            "temperatureRangeKCm": 1.3551951342963842,
+            "acceptanceAngleMradCm": [
+              2.2023404042871411,
+              1.0860939772720852
+            ],
+            "acceptanceBW": [
+              21.146187987821925,
+              37.408820676706284
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 60.056446421519212,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.51011853546093644,
+            "walkoffMrad": [
+              22.068877911386632,
+              0,
+              27.515005940387958
+            ],
+            "phaseVelocityIndex": [
+              1.4774051150362528,
+              1.5274772560321761,
+              1.5107865423668683
+            ],
+            "groupVelocityIndex": [
+              1.499265383019561,
+              1.5628493358922251,
+              1.5778803821907545
+            ],
+            "gddFs2PerMm": [
+              0.01894282904903281,
+              78.641116451251918,
+              139.20264467847471
+            ],
+            "s0L2Watt": 2.49188380499631E+8,
+            "angleToleranceMradCm": 1.1552255138942671,
+            "temperatureRangeKCm": 1.4058344750111236,
+            "acceptanceAngleMradCm": [
+              13.223736386223825,
+              1.2658063471114034
+            ],
+            "acceptanceBW": [
+              12.720218921867327,
+              66.52896811965995
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   32.068",
+            "Phase velocities    = c/  1.5066   1.5275   1.5205",
+            "Group velocities    = c/  1.5423   1.5628   1.5896",
+            "GrpDelDisp(fs^2/mm) =    -25.90    78.64   142.48",
+            "At theta,phi        =    47.91    0.00 deg.",
+            "d_eff               =     4.656E-01    pm/V",
+            "S_o * L^2           =     3.070E+08    watt",
+            "Crystal ang. tol.   =     0.727        mrad-cm",
+            "Temperature range   =     1.355        K-cm",
+            "Mix accpt ang   =     2.202    1.086  mrad-cm",
+            "Mix accpt bw    =   634.386 1122.265  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   22.0689   0.0000   27.515",
+            "Phase velocities    = c/  1.4774   1.5275   1.5108",
+            "Group velocities    = c/  1.4993   1.5628   1.5779",
+            "GrpDelDisp(fs^2/mm) =      0.02    78.64   139.20",
+            "At theta,phi        =    60.06    0.00 deg.",
+            "d_eff               =     5.101E-01    pm/V",
+            "S_o * L^2           =     2.492E+08    watt",
+            "Crystal ang. tol.   =     1.155        mrad-cm",
+            "Temperature range   =     1.406        K-cm",
+            "Mix accpt ang   =    13.224    1.266  mrad-cm",
+            "Mix accpt bw    =   381.607 1995.869  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "ADP_800_532_0_300K",
+      "description": "ADP SFG 800+532 nm",
+      "input": {
+        "selectedCrystal": "ADP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              800,
+              532,
+              319.51951951951952
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 55.041550759942794,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.52767742529720929,
+            "walkoffMrad": [
+              0,
+              0,
+              30.569210901641256
+            ],
+            "phaseVelocityIndex": [
+              1.5153512038566861,
+              1.5274772560321761,
+              1.5226341180761995
+            ],
+            "groupVelocityIndex": [
+              1.5431946936642316,
+              1.5628493358922251,
+              1.6095881709380253
+            ],
+            "gddFs2PerMm": [
+              27.852630872633963,
+              78.641116451251918,
+              169.51884031848553
+            ],
+            "s0L2Watt": 1.8100370910646579E+8,
+            "angleToleranceMradCm": 0.68646375138303517,
+            "temperatureRangeKCm": 0.99233135333340849,
+            "acceptanceAngleMradCm": [
+              1.7270004886574437,
+              1.1393381815518537
+            ],
+            "acceptanceBW": [
+              15.061720534325913,
+              21.395484055605621
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "     800.00(o) +  532.00(o)  =  319.52(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   30.569",
+            "Phase velocities    = c/  1.5154   1.5275   1.5226",
+            "Group velocities    = c/  1.5432   1.5628   1.6096",
+            "GrpDelDisp(fs^2/mm) =     27.85    78.64   169.52",
+            "At theta,phi        =    55.04    0.00 deg.",
+            "d_eff               =     5.277E-01    pm/V",
+            "S_o * L^2           =     1.810E+08    watt",
+            "Crystal ang. tol.   =     0.686        mrad-cm",
+            "Temperature range   =     0.992        K-cm",
+            "Mix accpt ang   =     1.727    1.139  mrad-cm",
+            "Mix accpt bw    =   451.852  641.865  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "KDP_1064_532_0_300K",
+      "description": "KDP SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "KDP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 47.35148159000277,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.32406200115983669,
+            "walkoffMrad": [
+              0,
+              0,
+              30.050605318446387
+            ],
+            "phaseVelocityIndex": [
+              1.4938404340868316,
+              1.5124159343735442,
+              1.50622410094464
+            ],
+            "groupVelocityIndex": [
+              1.5248361785105526,
+              1.5445596026269988,
+              1.5686686117856188
+            ],
+            "gddFs2PerMm": [
+              -19.4788267503433,
+              72.86562426491767,
+              129.08119202027572
+            ],
+            "s0L2Watt": 6.1631305281298661E+8,
+            "angleToleranceMradCm": 0.7835695600418956,
+            "temperatureRangeKCm": 6.4809392792647937,
+            "acceptanceAngleMradCm": [
+              2.3701956296754418,
+              1.1705424373790598
+            ],
+            "acceptanceBW": [
+              22.814156670805794,
+              41.478270360292115
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 58.378274113087436,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.37216866818656885,
+            "walkoffMrad": [
+              20.328326380212626,
+              0,
+              26.616890627235236
+            ],
+            "phaseVelocityIndex": [
+              1.4689603410099263,
+              1.5124159343735442,
+              1.4979307365856718
+            ],
+            "groupVelocityIndex": [
+              1.4856685316693967,
+              1.5445596026269988,
+              1.5583540678583756
+            ],
+            "gddFs2PerMm": [
+              7.0634511784373268,
+              72.86562426491767,
+              125.58190698444872
+            ],
+            "s0L2Watt": 4.5696818897379488E+8,
+            "angleToleranceMradCm": 1.185524956479431,
+            "temperatureRangeKCm": 6.94250292901565,
+            "acceptanceAngleMradCm": [
+              11.518079050882392,
+              1.3215483839490136
+            ],
+            "acceptanceBW": [
+              13.757895345231386,
+              72.492842834197276
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   30.051",
+            "Phase velocities    = c/  1.4938   1.5124   1.5062",
+            "Group velocities    = c/  1.5248   1.5446   1.5687",
+            "GrpDelDisp(fs^2/mm) =    -19.48    72.87   129.08",
+            "At theta,phi        =    47.35    0.00 deg.",
+            "d_eff               =     3.241E-01    pm/V",
+            "S_o * L^2           =     6.163E+08    watt",
+            "Crystal ang. tol.   =     0.784        mrad-cm",
+            "Temperature range   =     6.481        K-cm",
+            "Mix accpt ang   =     2.370    1.171  mrad-cm",
+            "Mix accpt bw    =   684.425 1244.348  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   20.3283   0.0000   26.617",
+            "Phase velocities    = c/  1.4690   1.5124   1.4979",
+            "Group velocities    = c/  1.4857   1.5446   1.5584",
+            "GrpDelDisp(fs^2/mm) =      7.06    72.87   125.58",
+            "At theta,phi        =    58.38    0.00 deg.",
+            "d_eff               =     3.722E-01    pm/V",
+            "S_o * L^2           =     4.570E+08    watt",
+            "Crystal ang. tol.   =     1.186        mrad-cm",
+            "Temperature range   =     6.943        K-cm",
+            "Mix accpt ang   =    11.518    1.322  mrad-cm",
+            "Mix accpt bw    =   412.737 2174.785  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "KDP_800_532_0_350K",
+      "description": "KDP SFG 800+532 nm at 350K",
+      "input": {
+        "selectedCrystal": "KDP",
+        "temperatureKelvin": 350,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              800,
+              532,
+              319.51951951951952
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 54.790952860433116,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.3685565105307384,
+            "walkoffMrad": [
+              0,
+              0,
+              28.408576242278514
+            ],
+            "phaseVelocityIndex": [
+              1.4996635215552023,
+              1.5105078431923407,
+              1.5061766276435737
+            ],
+            "groupVelocityIndex": [
+              1.5242226078443883,
+              1.5424830026392875,
+              1.584139105041104
+            ],
+            "gddFs2PerMm": [
+              26.956335961313936,
+              72.340440081404381,
+              151.7681057420769
+            ],
+            "s0L2Watt": 3.5919099334164852E+8,
+            "angleToleranceMradCm": 0.7467444813336076,
+            "temperatureRangeKCm": 4.712851357725298,
+            "acceptanceAngleMradCm": [
+              1.8777885678150412,
+              1.2397644502871805
+            ],
+            "acceptanceBW": [
+              16.689894215892437,
+              24.0060865597544
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "     800.00(o) +  532.00(o)  =  319.52(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   28.409",
+            "Phase velocities    = c/  1.4997   1.5105   1.5062",
+            "Group velocities    = c/  1.5242   1.5425   1.5841",
+            "GrpDelDisp(fs^2/mm) =     26.96    72.34   151.77",
+            "At theta,phi        =    54.79    0.00 deg.",
+            "d_eff               =     3.686E-01    pm/V",
+            "S_o * L^2           =     3.592E+08    watt",
+            "Crystal ang. tol.   =     0.747        mrad-cm",
+            "Temperature range   =     4.713        K-cm",
+            "Mix accpt ang   =     1.878    1.240  mrad-cm",
+            "Mix accpt bw    =   500.697  720.183  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "KDP_1064_1064_0_300K",
+      "description": "KDP SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KDP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 41.080622333209874,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.26440878419829161,
+            "walkoffMrad": [
+              0,
+              0,
+              28.007107566970291
+            ],
+            "phaseVelocityIndex": [
+              1.4938404340868316,
+              1.4938404340868316,
+              1.4938404340868316
+            ],
+            "groupVelocityIndex": [
+              1.5248361785105526,
+              1.5248361785105526,
+              1.5224038816588621
+            ],
+            "gddFs2PerMm": [
+              -19.4788267503433,
+              -19.4788267503433,
+              69.858239251440835
+            ],
+            "s0L2Watt": 1.8137749772899654E+9,
+            "angleToleranceMradCm": 1.2715667482721811,
+            "temperatureRangeKCm": 11.37198794056628,
+            "acceptanceAngleMradCm": [
+              2.5431334965443622,
+              2.5431334965443622
+            ],
+            "acceptanceBW": [
+              411.1340272076398,
+              411.1340272076398
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 58.922821290162219,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.33548039945107755,
+            "walkoffMrad": [
+              20.121625277484473,
+              0,
+              24.562191884393581
+            ],
+            "phaseVelocityIndex": [
+              1.4686778403008494,
+              1.4938404340868316,
+              1.4812591371938404
+            ],
+            "groupVelocityIndex": [
+              1.4852278095584428,
+              1.5248361785105526,
+              1.5074648515855007
+            ],
+            "gddFs2PerMm": [
+              7.3654627606036884,
+              -19.4788267503433,
+              67.887264730954428
+            ],
+            "s0L2Watt": 1.0983734469159045E+9,
+            "angleToleranceMradCm": 2.4621788752234939,
+            "temperatureRangeKCm": 13.327374182817518,
+            "acceptanceAngleMradCm": [
+              16.314610022254875,
+              2.8998150380927097
+            ],
+            "acceptanceBW": [
+              44.970009895345171,
+              57.566126313462938
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   28.007",
+            "Phase velocities    = c/  1.4938   1.4938   1.4938",
+            "Group velocities    = c/  1.5248   1.5248   1.5224",
+            "GrpDelDisp(fs^2/mm) =    -19.48   -19.48    69.86",
+            "At theta,phi        =    41.08    0.00 deg.",
+            "d_eff               =     2.644E-01    pm/V",
+            "S_o * L^2           =     1.814E+09    watt",
+            "Crystal ang. tol.   =     1.272        mrad-cm",
+            "Temperature range   =    11.372        K-cm",
+            "Mix accpt ang   =     2.543    2.543  mrad-cm",
+            "Mix accpt bw    =  12334.021 12334.021  GHz-cm",
+            " ",
+            "    1064.00(e) + 1064.00(o)  =  532.00(e)",
+            "Walkoff [mrad]      =   20.1216   0.0000   24.562",
+            "Phase velocities    = c/  1.4687   1.4938   1.4813",
+            "Group velocities    = c/  1.4852   1.5248   1.5075",
+            "GrpDelDisp(fs^2/mm) =      7.37   -19.48    67.89",
+            "At theta,phi        =    58.92    0.00 deg.",
+            "d_eff               =     3.355E-01    pm/V",
+            "S_o * L^2           =     1.098E+09    watt",
+            "Crystal ang. tol.   =     2.462        mrad-cm",
+            "Temperature range   =    13.327        K-cm",
+            "Mix accpt ang   =    16.315    2.900  mrad-cm",
+            "Mix accpt bw    =  1349.100 1726.984  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "CLBO_1064_532_0_300K",
+      "description": "CLBO SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "CLBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 38.749913096649045,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.522442633091467,
+            "walkoffMrad": [
+              0,
+              0,
+              37.13970046218261
+            ],
+            "phaseVelocityIndex": [
+              1.4849239335243265,
+              1.4981452334845058,
+              1.4937381334977795
+            ],
+            "groupVelocityIndex": [
+              1.5007231271450285,
+              1.5271380437651685,
+              1.55806348486969
+            ],
+            "gddFs2PerMm": [
+              17.282762338120403,
+              77.661917903486525,
+              137.15620560825451
+            ],
+            "s0L2Watt": 2.3155166628475809E+8,
+            "angleToleranceMradCm": 0.6393041273933997,
+            "temperatureRangeKCm": 20.215974964764523,
+            "acceptanceAngleMradCm": [
+              1.9292967116306483,
+              0.9561352257240151
+            ],
+            "acceptanceBW": [
+              17.439723777131444,
+              32.335836265688556
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 48.534571561095213,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.71396159760735012,
+            "walkoffMrad": [
+              33.770760167176967,
+              0,
+              37.25810209663323
+            ],
+            "phaseVelocityIndex": [
+              1.4562675259189617,
+              1.4981452334845058,
+              1.4841859976293246
+            ],
+            "groupVelocityIndex": [
+              1.4687134435539861,
+              1.5271380437651685,
+              1.5466412197873343
+            ],
+            "gddFs2PerMm": [
+              19.546238680440869,
+              77.661917903486525,
+              133.22714075869968
+            ],
+            "s0L2Watt": 1.2081649830976927E+8,
+            "angleToleranceMradCm": 0.91162546050428972,
+            "temperatureRangeKCm": 20.0647786205332,
+            "acceptanceAngleMradCm": [
+              20.951056662542538,
+              0.953096746383658
+            ],
+            "acceptanceBW": [
+              12.832394921748886,
+              51.273700184189408
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   37.140",
+            "Phase velocities    = c/  1.4849   1.4981   1.4937",
+            "Group velocities    = c/  1.5007   1.5271   1.5581",
+            "GrpDelDisp(fs^2/mm) =     17.28    77.66   137.16",
+            "At theta,phi        =    38.75    0.00 deg.",
+            "d_eff               =     5.224E-01    pm/V",
+            "S_o * L^2           =     2.316E+08    watt",
+            "Crystal ang. tol.   =     0.639        mrad-cm",
+            "Temperature range   =    20.216        K-cm",
+            "Mix accpt ang   =     1.929    0.956  mrad-cm",
+            "Mix accpt bw    =   523.192  970.075  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   33.7708   0.0000   37.258",
+            "Phase velocities    = c/  1.4563   1.4981   1.4842",
+            "Group velocities    = c/  1.4687   1.5271   1.5466",
+            "GrpDelDisp(fs^2/mm) =     19.55    77.66   133.23",
+            "At theta,phi        =    48.53    0.00 deg.",
+            "d_eff               =     7.140E-01    pm/V",
+            "S_o * L^2           =     1.208E+08    watt",
+            "Crystal ang. tol.   =     0.912        mrad-cm",
+            "Temperature range   =    20.065        K-cm",
+            "Mix accpt ang   =    20.951    0.953  mrad-cm",
+            "Mix accpt bw    =   384.972 1538.211  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "CLBO_800_532_0_300K",
+      "description": "CLBO SFG 800+532 nm",
+      "input": {
+        "selectedCrystal": "CLBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              800,
+              532,
+              319.51951951951952
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 45.474177242370871,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.60760295600804148,
+            "walkoffMrad": [
+              0,
+              0,
+              38.373615898249291
+            ],
+            "phaseVelocityIndex": [
+              1.4894120418502639,
+              1.4981452334845058,
+              1.4946572019909496
+            ],
+            "groupVelocityIndex": [
+              1.5059860828898555,
+              1.5271380437651685,
+              1.576222076689155
+            ],
+            "gddFs2PerMm": [
+              40.931388919334,
+              77.661917903486525,
+              163.22982107420665
+            ],
+            "s0L2Watt": 1.2918482978807506E+8,
+            "angleToleranceMradCm": 0.55708706049365064,
+            "temperatureRangeKCm": 13.483068382168659,
+            "acceptanceAngleMradCm": [
+              1.3997239770305812,
+              0.92539040310640552
+            ],
+            "acceptanceBW": [
+              14.237714110766559,
+              20.373224049226742
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              800,
+              532,
+              319.51951951951952
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 63.647908607783272,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.56821901080190906,
+            "walkoffMrad": [
+              27.277772428709397,
+              0,
+              29.833831356422969
+            ],
+            "phaseVelocityIndex": [
+              1.4477892959066203,
+              1.4981452334845058,
+              1.4780331022597046
+            ],
+            "groupVelocityIndex": [
+              1.4607904706999619,
+              1.5271380437651685,
+              1.5555491241540773
+            ],
+            "gddFs2PerMm": [
+              38.161057689624634,
+              77.661917903486525,
+              155.05020012257248
+            ],
+            "s0L2Watt": 1.4198838390868855E+8,
+            "angleToleranceMradCm": 1.1281623291369087,
+            "temperatureRangeKCm": 13.325577252005843,
+            "acceptanceAngleMradCm": [
+              21.6179129503392,
+              1.1902787630756704
+            ],
+            "acceptanceBW": [
+              10.553125899833793,
+              35.197535127540661
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "     800.00(o) +  532.00(o)  =  319.52(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   38.374",
+            "Phase velocities    = c/  1.4894   1.4981   1.4947",
+            "Group velocities    = c/  1.5060   1.5271   1.5762",
+            "GrpDelDisp(fs^2/mm) =     40.93    77.66   163.23",
+            "At theta,phi        =    45.47    0.00 deg.",
+            "d_eff               =     6.076E-01    pm/V",
+            "S_o * L^2           =     1.292E+08    watt",
+            "Crystal ang. tol.   =     0.557        mrad-cm",
+            "Temperature range   =    13.483        K-cm",
+            "Mix accpt ang   =     1.400    0.925  mrad-cm",
+            "Mix accpt bw    =   427.131  611.197  GHz-cm",
+            " ",
+            "     800.00(e) +  532.00(o)  =  319.52(e)",
+            "Walkoff [mrad]      =   27.2778   0.0000   29.834",
+            "Phase velocities    = c/  1.4478   1.4981   1.4780",
+            "Group velocities    = c/  1.4608   1.5271   1.5555",
+            "GrpDelDisp(fs^2/mm) =     38.16    77.66   155.05",
+            "At theta,phi        =    63.65    0.00 deg.",
+            "d_eff               =     5.682E-01    pm/V",
+            "S_o * L^2           =     1.420E+08    watt",
+            "Crystal ang. tol.   =     1.128        mrad-cm",
+            "Temperature range   =    13.326        K-cm",
+            "Mix accpt ang   =    21.618    1.190  mrad-cm",
+            "Mix accpt bw    =   316.594 1055.926  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "LIIO3_1064_532_0_300K",
+      "description": "LIIO3 SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "LIIO3",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 47.250316804424138,
+            "phiDeg": 0,
+            "dEffPmPerV": 4.1355589928153238,
+            "walkoffMrad": [
+              0,
+              0,
+              89.998935726595292
+            ],
+            "phaseVelocityIndex": [
+              1.8568649508610913,
+              1.8979858666945593,
+              1.8842788947500702
+            ],
+            "groupVelocityIndex": [
+              1.8860629752477918,
+              2.0135620934714544,
+              2.1844804759003211
+            ],
+            "gddFs2PerMm": [
+              129.319012720199,
+              375.89398387067996,
+              785.87861793390994
+            ],
+            "s0L2Watt": 7.384865223672322E+6,
+            "angleToleranceMradCm": 0.20914034289486483,
+            "temperatureRangeKCm": 8.0197368491237757,
+            "acceptanceAngleMradCm": [
+              0.63668399897607886,
+              0.31144494361585667
+            ],
+            "acceptanceBW": [
+              3.3510099032843841,
+              5.85074575238379
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 60.721718854230083,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.10006398492743709,
+            "walkoffMrad": [
+              64.314621464964617,
+              0,
+              74.019276109489923
+            ],
+            "phaseVelocityIndex": [
+              1.747042021163032,
+              1.8979858666945593,
+              1.8476712515173837
+            ],
+            "groupVelocityIndex": [
+              1.7700452839146588,
+              2.0135620934714544,
+              2.1258097643027272
+            ],
+            "gddFs2PerMm": [
+              110.77482668896729,
+              375.89398387067996,
+              714.37227586358767
+            ],
+            "s0L2Watt": 1.1637453967477064E+10,
+            "angleToleranceMradCm": 0.35713144588401885,
+            "temperatureRangeKCm": 6.0413262979704507,
+            "acceptanceAngleMradCm": [
+              6.2756424487239295,
+              0.3786812697464752
+            ],
+            "acceptanceBW": [
+              2.8108483424460995,
+              8.9088708263993226
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   89.999",
+            "Phase velocities    = c/  1.8569   1.8980   1.8843",
+            "Group velocities    = c/  1.8861   2.0136   2.1845",
+            "GrpDelDisp(fs^2/mm) =    129.32   375.89   785.88",
+            "At theta,phi        =    47.25    0.00 deg.",
+            "d_eff               =     4.136E+00    pm/V",
+            "S_o * L^2           =     7.385E+06    watt",
+            "Crystal ang. tol.   =     0.209        mrad-cm",
+            "Temperature range   =     8.020        K-cm",
+            "Mix accpt ang   =     0.637    0.311  mrad-cm",
+            "Mix accpt bw    =   100.530  175.522  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   64.3146   0.0000   74.019",
+            "Phase velocities    = c/  1.7470   1.8980   1.8477",
+            "Group velocities    = c/  1.7700   2.0136   2.1258",
+            "GrpDelDisp(fs^2/mm) =    110.77   375.89   714.37",
+            "At theta,phi        =    60.72    0.00 deg.",
+            "d_eff               =     1.001E-01    pm/V",
+            "S_o * L^2           =     1.164E+10    watt",
+            "Crystal ang. tol.   =     0.357        mrad-cm",
+            "Temperature range   =     6.041        K-cm",
+            "Mix accpt ang   =     6.276    0.379  mrad-cm",
+            "Mix accpt bw    =    84.325  267.266  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "LBGO_800_532_0_300K",
+      "description": "LBGO SFG 800+532 nm",
+      "input": {
+        "selectedCrystal": "LBGO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          []
+        ]
+      }
+    },
+    {
+      "name": "LBGO_532_800_0_300K",
+      "description": "LBGO SFG 532+800 nm",
+      "input": {
+        "selectedCrystal": "LBGO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 532,
+        "wavelengthRed2Nm": 800,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          []
+        ]
+      }
+    },
+    {
+      "name": "DKDP_1064_532_0_300K",
+      "description": "DKDP SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "DKDP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 46.784045987697311,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.290909843926644,
+            "walkoffMrad": [
+              0,
+              0,
+              27.752453200906483
+            ],
+            "phaseVelocityIndex": [
+              1.4933243961255693,
+              1.5075215000661082,
+              1.5027891320859286
+            ],
+            "groupVelocityIndex": [
+              1.5126564194609473,
+              1.5362913379588721,
+              1.5642578596718093
+            ],
+            "gddFs2PerMm": [
+              8.0552271511583484,
+              73.74696431119898,
+              130.31071200130444
+            ],
+            "s0L2Watt": 7.603112620370667E+8,
+            "angleToleranceMradCm": 0.85039549064493947,
+            "temperatureRangeKCm": 14.814077538531436,
+            "acceptanceAngleMradCm": [
+              2.5673559702736597,
+              1.2715889304995527
+            ],
+            "acceptanceBW": [
+              19.379304064259472,
+              35.75703872882422
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 59.448004255364985,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.33128786765173979,
+            "walkoffMrad": [
+              20.488255601154197,
+              0,
+              24.051055337856095
+            ],
+            "phaseVelocityIndex": [
+              1.4671634069279218,
+              1.5075215000661082,
+              1.4940688023533792
+            ],
+            "groupVelocityIndex": [
+              1.4796423160920382,
+              1.5362913379588721,
+              1.5533640463446212
+            ],
+            "gddFs2PerMm": [
+              17.723125594798731,
+              73.74696431119898,
+              125.05641603447312
+            ],
+            "s0L2Watt": 5.7265633989682722E+8,
+            "angleToleranceMradCm": 1.3686264809922577,
+            "temperatureRangeKCm": 11.934278875787292,
+            "acceptanceAngleMradCm": [
+              20.355029205833194,
+              1.4672833182889049
+            ],
+            "acceptanceBW": [
+              13.564521567437884,
+              58.57301474408802
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   27.752",
+            "Phase velocities    = c/  1.4933   1.5075   1.5028",
+            "Group velocities    = c/  1.5127   1.5363   1.5643",
+            "GrpDelDisp(fs^2/mm) =      8.06    73.75   130.31",
+            "At theta,phi        =    46.78    0.00 deg.",
+            "d_eff               =     2.909E-01    pm/V",
+            "S_o * L^2           =     7.603E+08    watt",
+            "Crystal ang. tol.   =     0.850        mrad-cm",
+            "Temperature range   =    14.814        K-cm",
+            "Mix accpt ang   =     2.567    1.272  mrad-cm",
+            "Mix accpt bw    =   581.379 1072.711  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   20.4883   0.0000   24.051",
+            "Phase velocities    = c/  1.4672   1.5075   1.4941",
+            "Group velocities    = c/  1.4796   1.5363   1.5534",
+            "GrpDelDisp(fs^2/mm) =     17.72    73.75   125.06",
+            "At theta,phi        =    59.45    0.00 deg.",
+            "d_eff               =     3.313E-01    pm/V",
+            "S_o * L^2           =     5.727E+08    watt",
+            "Crystal ang. tol.   =     1.369        mrad-cm",
+            "Temperature range   =    11.934        K-cm",
+            "Mix accpt ang   =    20.355    1.467  mrad-cm",
+            "Mix accpt bw    =   406.936 1757.190  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "DKDP_800_532_0_300K",
+      "description": "DKDP SFG 800+532 nm",
+      "input": {
+        "selectedCrystal": "DKDP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              800,
+              532,
+              319.51951951951952
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 55.244679816746455,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.33496091069622325,
+            "walkoffMrad": [
+              0,
+              0,
+              26.493740889604805
+            ],
+            "phaseVelocityIndex": [
+              1.4985255121154117,
+              1.5075215000661082,
+              1.5039285078815958
+            ],
+            "groupVelocityIndex": [
+              1.5167088865636695,
+              1.5362913379588721,
+              1.5812554542275976
+            ],
+            "gddFs2PerMm": [
+              35.531378882894728,
+              73.74696431119898,
+              153.13229620006956
+            ],
+            "s0L2Watt": 4.3301953262937218E+8,
+            "angleToleranceMradCm": 0.80191237990037079,
+            "temperatureRangeKCm": 8.9943656763991235,
+            "acceptanceAngleMradCm": [
+              2.0150348483045231,
+              1.3320018653283494
+            ],
+            "acceptanceBW": [
+              15.492690567322779,
+              22.239956725126223
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "     800.00(o) +  532.00(o)  =  319.52(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   26.494",
+            "Phase velocities    = c/  1.4985   1.5075   1.5039",
+            "Group velocities    = c/  1.5167   1.5363   1.5813",
+            "GrpDelDisp(fs^2/mm) =     35.53    73.75   153.13",
+            "At theta,phi        =    55.24    0.00 deg.",
+            "d_eff               =     3.350E-01    pm/V",
+            "S_o * L^2           =     4.330E+08    watt",
+            "Crystal ang. tol.   =     0.802        mrad-cm",
+            "Temperature range   =     8.994        K-cm",
+            "Mix accpt ang   =     2.015    1.332  mrad-cm",
+            "Mix accpt bw    =   464.781  667.199  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "KDA_1064_532_0_300K",
+      "description": "KDA SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "KDA",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 51.610327376112743,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.4690844518258484,
+            "walkoffMrad": [
+              0,
+              0,
+              35.874441611024672
+            ],
+            "phaseVelocityIndex": [
+              1.5508650972384777,
+              1.5735926169169983,
+              1.566016777024158
+            ],
+            "groupVelocityIndex": [
+              1.5821118167834671,
+              1.6196805012332161,
+              1.6645836777587237
+            ],
+            "gddFs2PerMm": [
+              9.9084033501090722,
+              119.50317615009877,
+              217.19280269665705
+            ],
+            "s0L2Watt": 3.3033394441608691E+8,
+            "angleToleranceMradCm": 0.63130439508166236,
+            "temperatureRangeKCm": 3.3007014747967989,
+            "acceptanceAngleMradCm": [
+              1.9124163846372533,
+              0.94239760355883562
+            ],
+            "acceptanceBW": [
+              12.1253478237871,
+              22.270139383834913
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 66.074024017998042,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.41011482668290156,
+            "walkoffMrad": [
+              21.367028533466133,
+              0,
+              26.865903458481153
+            ],
+            "phaseVelocityIndex": [
+              1.5130247455725749,
+              1.5735926169169983,
+              1.5534033264688569
+            ],
+            "groupVelocityIndex": [
+              1.5286115778093516,
+              1.6196805012332161,
+              1.6479946062048132
+            ],
+            "gddFs2PerMm": [
+              33.155626015360568,
+              119.50317615009877,
+              208.16129127912546
+            ],
+            "s0L2Watt": 4.1821939351680148E+8,
+            "angleToleranceMradCm": 1.1456639766221128,
+            "temperatureRangeKCm": 3.7198122459362311,
+            "acceptanceAngleMradCm": [
+              12.788563240807608,
+              1.258397576522533
+            ],
+            "acceptanceBW": [
+              8.376400007942971,
+              35.318086197784979
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   35.874",
+            "Phase velocities    = c/  1.5509   1.5736   1.5660",
+            "Group velocities    = c/  1.5821   1.6197   1.6646",
+            "GrpDelDisp(fs^2/mm) =      9.91   119.50   217.19",
+            "At theta,phi        =    51.61    0.00 deg.",
+            "d_eff               =     4.691E-01    pm/V",
+            "S_o * L^2           =     3.303E+08    watt",
+            "Crystal ang. tol.   =     0.631        mrad-cm",
+            "Temperature range   =     3.301        K-cm",
+            "Mix accpt ang   =     1.912    0.942  mrad-cm",
+            "Mix accpt bw    =   363.760  668.104  GHz-cm",
+            " ",
+            "    1064.00(e) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =   21.3670   0.0000   26.866",
+            "Phase velocities    = c/  1.5130   1.5736   1.5534",
+            "Group velocities    = c/  1.5286   1.6197   1.6480",
+            "GrpDelDisp(fs^2/mm) =     33.16   119.50   208.16",
+            "At theta,phi        =    66.07    0.00 deg.",
+            "d_eff               =     4.101E-01    pm/V",
+            "S_o * L^2           =     4.182E+08    watt",
+            "Crystal ang. tol.   =     1.146        mrad-cm",
+            "Temperature range   =     3.720        K-cm",
+            "Mix accpt ang   =    12.789    1.258  mrad-cm",
+            "Mix accpt bw    =   251.292 1059.543  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "ZGP_2000_3000_0_300K",
+      "description": "ZGP DFG 2000+3000 nm",
+      "input": {
+        "selectedCrystal": "ZGP",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 2000,
+        "wavelengthRed2Nm": 3000,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          []
+        ]
+      }
+    },
+    {
+      "name": "ZGP_2000_2500_0_350K",
+      "description": "ZGP DFG 2000+2500 nm at 350K",
+      "input": {
+        "selectedCrystal": "ZGP",
+        "temperatureKelvin": 350,
+        "wavelengthRed1Nm": 2000,
+        "wavelengthRed2Nm": 2500,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          []
+        ]
+      }
+    },
+    {
+      "name": "AGS_2000_3000_0_300K",
+      "description": "AGS DFG 2000+3000 nm",
+      "input": {
+        "selectedCrystal": "AGS",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 2000,
+        "wavelengthRed2Nm": 3000,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              3000,
+              2000,
+              1200
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 45.7035063042594,
+            "phiDeg": 0,
+            "dEffPmPerV": 11.371883041105802,
+            "walkoffMrad": [
+              0,
+              0,
+              21.991952064584741
+            ],
+            "phaseVelocityIndex": [
+              2.40823859118379,
+              2.4175997519303722,
+              2.4138552876317392
+            ],
+            "groupVelocityIndex": [
+              2.42822923055814,
+              2.4464193107498184,
+              2.4890071711678776
+            ],
+            "gddFs2PerMm": [
+              124.56689345220602,
+              253.4540556850564,
+              500.55620500105579
+            ],
+            "s0L2Watt": 2.190891665783257E+7,
+            "angleToleranceMradCm": 2.2605089744156679,
+            "temperatureRangeKCm": 14.488174939359807,
+            "acceptanceAngleMradCm": [
+              5.6644528085878418,
+              3.7616796964809089
+            ],
+            "acceptanceBW": [
+              16.453338003357512,
+              23.480869669985928
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              3000,
+              2000,
+              1200
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 68.674742197638466,
+            "phiDeg": 0,
+            "dEffPmPerV": 10.201159039326427,
+            "walkoffMrad": [
+              14.960355948287612,
+              0,
+              14.659646777832862
+            ],
+            "phaseVelocityIndex": [
+              2.36159207319193,
+              2.4175997519303722,
+              2.3951966804349962
+            ],
+            "groupVelocityIndex": [
+              2.3817969565252746,
+              2.4464193107498184,
+              2.47091536422162
+            ],
+            "gddFs2PerMm": [
+              122.50875891060937,
+              253.4540556850564,
+              508.07995925622305
+            ],
+            "s0L2Watt": 2.64924398464574E+7,
+            "angleToleranceMradCm": 5.7195602135198076,
+            "temperatureRangeKCm": 15.049131072578517,
+            "acceptanceAngleMradCm": [
+              422.44453843704179,
+              5.6431564021325853
+            ],
+            "acceptanceBW": [
+              11.221026338434076,
+              40.822902397365169
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    3000.00(o) + 2000.00(o)  = 1200.00(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   21.992",
+            "Phase velocities    = c/  2.4082   2.4176   2.4139",
+            "Group velocities    = c/  2.4282   2.4464   2.4890",
+            "GrpDelDisp(fs^2/mm) =    124.57   253.45   500.56",
+            "At theta,phi        =    45.70    0.00 deg.",
+            "d_eff               =     1.137E+01    pm/V",
+            "S_o * L^2           =     2.191E+07    watt",
+            "Crystal ang. tol.   =     2.261        mrad-cm",
+            "Temperature range   =    14.488        K-cm",
+            "Mix accpt ang   =     5.664    3.762  mrad-cm",
+            "Mix accpt bw    =   493.600  704.426  GHz-cm",
+            " ",
+            "    3000.00(e) + 2000.00(o)  = 1200.00(e)",
+            "Walkoff [mrad]      =   14.9604   0.0000   14.660",
+            "Phase velocities    = c/  2.3616   2.4176   2.3952",
+            "Group velocities    = c/  2.3818   2.4464   2.4709",
+            "GrpDelDisp(fs^2/mm) =    122.51   253.45   508.08",
+            "At theta,phi        =    68.67    0.00 deg.",
+            "d_eff               =     1.020E+01    pm/V",
+            "S_o * L^2           =     2.649E+07    watt",
+            "Crystal ang. tol.   =     5.720        mrad-cm",
+            "Temperature range   =    15.049        K-cm",
+            "Mix accpt ang   =   422.445    5.643  mrad-cm",
+            "Mix accpt bw    =   336.631 1224.687  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "CGA_4000_6000_0_300K",
+      "description": "CGA DFG 4000+6000 nm",
+      "input": {
+        "selectedCrystal": "CGA",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 4000,
+        "wavelengthRed2Nm": 6000,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          [
+            "Error: Wavelength out of transmission range"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "TE_5000_8000_0_300K",
+      "description": "TE DFG 5000+8000 nm",
+      "input": {
+        "selectedCrystal": "TE",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 5000,
+        "wavelengthRed2Nm": 8000,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          [
+            "Error: Wavelength out of transmission range"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "LNB_C_1064_1550_0_300K",
+      "description": "LNB_C SFG 1064+1550 nm",
+      "input": {
+        "selectedCrystal": "LNB_C",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1550,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1550,
+              1064,
+              630.91048201989292
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 59.875324482147668,
+            "phiDeg": 0,
+            "dEffPmPerV": -4.7067043228608991,
+            "walkoffMrad": [
+              0,
+              0,
+              31.732564687316835
+            ],
+            "phaseVelocityIndex": [
+              2.2110395519459165,
+              2.2319860665145228,
+              2.2234600177383186
+            ],
+            "groupVelocityIndex": [
+              2.2634583893024152,
+              2.2967234167136308,
+              2.37691046480943
+            ],
+            "gddFs2PerMm": [
+              111.90119644703671,
+              276.18230618765688,
+              565.73119405529735
+            ],
+            "s0L2Watt": 2.7447076027329154E+7,
+            "angleToleranceMradCm": 0.89419707408649229,
+            "temperatureRangeKCm": 1.9071087162529037,
+            "acceptanceAngleMradCm": [
+              2.209174454390149,
+              1.5022595543096888
+            ],
+            "acceptanceBW": [
+              8.8142944545617237,
+              12.470841909597437
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1550.00(o) + 1064.00(o)  =  630.91(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   31.733",
+            "Phase velocities    = c/  2.2110   2.2320   2.2235",
+            "Group velocities    = c/  2.2635   2.2967   2.3769",
+            "GrpDelDisp(fs^2/mm) =    111.90   276.18   565.73",
+            "At theta,phi        =    59.88    0.00 deg.",
+            "d_eff               =    -4.707E+00    pm/V",
+            "S_o * L^2           =     2.745E+07    watt",
+            "Crystal ang. tol.   =     0.894        mrad-cm",
+            "Temperature range   =     1.907        K-cm",
+            "Mix accpt ang   =     2.209    1.502  mrad-cm",
+            "Mix accpt bw    =   264.429  374.125  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "LNB_C_1064_1550_0_400K",
+      "description": "LNB_C SFG 1064+1550 nm at 400K",
+      "input": {
+        "selectedCrystal": "LNB_C",
+        "temperatureKelvin": 400,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1550,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1550,
+              1064,
+              630.91048201989292
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 63.307261069689147,
+            "phiDeg": 0,
+            "dEffPmPerV": -4.7097088142822514,
+            "walkoffMrad": [
+              0,
+              0,
+              27.600783171445137
+            ],
+            "phaseVelocityIndex": [
+              2.2118095445420733,
+              2.2328459474935585,
+              2.2242833106380191
+            ],
+            "groupVelocityIndex": [
+              2.2644511522710316,
+              2.2978652565519413,
+              2.379434630910878
+            ],
+            "gddFs2PerMm": [
+              112.38335663420784,
+              277.44280958138114,
+              571.49058100235914
+            ],
+            "s0L2Watt": 2.7442336231264275E+7,
+            "angleToleranceMradCm": 1.0276760474062507,
+            "temperatureRangeKCm": 1.359884392157509,
+            "acceptanceAngleMradCm": [
+              2.5389992057165478,
+              1.7264796438477323
+            ],
+            "acceptanceBW": [
+              8.69690160559692,
+              12.259503126744775
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1550.00(o) + 1064.00(o)  =  630.91(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   27.601",
+            "Phase velocities    = c/  2.2118   2.2328   2.2243",
+            "Group velocities    = c/  2.2645   2.2979   2.3794",
+            "GrpDelDisp(fs^2/mm) =    112.38   277.44   571.49",
+            "At theta,phi        =    63.31    0.00 deg.",
+            "d_eff               =    -4.710E+00    pm/V",
+            "S_o * L^2           =     2.744E+07    watt",
+            "Crystal ang. tol.   =     1.028        mrad-cm",
+            "Temperature range   =     1.360        K-cm",
+            "Mix accpt ang   =     2.539    1.726  mrad-cm",
+            "Mix accpt bw    =   260.907  367.785  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    },
+    {
+      "name": "LNB_C_800_1064_0_300K",
+      "description": "LNB_C SFG 800+1064 nm",
+      "input": {
+        "selectedCrystal": "LNB_C",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "formattedText": [
+          []
+        ]
+      }
+    },
+    {
+      "name": "RDA_1064_532_0_300K",
+      "description": "RDA SFG 1064+532 nm",
+      "input": {
+        "selectedCrystal": "RDA",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 532,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              532,
+              354.66666666666669
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 67.373701003095718,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.40554078036910063,
+            "walkoffMrad": [
+              0,
+              0,
+              18.539889309468212
+            ],
+            "phaseVelocityIndex": [
+              1.5405074559233838,
+              1.5625034418333243,
+              1.5551714465300108
+            ],
+            "groupVelocityIndex": [
+              1.5702763914351587,
+              1.6075520919593911,
+              1.6492588602487381
+            ],
+            "gddFs2PerMm": [
+              11.775614114711511,
+              117.33648462664421,
+              203.75888577819154
+            ],
+            "s0L2Watt": 4.3289895129262435E+8,
+            "angleToleranceMradCm": 1.2300845463916816,
+            "temperatureRangeKCm": 3.5489381541147855,
+            "acceptanceAngleMradCm": [
+              3.7253809243386851,
+              1.8364686235074164
+            ],
+            "acceptanceBW": [
+              12.661037506440552,
+              23.976923674890077
+            ]
+          }
+        ],
+        "formattedText": [
+          [
+            "    1064.00(o) +  532.00(o)  =  354.67(e)",
+            "Walkoff [mrad]      =    0.0000   0.0000   18.540",
+            "Phase velocities    = c/  1.5405   1.5625   1.5552",
+            "Group velocities    = c/  1.5703   1.6076   1.6493",
+            "GrpDelDisp(fs^2/mm) =     11.78   117.34   203.76",
+            "At theta,phi        =    67.37    0.00 deg.",
+            "d_eff               =     4.055E-01    pm/V",
+            "S_o * L^2           =     4.329E+08    watt",
+            "Crystal ang. tol.   =     1.230        mrad-cm",
+            "Temperature range   =     3.549        K-cm",
+            "Mix accpt ang   =     3.725    1.836  mrad-cm",
+            "Mix accpt bw    =   379.831  719.308  GHz-cm",
+            " "
+          ]
+        ]
+      }
+    }
+  ]
+}

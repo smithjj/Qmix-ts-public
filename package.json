@@ -1,0 +1,52 @@
+{
+  "name": "qmix-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript port of the Qmix nonlinear crystal phase-matching engine.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "standalone": "node tools/build-standalone.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.test.json",
+    "start": "node dist/server.js",
+    "tui": "bun dist/cli.js --tui",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build",
+    "docs": "typedoc --out typedoc-api src/index.ts src/cli.ts src/server.ts src/qmix/types.ts src/qmix/engine.ts src/qmix/qpm.ts src/qmix/crystal-db.ts --readme README.md --name \"qmix-ts — Nonlinear-crystal phase-matching engine\" --excludePrivate --excludeProtected --excludeExternals",
+    "docs:serve": "node tools/serve-docs.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "bin": {
+    "qmix-ts": "bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "license": "GPL-3.0",
+  "author": "",
+  "files": [
+    "dist",
+    "fixtures"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.3",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.0",
+    "playwright": "^1.60.0",
+    "typedoc": "^0.28.19",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "@opentui/core": "^0.4.1",
+    "express": "^5.2.1"
+  }
+}

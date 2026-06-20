@@ -1,0 +1,1214 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/generate_qmix_golden.m",
+  "source": {
+    "matlabVersion": "26.1.0.3251617 (R2026a) Update 2",
+    "engine": "QmixEngine.m"
+  },
+  "numericTolerance": {
+    "absolute": 1E-9,
+    "relative": 1E-9
+  },
+  "cases": [
+    {
+      "name": "bbo_shg_mix",
+      "description": "Default BBO 1064 nm second-harmonic generation in Mix mode.",
+      "input": {
+        "selectedCrystal": "BBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 22.836667170440727,
+            "phiDeg": 0,
+            "dEffPmPerV": 2.011942024498794,
+            "walkoffMrad": [
+              0,
+              0,
+              55.741977216279373
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6542503265005448,
+              1.654250326500545
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6738448647348743,
+              1.6993939846419899
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              41.770471885429011,
+              128.89912612488138
+            ],
+            "s0L2Watt": 4.2539785554546706E+7,
+            "angleToleranceMradCm": 0.57693652425433273,
+            "temperatureRangeKCm": 60.873989952778651,
+            "acceptanceAngleMradCm": [
+              1.1538730485086657,
+              1.1538730485086657
+            ],
+            "acceptanceBW": [
+              39.140291471311805,
+              39.140291471311805
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 32.448495322504982,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.4251080321746246,
+            "walkoffMrad": [
+              65.492269407738391,
+              0,
+              69.048046802387645
+            ],
+            "phaseVelocityIndex": [
+              1.6194552437988536,
+              1.6542503265005448,
+              1.636852785149699
+            ],
+            "groupVelocityIndex": [
+              1.6357362931315997,
+              1.6738448647348743,
+              1.6798102196466296
+            ],
+            "gddFs2PerMm": [
+              41.365693538381258,
+              41.770471885429011,
+              123.14986247107653
+            ],
+            "s0L2Watt": 8.2130933384669945E+7,
+            "angleToleranceMradCm": 0.88680577460744736,
+            "temperatureRangeKCm": 52.415604691076474,
+            "acceptanceAngleMradCm": [
+              18.477283113028395,
+              0.93151317320426708
+            ],
+            "acceptanceBW": [
+              22.689151593039611,
+              167.6346193634518
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+          "Walkoff [mrad]      =    0.0000   0.0000   55.742",
+          "Phase velocities    = c/  1.6543   1.6543   1.6543",
+          "Group velocities    = c/  1.6738   1.6738   1.6994",
+          "GrpDelDisp(fs^2/mm) =     41.77    41.77   128.90",
+          "At theta,phi        =    22.84    0.00 deg.",
+          "d_eff               =     2.012E+00    pm/V",
+          "S_o * L^2           =     4.254E+07    watt",
+          "Crystal ang. tol.   =     0.577        mrad-cm",
+          "Temperature range   =    60.874        K-cm",
+          "Mix accpt ang   =     1.154    1.154  mrad-cm",
+          "Mix accpt bw    =  1174.209 1174.209  GHz-cm",
+          " ",
+          "    1064.00(e) + 1064.00(o)  =  532.00(e)",
+          "Walkoff [mrad]      =   65.4923   0.0000   69.048",
+          "Phase velocities    = c/  1.6195   1.6543   1.6369",
+          "Group velocities    = c/  1.6357   1.6738   1.6798",
+          "GrpDelDisp(fs^2/mm) =     41.37    41.77   123.15",
+          "At theta,phi        =    32.45    0.00 deg.",
+          "d_eff               =     1.425E+00    pm/V",
+          "S_o * L^2           =     8.213E+07    watt",
+          "Crystal ang. tol.   =     0.887        mrad-cm",
+          "Temperature range   =    52.416        K-cm",
+          "Mix accpt ang   =    18.477    0.932  mrad-cm",
+          "Mix accpt bw    =   680.675 5029.039  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "bbo_shg_opo",
+      "description": "BBO degenerate OPO case with the second red wavelength computed.",
+      "input": {
+        "selectedCrystal": "BBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 0,
+        "wavelengthBlueNm": 532,
+        "principalPlane": "XY",
+        "type": "OPO"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 22.836667170440727,
+            "phiDeg": 0,
+            "dEffPmPerV": 2.011942024498794,
+            "walkoffMrad": [
+              0,
+              0,
+              55.741977216279373
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6542503265005448,
+              1.654250326500545
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6738448647348743,
+              1.6993939846419899
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              41.770471885429011,
+              128.89912612488138
+            ],
+            "s0L2Watt": 4.2539785554546706E+7,
+            "angleToleranceMradCm": 0.57693652425433273,
+            "temperatureRangeKCm": 60.873989952778651,
+            "acceptanceAngleMradCm": [
+              6.4319165180448877E+21,
+              6.4319165180448877E+21
+            ],
+            "acceptanceBW": [
+              1.0E+20,
+              1.0E+20
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 32.448495322504982,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.4251080321746246,
+            "walkoffMrad": [
+              65.492269407738391,
+              0,
+              69.048046802387645
+            ],
+            "phaseVelocityIndex": [
+              1.6194552437988536,
+              1.6542503265005448,
+              1.636852785149699
+            ],
+            "groupVelocityIndex": [
+              1.6357362931315997,
+              1.6738448647348743,
+              1.6798102196466296
+            ],
+            "gddFs2PerMm": [
+              41.365693538381258,
+              41.770471885429011,
+              123.14986247107653
+            ],
+            "s0L2Watt": 8.2130933384669945E+7,
+            "angleToleranceMradCm": 0.88680577460744736,
+            "temperatureRangeKCm": 52.415604691076474,
+            "acceptanceAngleMradCm": [
+              1.0031887152787793,
+              0.98208789773360761
+            ],
+            "acceptanceBW": [
+              26.240815594202797,
+              26.240815594202797
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+          "Walkoff [mrad]      =    0.0000   0.0000   55.742",
+          "Phase velocities    = c/  1.6543   1.6543   1.6543",
+          "Group velocities    = c/  1.6738   1.6738   1.6994",
+          "GrpDelDisp(fs^2/mm) =     41.77    41.77   128.90",
+          "At theta,phi        =    22.84    0.00 deg.",
+          "d_eff               =     2.012E+00    pm/V",
+          "S_o * L^2           =     4.254E+07    watt",
+          "Crystal ang. tol.   =     0.577        mrad-cm",
+          "Temperature range   =    60.874        K-cm",
+          "OPO accpt ang   =  ******** ********  mrad-cm",
+          "OPO accpt bw    =  ******** ********  GHz-cm",
+          " ",
+          "    1064.00(e) + 1064.00(o)  =  532.00(e)",
+          "Walkoff [mrad]      =   65.4923   0.0000   69.048",
+          "Phase velocities    = c/  1.6195   1.6543   1.6369",
+          "Group velocities    = c/  1.6357   1.6738   1.6798",
+          "GrpDelDisp(fs^2/mm) =     41.37    41.77   123.15",
+          "At theta,phi        =    32.45    0.00 deg.",
+          "d_eff               =     1.425E+00    pm/V",
+          "S_o * L^2           =     8.213E+07    watt",
+          "Crystal ang. tol.   =     0.887        mrad-cm",
+          "Temperature range   =    52.416        K-cm",
+          "OPO accpt ang   =     1.003    0.982  mrad-cm",
+          "OPO accpt bw    =   787.224  787.224  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "bbo_sfg_non_degenerate",
+      "description": "BBO non-degenerate sum-frequency generation covering the oee branch.",
+      "input": {
+        "selectedCrystal": "BBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 3,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 25.5705530447404,
+            "phiDeg": 0,
+            "dEffPmPerV": 2.0161827162823385,
+            "walkoffMrad": [
+              0,
+              0,
+              61.385784012592474
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6602864071501839,
+              1.6576958145966907
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6842871504929029,
+              1.7193116131420521
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              75.430805422942143,
+              159.3234569428644
+            ],
+            "s0L2Watt": 3.2033190744423136E+7,
+            "angleToleranceMradCm": 0.44875888367013123,
+            "temperatureRangeKCm": 38.296785836954236,
+            "acceptanceAngleMradCm": [
+              1.047786001515508,
+              0.78494489207191553
+            ],
+            "acceptanceBW": [
+              21.99409535611592,
+              28.551473009516474
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 33.930726958589858,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.4030382710787013,
+            "walkoffMrad": [
+              66.758422542411523,
+              0,
+              71.576933553352163
+            ],
+            "phaseVelocityIndex": [
+              1.616687557261115,
+              1.6602864071501839,
+              1.6415744544080941
+            ],
+            "groupVelocityIndex": [
+              1.6327130399322554,
+              1.6842871504929029,
+              1.7005235370662559
+            ],
+            "gddFs2PerMm": [
+              41.334710125685675,
+              75.430805422942143,
+              152.541310610386
+            ],
+            "s0L2Watt": 6.4017918684475012E+7,
+            "angleToleranceMradCm": 0.64156350129489415,
+            "temperatureRangeKCm": 33.523547114559193,
+            "acceptanceAngleMradCm": [
+              13.658489603118783,
+              0.67318415604656323
+            ],
+            "acceptanceBW": [
+              14.746979336014844,
+              61.590058568892964
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "oee",
+            "thetaDeg": 39.965417360556096,
+            "phiDeg": 0,
+            "dEffPmPerV": 1.1600457635536878,
+            "walkoffMrad": [
+              0,
+              71.380315118905216,
+              74.897089925541835
+            ],
+            "phaseVelocityIndex": [
+              1.6542503265005448,
+              1.6098635301421973,
+              1.6289136573346208
+            ],
+            "groupVelocityIndex": [
+              1.6738448647348743,
+              1.6296652387448485,
+              1.6858109777367578
+            ],
+            "gddFs2PerMm": [
+              41.770471885429011,
+              67.759189732930608,
+              147.33164916382407
+            ],
+            "s0L2Watt": 9.2195346985137E+7,
+            "angleToleranceMradCm": 0.80956647634307244,
+            "temperatureRangeKCm": 33.062018531962636,
+            "acceptanceAngleMradCm": [
+              0.85876721304380577,
+              14.130462128882499
+            ],
+            "acceptanceBW": [
+              83.569326133105463,
+              17.810790595241809
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) +  800.00(o)  =  456.65(e)",
+          "Walkoff [mrad]      =    0.0000   0.0000   61.386",
+          "Phase velocities    = c/  1.6543   1.6603   1.6577",
+          "Group velocities    = c/  1.6738   1.6843   1.7193",
+          "GrpDelDisp(fs^2/mm) =     41.77    75.43   159.32",
+          "At theta,phi        =    25.57    0.00 deg.",
+          "d_eff               =     2.016E+00    pm/V",
+          "S_o * L^2           =     3.203E+07    watt",
+          "Crystal ang. tol.   =     0.449        mrad-cm",
+          "Temperature range   =    38.297        K-cm",
+          "Mix accpt ang   =     1.048    0.785  mrad-cm",
+          "Mix accpt bw    =   659.823  856.544  GHz-cm",
+          " ",
+          "    1064.00(e) +  800.00(o)  =  456.65(e)",
+          "Walkoff [mrad]      =   66.7584   0.0000   71.577",
+          "Phase velocities    = c/  1.6167   1.6603   1.6416",
+          "Group velocities    = c/  1.6327   1.6843   1.7005",
+          "GrpDelDisp(fs^2/mm) =     41.33    75.43   152.54",
+          "At theta,phi        =    33.93    0.00 deg.",
+          "d_eff               =     1.403E+00    pm/V",
+          "S_o * L^2           =     6.402E+07    watt",
+          "Crystal ang. tol.   =     0.642        mrad-cm",
+          "Temperature range   =    33.524        K-cm",
+          "Mix accpt ang   =    13.658    0.673  mrad-cm",
+          "Mix accpt bw    =   442.409 1847.702  GHz-cm",
+          " ",
+          "    1064.00(o) +  800.00(e)  =  456.65(e)",
+          "Walkoff [mrad]      =    0.0000  71.3803   74.897",
+          "Phase velocities    = c/  1.6543   1.6099   1.6289",
+          "Group velocities    = c/  1.6738   1.6297   1.6858",
+          "GrpDelDisp(fs^2/mm) =     41.77    67.76   147.33",
+          "At theta,phi        =    39.97    0.00 deg.",
+          "d_eff               =     1.160E+00    pm/V",
+          "S_o * L^2           =     9.220E+07    watt",
+          "Crystal ang. tol.   =     0.810        mrad-cm",
+          "Temperature range   =    33.062        K-cm",
+          "Mix accpt ang   =     0.859   14.130  mrad-cm",
+          "Mix accpt bw    =  2507.080  534.324  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_shg_xy",
+      "description": "Biaxial LBO 1064 nm second-harmonic generation in the XY plane.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 90,
+            "phiDeg": 11.345454213053737,
+            "dEffPmPerV": 0.8322194650143655,
+            "walkoffMrad": [
+              0,
+              0,
+              6.882565818753748
+            ],
+            "phaseVelocityIndex": [
+              1.6052903296184884,
+              1.6052903296184884,
+              1.6052903296184884
+            ],
+            "groupVelocityIndex": [
+              1.62579259924877,
+              1.62579259924877,
+              1.6389660373494572
+            ],
+            "gddFs2PerMm": [
+              16.569453621581722,
+              16.569453621581722,
+              87.3216870358751
+            ],
+            "s0L2Watt": 2.271996002586942E+8,
+            "angleToleranceMradCm": 4.8151261496113511,
+            "temperatureRangeKCm": 7.0364788863967709,
+            "acceptanceAngleMradCm": [
+              9.6302522992227022,
+              9.6302522992227022
+            ],
+            "acceptanceBW": [
+              75.910327460212329,
+              75.910327460212329
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+          "Walkoff [mrad]      =    0.0000   0.0000    6.883",
+          "Phase velocities    = c/  1.6053   1.6053   1.6053",
+          "Group velocities    = c/  1.6258   1.6258   1.6390",
+          "GrpDelDisp(fs^2/mm) =     16.57    16.57    87.32",
+          "At theta,phi        =    90.00   11.35 deg.",
+          "d_eff               =     8.322E-01    pm/V",
+          "S_o * L^2           =     2.272E+08    watt",
+          "Crystal ang. tol.   =     4.815        mrad-cm",
+          "Temperature range   =     7.036        K-cm",
+          "Mix accpt ang   =     9.630    9.630  mrad-cm",
+          "Mix accpt bw    =  2277.310 2277.310  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_sfg_xy_zero_deff_branches",
+      "description": "Biaxial LBO XY-plane non-degenerate case covering eoe and oee symmetry-forbidden branches.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XY",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 3,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 90,
+            "phiDeg": 21.190799035781247,
+            "dEffPmPerV": 0.80612751575253416,
+            "walkoffMrad": [
+              0,
+              0,
+              12.228260254578721
+            ],
+            "phaseVelocityIndex": [
+              1.6052903296184884,
+              1.610987034370537,
+              1.6085420967087136
+            ],
+            "groupVelocityIndex": [
+              1.62579259924877,
+              1.6315750733923502,
+              1.6529235600548817
+            ],
+            "gddFs2PerMm": [
+              16.569453621581722,
+              46.649669160443246,
+              107.2541446923926
+            ],
+            "s0L2Watt": 1.8308023767390734E+8,
+            "angleToleranceMradCm": 2.3216064543427035,
+            "temperatureRangeKCm": 7.4212410531972361,
+            "acceptanceAngleMradCm": [
+              5.4203005105151254,
+              4.0610026099939578
+            ],
+            "acceptanceBW": [
+              36.858259725720252,
+              46.841727744341142
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 90,
+            "phiDeg": 49.297509781952705,
+            "dEffPmPerV": 0,
+            "walkoffMrad": [
+              0,
+              0,
+              0
+            ],
+            "phaseVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "groupVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "gddFs2PerMm": [
+              0,
+              0,
+              0
+            ],
+            "s0L2Watt": 0,
+            "angleToleranceMradCm": 0,
+            "temperatureRangeKCm": 0,
+            "acceptanceAngleMradCm": [
+              0,
+              0
+            ],
+            "acceptanceBW": [
+              0,
+              0
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "oee",
+            "thetaDeg": 90,
+            "phiDeg": 73.537038211564521,
+            "dEffPmPerV": 0,
+            "walkoffMrad": [
+              0,
+              0,
+              0
+            ],
+            "phaseVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "groupVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "gddFs2PerMm": [
+              0,
+              0,
+              0
+            ],
+            "s0L2Watt": 0,
+            "angleToleranceMradCm": 0,
+            "temperatureRangeKCm": 0,
+            "acceptanceAngleMradCm": [
+              0,
+              0
+            ],
+            "acceptanceBW": [
+              0,
+              0
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) +  800.00(o)  =  456.65(e)",
+          "Walkoff [mrad]      =    0.0000   0.0000   12.228",
+          "Phase velocities    = c/  1.6053   1.6110   1.6085",
+          "Group velocities    = c/  1.6258   1.6316   1.6529",
+          "GrpDelDisp(fs^2/mm) =     16.57    46.65   107.25",
+          "At theta,phi        =    90.00   21.19 deg.",
+          "d_eff               =     8.061E-01    pm/V",
+          "S_o * L^2           =     1.831E+08    watt",
+          "Crystal ang. tol.   =     2.322        mrad-cm",
+          "Temperature range   =     7.421        K-cm",
+          "Mix accpt ang   =     5.420    4.061  mrad-cm",
+          "Mix accpt bw    =  1105.748 1405.252  GHz-cm",
+          " ",
+          "    1064.00(e) +  800.00(o)  =  456.65(e)",
+          "At theta,phi        =     90.00    49.30 deg.",
+          "d_eff               =     0.000E+00    pm/V",
+          " ",
+          "    1064.00(o) +  800.00(e)  =  456.65(e)",
+          "At theta,phi        =     90.00    73.54 deg.",
+          "d_eff               =     0.000E+00    pm/V",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_shg_xz_zero_deff",
+      "description": "Biaxial LBO XZ-plane solution with symmetry-forbidden d_eff.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XZ",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              1064,
+              532
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 32.146944385562115,
+            "phiDeg": 0,
+            "dEffPmPerV": 0,
+            "walkoffMrad": [
+              0,
+              0,
+              0
+            ],
+            "phaseVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "groupVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "gddFs2PerMm": [
+              0,
+              0,
+              0
+            ],
+            "s0L2Watt": 0,
+            "angleToleranceMradCm": 0,
+            "temperatureRangeKCm": 0,
+            "acceptanceAngleMradCm": [
+              0,
+              0
+            ],
+            "acceptanceBW": [
+              0,
+              0
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) + 1064.00(o)  =  532.00(e)",
+          "At theta,phi        =     32.15     0.00 deg.",
+          "d_eff               =     0.000E+00    pm/V",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_sfg_xz_eoe_eeo",
+      "description": "Biaxial LBO XZ-plane non-degenerate case covering eoe and eeo branches.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1550,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "XZ",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 3,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1550,
+              1064,
+              630.91048201989292
+            ],
+            "polarizations": "ooe",
+            "thetaDeg": 33.354007674017375,
+            "phiDeg": 0,
+            "dEffPmPerV": 0,
+            "walkoffMrad": [
+              0,
+              0,
+              0
+            ],
+            "phaseVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "groupVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "gddFs2PerMm": [
+              0,
+              0,
+              0
+            ],
+            "s0L2Watt": 0,
+            "angleToleranceMradCm": 0,
+            "temperatureRangeKCm": 0,
+            "acceptanceAngleMradCm": [
+              0,
+              0
+            ],
+            "acceptanceBW": [
+              0,
+              0
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1550,
+              1064,
+              630.91048201989292
+            ],
+            "polarizations": "eoe",
+            "thetaDeg": 19.415168231746204,
+            "phiDeg": 0,
+            "dEffPmPerV": -0.50587662055077609,
+            "walkoffMrad": [
+              -15.046380482323778,
+              -0,
+              -16.323248628259275
+            ],
+            "phaseVelocityIndex": [
+              1.5615094918124934,
+              1.5903449958266433,
+              1.5786078205125438
+            ],
+            "groupVelocityIndex": [
+              1.5867813598539,
+              1.6107173093627605,
+              1.6015460073878998
+            ],
+            "gddFs2PerMm": [
+              -37.163146387656958,
+              15.851543408108055,
+              62.733281397305845
+            ],
+            "s0L2Watt": 8.4885519596323156E+8,
+            "angleToleranceMradCm": 3.8934037796955412,
+            "temperatureRangeKCm": 7.36700819613554,
+            "acceptanceAngleMradCm": [
+              77.739370027907412,
+              4.0986769145990261
+            ],
+            "acceptanceBW": [
+              67.729351323641069,
+              109.03577297324651
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1550,
+              1064,
+              630.91048201989292
+            ],
+            "polarizations": "eeo",
+            "thetaDeg": 87.134444963927962,
+            "phiDeg": 0,
+            "dEffPmPerV": 0.82716472077146608,
+            "walkoffMrad": [
+              -2.4746695665228531,
+              -2.5935072697918282,
+              -0
+            ],
+            "phaseVelocityIndex": [
+              1.5958020996727034,
+              1.6051850798043552,
+              1.6013658407607141
+            ],
+            "groupVelocityIndex": [
+              1.6277633193743237,
+              1.6256767551103573,
+              1.6272176400433986
+            ],
+            "gddFs2PerMm": [
+              -58.845246562087972,
+              16.572981435898544,
+              68.583317833986911
+            ],
+            "s0L2Watt": 3.3221811054930937E+8,
+            "angleToleranceMradCm": 15.478809866190062,
+            "temperatureRangeKCm": 7.9735080084788716,
+            "acceptanceAngleMradCm": [
+              39.2496192932678,
+              25.558128183417313
+            ],
+            "acceptanceBW": [
+              1832.5781156209584,
+              648.97772608251023
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1550.00(o) + 1064.00(o)  =  630.91(e)",
+          "At theta,phi        =     33.35     0.00 deg.",
+          "d_eff               =     0.000E+00    pm/V",
+          " ",
+          "    1550.00(e) + 1064.00(o)  =  630.91(e)",
+          "Walkoff [mrad]      =  -15.0464  -0.0000  -16.323",
+          "Phase velocities    = c/  1.5615   1.5903   1.5786",
+          "Group velocities    = c/  1.5868   1.6107   1.6015",
+          "GrpDelDisp(fs^2/mm) =    -37.16    15.85    62.73",
+          "At theta,phi        =    19.42    0.00 deg.",
+          "d_eff               =    -5.059E-01    pm/V",
+          "S_o * L^2           =     8.489E+08    watt",
+          "Crystal ang. tol.   =     3.893        mrad-cm",
+          "Temperature range   =     7.367        K-cm",
+          "Mix accpt ang   =    77.739    4.099  mrad-cm",
+          "Mix accpt bw    =  2031.881 3271.073  GHz-cm",
+          " ",
+          "    1550.00(e) + 1064.00(e)  =  630.91(o)",
+          "Walkoff [mrad]      =   -2.4747  -2.5935   -0.000",
+          "Phase velocities    = c/  1.5958   1.6052   1.6014",
+          "Group velocities    = c/  1.6278   1.6257   1.6272",
+          "GrpDelDisp(fs^2/mm) =    -58.85    16.57    68.58",
+          "At theta,phi        =    87.13    0.00 deg.",
+          "d_eff               =     8.272E-01    pm/V",
+          "S_o * L^2           =     3.322E+08    watt",
+          "Crystal ang. tol.   =    15.479        mrad-cm",
+          "Temperature range   =     7.974        K-cm",
+          "Mix accpt ang   =    39.250   25.558  mrad-cm",
+          "Mix accpt bw    =  ******** 19469.332  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_sfg_yz",
+      "description": "Biaxial LBO non-degenerate sum-frequency generation in the YZ plane.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 1064,
+        "wavelengthRed2Nm": 1550,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "YZ",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1550,
+              1064,
+              630.91048201989292
+            ],
+            "polarizations": "eoo",
+            "thetaDeg": 42.256305562550544,
+            "phiDeg": 90,
+            "dEffPmPerV": -0.48905267434306854,
+            "walkoffMrad": [
+              -9.333901513869014,
+              -0,
+              -0
+            ],
+            "phaseVelocityIndex": [
+              1.5876838858130553,
+              1.5647618387743905,
+              1.5740920063524853
+            ],
+            "groupVelocityIndex": [
+              1.6196093432400402,
+              1.5813179776572068,
+              1.5966481711392047
+            ],
+            "gddFs2PerMm": [
+              -58.738721908043004,
+              17.848056236583645,
+              61.892894673745928
+            ],
+            "s0L2Watt": 9.0603239000124538E+8,
+            "angleToleranceMradCm": 10.459344005800748,
+            "temperatureRangeKCm": 13.430925404297968,
+            "acceptanceAngleMradCm": [
+              10.459344005800748,
+              6.7997568296615978E+21
+            ],
+            "acceptanceBW": [
+              43.551783663674925,
+              65.230748794807809
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1550.00(e) + 1064.00(o)  =  630.91(o)",
+          "Walkoff [mrad]      =   -9.3339  -0.0000   -0.000",
+          "Phase velocities    = c/  1.5877   1.5648   1.5741",
+          "Group velocities    = c/  1.6196   1.5813   1.5966",
+          "GrpDelDisp(fs^2/mm) =    -58.74    17.85    61.89",
+          "At theta,phi        =    42.26   90.00 deg.",
+          "d_eff               =    -4.891E-01    pm/V",
+          "S_o * L^2           =     9.060E+08    watt",
+          "Crystal ang. tol.   =    10.459        mrad-cm",
+          "Temperature range   =    13.431        K-cm",
+          "Mix accpt ang   =    10.459 ********  mrad-cm",
+          "Mix accpt bw    =  1306.554 1956.922  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_sfg_yz_oeo_eoo",
+      "description": "Biaxial LBO YZ-plane case covering oeo and eoo branches.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 800,
+        "wavelengthRed2Nm": 1064,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "YZ",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 2,
+        "results": [
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "oeo",
+            "thetaDeg": 22.098452672972137,
+            "phiDeg": 90,
+            "dEffPmPerV": -0.636148148944014,
+            "walkoffMrad": [
+              -0,
+              -6.4825809029439609,
+              -0
+            ],
+            "phaseVelocityIndex": [
+              1.5647618387743905,
+              1.5980882890272272,
+              1.5837850914938207
+            ],
+            "groupVelocityIndex": [
+              1.5813179776572068,
+              1.6184747769292165,
+              1.6237274093604672
+            ],
+            "gddFs2PerMm": [
+              17.848056236583645,
+              45.754678006588129,
+              97.090665028854048
+            ],
+            "s0L2Watt": 2.7989788851763952E+8,
+            "angleToleranceMradCm": 7.7222040391687248,
+            "temperatureRangeKCm": 4.9067936621447172,
+            "acceptanceAngleMradCm": [
+              6.7997568296615978E+21,
+              7.7222040391687239
+            ],
+            "acceptanceBW": [
+              23.579660463196472,
+              190.38073063145671
+            ]
+          },
+          {
+            "wavelengthsNm": [
+              1064,
+              800,
+              456.65236051502143
+            ],
+            "polarizations": "eoo",
+            "thetaDeg": 66.274227751972845,
+            "phiDeg": 90,
+            "dEffPmPerV": -0.27987166750427911,
+            "walkoffMrad": [
+              -6.92825619371203,
+              -0,
+              -0
+            ],
+            "phaseVelocityIndex": [
+              1.6028421790512903,
+              1.5694564542325657,
+              1.5837850914938207
+            ],
+            "groupVelocityIndex": [
+              1.6233232787126244,
+              1.5867511928849476,
+              1.6237274093604672
+            ],
+            "gddFs2PerMm": [
+              16.450811692274623,
+              42.176400606710509,
+              97.090665028854048
+            ],
+            "s0L2Watt": 1.4547531456281617E+9,
+            "angleToleranceMradCm": 9.5813548955563235,
+            "temperatureRangeKCm": 9.366441181745369,
+            "acceptanceAngleMradCm": [
+              9.5813548955563235,
+              5.0973061268602377E+21
+            ],
+            "acceptanceBW": [
+              2474.4473237498441,
+              27.044411119294946
+            ]
+          }
+        ],
+        "formattedText": [
+          "    1064.00(o) +  800.00(e)  =  456.65(o)",
+          "Walkoff [mrad]      =   -0.0000  -6.4826   -0.000",
+          "Phase velocities    = c/  1.5648   1.5981   1.5838",
+          "Group velocities    = c/  1.5813   1.6185   1.6237",
+          "GrpDelDisp(fs^2/mm) =     17.85    45.75    97.09",
+          "At theta,phi        =    22.10   90.00 deg.",
+          "d_eff               =    -6.361E-01    pm/V",
+          "S_o * L^2           =     2.799E+08    watt",
+          "Crystal ang. tol.   =     7.722        mrad-cm",
+          "Temperature range   =     4.907        K-cm",
+          "Mix accpt ang   =  ********    7.722  mrad-cm",
+          "Mix accpt bw    =   707.390 5711.422  GHz-cm",
+          " ",
+          "    1064.00(e) +  800.00(o)  =  456.65(o)",
+          "Walkoff [mrad]      =   -6.9283  -0.0000   -0.000",
+          "Phase velocities    = c/  1.6028   1.5695   1.5838",
+          "Group velocities    = c/  1.6233   1.5868   1.6237",
+          "GrpDelDisp(fs^2/mm) =     16.45    42.18    97.09",
+          "At theta,phi        =    66.27   90.00 deg.",
+          "d_eff               =    -2.799E-01    pm/V",
+          "S_o * L^2           =     1.455E+09    watt",
+          "Crystal ang. tol.   =     9.581        mrad-cm",
+          "Temperature range   =     9.366        K-cm",
+          "Mix accpt ang   =     9.581 ********  mrad-cm",
+          "Mix accpt bw    =  ********  811.332  GHz-cm",
+          " "
+        ]
+      }
+    },
+    {
+      "name": "lbo_sfg_yz_eeo_zero_deff",
+      "description": "Biaxial LBO YZ-plane case covering the eeo symmetry-forbidden branch.",
+      "input": {
+        "selectedCrystal": "LBO",
+        "temperatureKelvin": 300,
+        "wavelengthRed1Nm": 450,
+        "wavelengthRed2Nm": 800,
+        "wavelengthBlueNm": 0,
+        "principalPlane": "YZ",
+        "type": "Mix"
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "wavelengthsNm": [
+              800,
+              450,
+              288
+            ],
+            "polarizations": "eeo",
+            "thetaDeg": 49.486204464474213,
+            "phiDeg": 90,
+            "dEffPmPerV": 0,
+            "walkoffMrad": [
+              0,
+              0,
+              0
+            ],
+            "phaseVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "groupVelocityIndex": [
+              0,
+              0,
+              0
+            ],
+            "gddFs2PerMm": [
+              0,
+              0,
+              0
+            ],
+            "s0L2Watt": 0,
+            "angleToleranceMradCm": 0,
+            "temperatureRangeKCm": 0,
+            "acceptanceAngleMradCm": [
+              0,
+              0
+            ],
+            "acceptanceBW": [
+              0,
+              0
+            ]
+          }
+        ],
+        "formattedText": [
+          "     800.00(e) +  450.00(e)  =  288.00(o)",
+          "At theta,phi        =     49.49    90.00 deg.",
+          "d_eff               =     0.000E+00    pm/V",
+          " "
+        ]
+      }
+    }
+  ]
+}

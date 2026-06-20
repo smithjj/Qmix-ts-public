@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qmix — Custom crystals</title>
+<link rel="stylesheet" href="styles/qmix-shared.css">
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0; padding: 1.5rem;
+    background: #f5f5f7; color: #1d1d1f;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  .top-nav { margin: 0 0 1rem; }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    color: #0071e3; text-decoration: none; font-weight: 600; font-size: 0.875rem;
+    background: #fff; border: 1px solid #d2d2d7; border-radius: 999px;
+    padding: 0.4rem 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .top-nav a:hover { background: #f0f7ff; border-color: #0071e3; }
+  h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 0.25rem; }
+  p.sub { color: #6e6e73; margin: 0 0 1rem; font-size: 0.875rem; }
+  .card {
+    background: #fff; border-radius: 12px; padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1rem;
+  }
+  .row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: end; }
+  .row > div { flex: 1; min-width: 120px; }
+  label { display: block; font-size: 0.8125rem; font-weight: 500; margin-bottom: 0.25rem; color: #6e6e73; }
+  input:not([type="radio"]):not([type="checkbox"]), select, textarea {
+    width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d2d2d7;
+    border-radius: 8px; font-size: 0.875rem; background: #fff; font-family: monospace;
+  }
+  input:not([type="radio"]):not([type="checkbox"]):focus, select:focus, textarea:focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,.2); }
+  input[type="checkbox"] { width: auto; height: auto; margin: 0 0.35rem 0 0; padding: 0; border: 0; flex: 0 0 auto; accent-color: #0071e3; }
+  .inline-label { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; white-space: nowrap; }
+  textarea { resize: vertical; min-height: 60px; font-family: monospace; font-size: 0.8125rem; }
+  button {
+    padding: 0.5rem 1.25rem; background: #0071e3; color: #fff;
+    border: none; border-radius: 8px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
+  }
+  button:hover { background: #0060c4; }
+  button.sm { padding: 0.25rem 0.75rem; font-size: 0.8125rem; }
+  button.sec { background: #e8e8ed; color: #1d1d1f; }
+  button.sec:hover { background: #d1d1d6; }
+  button.danger { background: #d32f2f; }
+  button.danger:hover { background: #b71c1c; }
+  .coeff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .coeff-grid .full { grid-column: 1 / -1; }
+  .msg { font-size: 0.8125rem; padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; }
+  .msg.ok { background: #e8f5e9; color: #2e7d32; }
+  .msg.err { background: #fce4ec; color: #c62828; }
+  .crystal-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.5rem 0; border-bottom: 1px solid #e8e8ed;
+  }
+  .crystal-item:last-child { border-bottom: none; }
+  .crystal-item span { font-size: 0.875rem; }
+  .crystal-item .info { font-size: 0.75rem; color: #6e6e73; margin-left: 0.5rem; }
+  .formula {
+    background: #fafafa; border: 1px solid #e8e8ed; border-radius: 8px;
+    padding: 0.75rem; margin-top: 0.75rem; font-size: 0.8125rem;
+    line-height: 1.5; color: #1d1d1f;
+  }
+  .formula code { font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", monospace; }
+
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar sidebar-left">
+  <a class="ad-card" href="https://as-photonics.com/book" target="_blank" rel="noopener">
+    <span class="ad-kicker">Textbook</span>
+    <img src="thebook.webp" alt="The Book">
+    <strong class="ad-title">Crystal Nonlinear Optics</strong>
+    <p><em>Crystal Nonlinear Optics: with SNLO examples (second edition)</em> teaches advanced crystal nonlinear optics from the ground up, so you can get the most out of Qmix.</p>
+    <span class="ad-cta">Learn more</span>
+  </a>
+</div>
+<div class="container">
+<header class="page-header">
+    <div class="page-kicker">Qmix toolkit</div>
+    <h1>Custom</h1>
+    <p class="sub">Define your own crystals with Sellmeier coefficients and nonlinear coefficients</p>
+    <nav class="module-nav" aria-label="Qmix modules">
+      <a href="index.html">Qmix</a>
+      <a href="compare.html">Compare crystals</a>
+      <a href="qpm.html">QPM</a>
+      <a href="refractive-index.html">Refractive index</a>
+      <span class="nav-current">Custom crystals</span>
+    </nav>
+  </header>
+
+<div class="container">
+      
+  <div class="card">
+    <div class="row">
+      <div><label for="crystalName">Crystal name</label><input id="crystalName" placeholder="MyCrystal"></div>
+      <div><label for="numPol">Type</label><select id="numPol"><option value="2">Uniaxial</option><option value="3">Biaxial</option></select></div>
+      <div><label for="rangeMin">Range min (nm)</label><input id="rangeMin" type="number" value="200"></div>
+      <div><label for="rangeMax">Range max (nm)</label><input id="rangeMax" type="number" value="5000"></div>
+    </div>
+    <div class="formula">
+      <div><strong>Refractive-index model used for custom crystals</strong></div>
+      <div><code>n(&lambda;,T) = sqrt(abs(A + B / (&lambda;&sup2; - C) - D&lambda;&sup2;)) + &Delta;n(&lambda;,T)</code></div>
+      <div><code>&lambda;</code> is in micrometers. Enter one row of <code>A B C D</code> coefficients for each principal index. Extra values in a row are ignored by this page.</div>
+    </div>
+    <div style="margin-top:0.75rem"><label>Sellmeier coefficients (A B C D per row, &lambda; in &micro;m)</label></div>
+    <div class="coeff-grid" id="coeffRows">
+      <div class="full"><label>n<sub>o</sub> / n<sub>x</sub></label><input class="coeff-input" id="coeff0" value="2.7359 0.01878 0.01822 0.01471"></div>
+      <div class="full"><label>n<sub>e</sub> / n<sub>y</sub></label><input class="coeff-input" id="coeff1" value="2.3753 0.01224 0.01667 0.01627"></div>
+      <div class="full" id="coeff2row" style="display:none"><label>n<sub>z</sub></label><input class="coeff-input" id="coeff2" value="2.5865 0.0131 0.01223 0.01862"></div>
+    </div>
+    <div style="margin-top:0.5rem">
+      <label class="inline-label"><input type="checkbox" id="hasTemp"> Temperature correction</label>
+    </div>
+    <div id="tempSection" style="display:none;margin-top:0.5rem">
+      <div class="coeff-grid" id="tempRows">
+        <div class="full"><label>Temp coeffs (a b c d, &Delta;n = (T-293) &times; (a/&lambda;&sup3; + b/&lambda;&sup2; + c/&lambda; + d) &times; 10<sup>-5</sup>)</label></div>
+        <div class="full"><input class="coeff-input" id="tempCoeff0" value="-0.0137 0.0607 -0.1334 -1.5287"></div>
+        <div class="full"><input class="coeff-input" id="tempCoeff1" value="0.0413 -0.2119 0.4408 -1.2749"></div>
+        <div class="full" id="tempCoeff2row" style="display:none"><input class="coeff-input" id="tempCoeff2" value="0 0 0 0"></div>
+      </div>
+    </div>
+    <div class="formula">
+      <div><strong>Nonlinear model used by the uniaxial Qmix calculation</strong></div>
+      <div><code>d1 = A cos&theta; + B sin&theta;</code></div>
+      <div><code>d2 = C cos&sup2;&theta; + D sin(2&theta;)</code></div>
+      <div>These values are stored with the custom crystal and used by the standard uniaxial phase-matching calculation. Biaxial custom nonlinear tensors are not fully represented by this simplified form.</div>
+    </div>
+    <div style="margin-top:0.75rem">
+      <label>Nonlinear coefficients</label>
+      <label style="font-weight:400;font-size:0.8125rem;margin-top:0.25rem">
+        Uniaxial: d<sub>1</sub> = A&middot;cos&theta; + B&middot;sin&theta;, d<sub>2</sub> = C&middot;cos&sup2;&theta; + D&middot;sin2&theta;
+      </label>
+    </div>
+    <div class="row" style="margin-top:0.25rem">
+      <div><label>d1 cos(A)</label><input id="d1Cos" type="number" value="0" step="any"></div>
+      <div><label>d1 sin(B)</label><input id="d1Sin" type="number" value="0.39" step="any"></div>
+      <div><label>d2 cos&sup2;(C)</label><input id="d2Cos2" type="number" value="0" step="any"></div>
+      <div><label>d2 sin2(D)</label><input id="d2Sin2" type="number" value="0.39" step="any"></div>
+      <div><label>Miller &lambda; ref (nm)</label><input id="lambdaRef" type="number" value="532" step="any"></div>
+    </div>
+    <div style="margin-top:0.75rem" class="row">
+      <button id="saveCustom">Save crystal</button>
+      <button id="exportJson" class="sec">Export JSON</button>
+      <button id="importBtn" class="sec">Import JSON</button>
+    </div>
+    <div id="msg" class="msg" style="display:none"></div>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1rem;margin:0 0 0.5rem">Custom crystals</h2>
+    <div id="customCrystalList"></div>
+  </div>
+</div>
+
+<input type="file" id="importFile" accept=".json" style="display:none">
+
+<script>
+const STORAGE_KEY = "qmix-custom-crystals";
+let customCrystals = loadCustom();
+
+document.getElementById("numPol").addEventListener("change", function() {
+  const show = this.value === "3";
+  document.getElementById("coeff2row").style.display = show ? "" : "none";
+  document.getElementById("tempCoeff2row").style.display = show ? "" : "none";
+});
+document.getElementById("hasTemp").addEventListener("change", function() {
+  document.getElementById("tempSection").style.display = this.checked ? "" : "none";
+});
+
+document.getElementById("saveCustom").addEventListener("click", saveCustom);
+document.getElementById("exportJson").addEventListener("click", exportJson);
+document.getElementById("importBtn").addEventListener("click", () => document.getElementById("importFile").click());
+document.getElementById("importFile").addEventListener("change", importJson);
+
+function saveCustom() {
+  const name = document.getElementById("crystalName").value.trim();
+  if (!name) return showMsg("Enter a crystal name", "err");
+  if (customCrystals[name]) return showMsg("Crystal '" + name + "' already exists", "err");
+
+  const numPol = parseInt(document.getElementById("numPol").value);
+  const rangeMin = parseFloat(document.getElementById("rangeMin").value);
+  const rangeMax = parseFloat(document.getElementById("rangeMax").value);
+  const hasTemp = document.getElementById("hasTemp").checked;
+
+  const coeffs = [];
+  for (let i = 0; i < numPol; i++) {
+    const val = document.getElementById("coeff" + i).value.trim();
+    const parts = val.split(/\s+/).map(Number);
+    if (parts.length < 4 || parts.some(isNaN)) return showMsg("Invalid coefficients for row " + (i+1), "err");
+    coeffs.push(parts.slice(0, 4));
+  }
+
+  let tempCoeffs = undefined;
+  if (hasTemp) {
+    tempCoeffs = [];
+    for (let i = 0; i < numPol; i++) {
+      const val = document.getElementById("tempCoeff" + i).value.trim();
+      const parts = val.split(/\s+/).map(Number);
+      if (parts.length < 4 || parts.some(isNaN)) return showMsg("Invalid temp coefficients for row " + (i+1), "err");
+      tempCoeffs.push(parts);
+    }
+  }
+
+  const d1Cos = parseFloat(document.getElementById("d1Cos").value);
+  const d1Sin = parseFloat(document.getElementById("d1Sin").value);
+  const d2Cos2 = parseFloat(document.getElementById("d2Cos2").value);
+  const d2Sin2 = parseFloat(document.getElementById("d2Sin2").value);
+  const lambdaRef = parseFloat(document.getElementById("lambdaRef").value);
+
+  const crystal = {
+    name,
+    numPolarizations: numPol,
+    rangeNm: [rangeMin, rangeMax],
+    sellmeierFunction: 1,
+    coefficients: coeffs,
+    temperatureCoefficients: tempCoeffs,
+    temperatureReferenceKelvin: 293,
+    nlData: { d1Cos, d1Sin, d2Cos2, d2Sin2, lambdaRef },
+  };
+
+  customCrystals[name] = crystal;
+  saveCustomCrystals();
+  renderCustomList();
+  showMsg("Crystal '" + name + "' saved", "ok");
+}
+
+function exportJson() {
+  const keys = Object.keys(customCrystals);
+  if (!keys.length) return showMsg("No custom crystals to export", "err");
+  const blob = new Blob([JSON.stringify(customCrystals, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "qmix-custom-crystals.json";
+  a.click();
+}
+
+function importJson(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      let count = 0;
+      for (const [name, def] of Object.entries(data)) {
+        if (!customCrystals[name]) { customCrystals[name] = def; count++; }
+      }
+      saveCustomCrystals();
+      renderCustomList();
+      showMsg("Imported " + count + " new crystals", "ok");
+    } catch { showMsg("Invalid JSON file", "err"); }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+}
+
+function deleteCrystal(name) {
+  delete customCrystals[name];
+  saveCustomCrystals();
+  renderCustomList();
+}
+
+function loadCustom() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveCustomCrystals() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(customCrystals));
+}
+
+function renderCustomList() {
+  const list = document.getElementById("customCrystalList");
+  const entries = Object.entries(customCrystals);
+  if (!entries.length) {
+    list.innerHTML = "<p style='color:#6e6e73;font-size:0.875rem'>No custom crystals defined yet.</p>";
+    return;
+  }
+  list.innerHTML = entries.map(([name, def]) =>
+    `<div class="crystal-item">
+      <span>${name} <span class="info">${def.numPolarizations === 2 ? "uniaxial" : "biaxial"}, ${def.rangeNm[0]}-${def.rangeNm[1]} nm</span></span>
+      <div><button class="sm sec" onclick="deleteCrystal('${name}')">Delete</button></div>
+    </div>`
+  ).join("");
+}
+
+function showMsg(text, type) {
+  const el = document.getElementById("msg");
+  el.textContent = text;
+  el.className = "msg " + type;
+  el.style.display = "block";
+  setTimeout(() => el.style.display = "none", 3000);
+}
+
+renderCustomList();
+</script>
+</div>
+<div class="sidebar sidebar-right">
+  <a class="ad-card" href="https://as-photonics.com/mlSNLO" target="_blank" rel="noopener">
+    <span class="ad-kicker">Software</span>
+    <img src="mlSNLO.webp" alt="mlSNLO">
+    <strong class="ad-title">Automate design scans</strong>
+    <p><strong>mlSNLO</strong> is a versatile MATLAB App for nonlinear optics. Write batch scripts to automate calculations and explore design spaces.</p>
+    <span class="ad-cta">Explore mlSNLO</span>
+  </a>
+</div>
+</div>
+<script>
+const STORAGE_KEY = "qmix-custom-crystals";
+let customCrystals = loadCustom();
+
+document.getElementById("numPol").addEventListener("change", function() {
+  const show = this.value === "3";
+  document.getElementById("coeff2row").style.display = show ? "" : "none";
+  document.getElementById("tempCoeff2row").style.display = show ? "" : "none";
+});
+document.getElementById("hasTemp").addEventListener("change", function() {
+  document.getElementById("tempSection").style.display = this.checked ? "" : "none";
+});
+
+document.getElementById("saveCustom").addEventListener("click", saveCustom);
+document.getElementById("exportJson").addEventListener("click", exportJson);
+document.getElementById("importBtn").addEventListener("click", () => document.getElementById("importFile").click());
+document.getElementById("importFile").addEventListener("change", importJson);
+
+function saveCustom() {
+  const name = document.getElementById("crystalName").value.trim();
+  if (!name) return showMsg("Enter a crystal name", "err");
+  if (customCrystals[name]) return showMsg("Crystal '" + name + "' already exists", "err");
+
+  const numPol = parseInt(document.getElementById("numPol").value);
+  const rangeMin = parseFloat(document.getElementById("rangeMin").value);
+  const rangeMax = parseFloat(document.getElementById("rangeMax").value);
+  const hasTemp = document.getElementById("hasTemp").checked;
+
+  const coeffs = [];
+  for (let i = 0; i < numPol; i++) {
+    const val = document.getElementById("coeff" + i).value.trim();
+    const parts = val.split(/\s+/).map(Number);
+    if (parts.length < 4 || parts.some(isNaN)) return showMsg("Invalid coefficients for row " + (i+1), "err");
+    coeffs.push(parts.slice(0, 4));
+  }
+
+  let tempCoeffs = undefined;
+  if (hasTemp) {
+    tempCoeffs = [];
+    for (let i = 0; i < numPol; i++) {
+      const val = document.getElementById("tempCoeff" + i).value.trim();
+      const parts = val.split(/\s+/).map(Number);
+      if (parts.length < 4 || parts.some(isNaN)) return showMsg("Invalid temp coefficients for row " + (i+1), "err");
+      tempCoeffs.push(parts);
+    }
+  }
+
+  const d1Cos = parseFloat(document.getElementById("d1Cos").value);
+  const d1Sin = parseFloat(document.getElementById("d1Sin").value);
+  const d2Cos2 = parseFloat(document.getElementById("d2Cos2").value);
+  const d2Sin2 = parseFloat(document.getElementById("d2Sin2").value);
+  const lambdaRef = parseFloat(document.getElementById("lambdaRef").value);
+
+  const crystal = {
+    name,
+    numPolarizations: numPol,
+    rangeNm: [rangeMin, rangeMax],
+    sellmeierFunction: 1,
+    coefficients: coeffs,
+    temperatureCoefficients: tempCoeffs,
+    temperatureReferenceKelvin: 293,
+    nlData: { d1Cos, d1Sin, d2Cos2, d2Sin2, lambdaRef },
+  };
+
+  customCrystals[name] = crystal;
+  saveCustomCrystals();
+  renderCustomList();
+  showMsg("Crystal '" + name + "' saved", "ok");
+}
+
+function exportJson() {
+  const keys = Object.keys(customCrystals);
+  if (!keys.length) return showMsg("No custom crystals to export", "err");
+  const blob = new Blob([JSON.stringify(customCrystals, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "qmix-custom-crystals.json";
+  a.click();
+}
+
+function importJson(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      let count = 0;
+      for (const [name, def] of Object.entries(data)) {
+        if (!customCrystals[name]) { customCrystals[name] = def; count++; }
+      }
+      saveCustomCrystals();
+      renderCustomList();
+      showMsg("Imported " + count + " new crystals", "ok");
+    } catch { showMsg("Invalid JSON file", "err"); }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+}
+
+function deleteCrystal(name) {
+  delete customCrystals[name];
+  saveCustomCrystals();
+  renderCustomList();
+}
+
+function loadCustom() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveCustomCrystals() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(customCrystals));
+}
+
+function renderCustomList() {
+  const list = document.getElementById("customCrystalList");
+  const entries = Object.entries(customCrystals);
+  if (!entries.length) {
+    list.innerHTML = "<p style='color:#6e6e73;font-size:0.875rem'>No custom crystals defined yet.</p>";
+    return;
+  }
+  list.innerHTML = entries.map(([name, def]) =>
+    `<div class="crystal-item">
+      <span>${name} <span class="info">${def.numPolarizations === 2 ? "uniaxial" : "biaxial"}, ${def.rangeNm[0]}-${def.rangeNm[1]} nm</span></span>
+      <div><button class="sm sec" onclick="deleteCrystal('${name}')">Delete</button></div>
+    </div>`
+  ).join("");
+}
+
+function showMsg(text, type) {
+  const el = document.getElementById("msg");
+  el.textContent = text;
+  el.className = "msg " + type;
+  el.style.display = "block";
+  setTimeout(() => el.style.display = "none", 3000);
+}
+
+renderCustomList();
+</script>
+</body>
+</html>

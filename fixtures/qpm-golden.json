@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/generate_qpm_golden.m",
+  "source": {
+    "matlabVersion": "26.1.0.3276743 (R2026a) Update 3",
+    "engine": "qpm.m"
+  },
+  "numericTolerance": {
+    "absolute": 1E-9,
+    "relative": 1E-9
+  },
+  "cases": [
+    {
+      "name": "CTA_1064_1064_532_300K",
+      "description": "CTA SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "CTA",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.267741292581492,
+            "dEffPmPerV": 10.010832971750032
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.267741292581492,
+            "dEffPmPerV": 10.010832971750032
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.267741292581492,
+            "dEffPmPerV": 1.8804879615442049
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.267741292581492,
+            "dEffPmPerV": 1.8804879615442049
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.267741292581492,
+            "dEffPmPerV": 1.1614778586008325
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.267741292581492,
+            "dEffPmPerV": 1.1614778586008325
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "GAAS_2000_2000_1000_300K",
+      "description": "GAAS SHG 2000 nm",
+      "input": {
+        "selectedCrystal": "GAAS",
+        "temperatureKelvin": 300,
+        "pumpNm": 2000,
+        "signalNm": 2000,
+        "idlerNm": 1000
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.28526784764021207,
+            "dEffPmPerV": 84.56300435002764
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "GAP_1550_1550_775_300K",
+      "description": "GAP SHG 1550 nm",
+      "input": {
+        "selectedCrystal": "GAP",
+        "temperatureKelvin": 300,
+        "pumpNm": 1550,
+        "signalNm": 1550,
+        "idlerNm": 775
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.24244889398473293,
+            "dEffPmPerV": 26.654266908499828
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KNBO3_1064_1064_532_300K",
+      "description": "KNBO3 SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KNBO3",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "XXX-z",
+            "periodUm": 0.22337172866072466,
+            "dEffPmPerV": 11.659820552859935
+          },
+          {
+            "polarization": "XXX-y",
+            "periodUm": 0.22337172866072466,
+            "dEffPmPerV": 11.659820552859935
+          },
+          {
+            "polarization": "YXY",
+            "periodUm": 0.22337172866072466,
+            "dEffPmPerV": 4.7384658867786955
+          },
+          {
+            "polarization": "YYX",
+            "periodUm": 0.22337172866072466,
+            "dEffPmPerV": 4.7384658867786955
+          },
+          {
+            "polarization": "ZXZ",
+            "periodUm": 0.22337172866072466,
+            "dEffPmPerV": 6.6019075276467225
+          },
+          {
+            "polarization": "ZZX",
+            "periodUm": 0.22337172866072466,
+            "dEffPmPerV": 6.6019075276467225
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KTA_1_1064_1064_532_300K",
+      "description": "KTA_1 SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KTA_1",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.27550820016702204,
+            "dEffPmPerV": 8.6222091262665046
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.27550820016702204,
+            "dEffPmPerV": 8.6222091262665046
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.27550820016702204,
+            "dEffPmPerV": 2.0359538969119617
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.27550820016702204,
+            "dEffPmPerV": 2.0359538969119617
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.27550820016702204,
+            "dEffPmPerV": 1.2794245800266424
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.27550820016702204,
+            "dEffPmPerV": 1.2794245800266424
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KTA_2_1064_1064_532_300K",
+      "description": "KTA_2 SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KTA_2",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.27548186156580523,
+            "dEffPmPerV": 8.78163209042819
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.27548186156580523,
+            "dEffPmPerV": 8.78163209042819
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.27548186156580523,
+            "dEffPmPerV": 2.0735982871591725
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.27548186156580523,
+            "dEffPmPerV": 2.0735982871591725
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.27548186156580523,
+            "dEffPmPerV": 1.3030808908377312
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.27548186156580523,
+            "dEffPmPerV": 1.3030808908377312
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KTA_3_1064_1064_532_300K",
+      "description": "KTA_3 SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KTA_3",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.27557483526549503,
+            "dEffPmPerV": 8.6428195227426681
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.27557483526549503,
+            "dEffPmPerV": 8.6428195227426681
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.27557483526549503,
+            "dEffPmPerV": 2.0408206098863331
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.27557483526549503,
+            "dEffPmPerV": 2.0408206098863331
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.27557483526549503,
+            "dEffPmPerV": 1.2824828969231055
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.27557483526549503,
+            "dEffPmPerV": 1.2824828969231055
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KTP_F_1064_1064_532_300K",
+      "description": "KTP_F SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KTP_F",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.28182130739721145,
+            "dEffPmPerV": 8.5007933536315772
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.28182130739721145,
+            "dEffPmPerV": 8.5007933536315772
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.28182130739721145,
+            "dEffPmPerV": 2.1668688940629508
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.28182130739721145,
+            "dEffPmPerV": 2.1668688940629508
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.28182130739721145,
+            "dEffPmPerV": 1.0834344470314754
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.28182130739721145,
+            "dEffPmPerV": 1.0834344470314754
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KTP_H_1064_1064_532_300K",
+      "description": "KTP_H SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KTP_H",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.28195080607383011,
+            "dEffPmPerV": 8.48597854483462
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.28195080607383011,
+            "dEffPmPerV": 8.48597854483462
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.28195080607383011,
+            "dEffPmPerV": 2.1630925702519614
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.28195080607383011,
+            "dEffPmPerV": 2.1630925702519614
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.28195080607383011,
+            "dEffPmPerV": 1.0815462851259807
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.28195080607383011,
+            "dEffPmPerV": 1.0815462851259807
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "KTP_K_1064_1064_532_300K",
+      "description": "KTP_K SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "KTP_K",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.28165714871694852,
+            "dEffPmPerV": 8.5063808089001824
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.28165714871694852,
+            "dEffPmPerV": 8.5063808089001824
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.28165714871694852,
+            "dEffPmPerV": 2.1682931473667129
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.28165714871694852,
+            "dEffPmPerV": 2.1682931473667129
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.28165714871694852,
+            "dEffPmPerV": 1.0841465736833564
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.28165714871694852,
+            "dEffPmPerV": 1.0841465736833564
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "LBGO_1064_1064_532_300K",
+      "description": "LBGO SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "LBGO",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 4,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.28523392333384118,
+            "dEffPmPerV": 0.44563384065730693
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.28523392333384118,
+            "dEffPmPerV": 0.11459155902616464
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.28523392333384118,
+            "dEffPmPerV": 0.11459155902616464
+          },
+          {
+            "polarization": "YYY",
+            "periodUm": 0.28523392333384118,
+            "dEffPmPerV": 0.40107045659157625
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "LNB_C_1064_1064_532_300K",
+      "description": "LNB_C SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "LNB_C",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.23810087343707931,
+            "dEffPmPerV": 13.17797650944221
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.23810087343707931,
+            "dEffPmPerV": 2.4247476777373662
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.23810087343707931,
+            "dEffPmPerV": 2.4247476777373662
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.23810087343707931,
+            "dEffPmPerV": 2.4247476777373662
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.23810087343707931,
+            "dEffPmPerV": 2.4247476777373662
+          },
+          {
+            "polarization": "YYY",
+            "periodUm": 0.23810087343707931,
+            "dEffPmPerV": 1.37050955698199
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "LNB_M_1064_1064_532_300K",
+      "description": "LNB_M SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "LNB_M",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.23922857527828426,
+            "dEffPmPerV": 13.205036947572955
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.23922857527828426,
+            "dEffPmPerV": 2.4297267983534234
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.23922857527828426,
+            "dEffPmPerV": 2.4297267983534234
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.23922857527828426,
+            "dEffPmPerV": 2.4297267983534234
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.23922857527828426,
+            "dEffPmPerV": 2.4297267983534234
+          },
+          {
+            "polarization": "YYY",
+            "periodUm": 0.23922857527828426,
+            "dEffPmPerV": 1.3733238425475875
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "LITA_C_1064_1064_532_300K",
+      "description": "LITA_C SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "LITA_C",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "error": "Index in position 1 exceeds array bounds. Index must not exceed 1."
+      }
+    },
+    {
+      "name": "LITA_S_1064_1064_532_300K",
+      "description": "LITA_S SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "LITA_S",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 0,
+        "results": [],
+        "error": "Index in position 1 exceeds array bounds. Index must not exceed 1."
+      }
+    },
+    {
+      "name": "LITA_M_1064_1064_532_300K",
+      "description": "LITA_M SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "LITA_M",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.24232255495082214,
+            "dEffPmPerV": 7.0028360897561974
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.24232255495082214,
+            "dEffPmPerV": 0.24971353498355431
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.24232255495082214,
+            "dEffPmPerV": 0.24971353498355431
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.24232255495082214,
+            "dEffPmPerV": 0.24971353498355431
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.24232255495082214,
+            "dEffPmPerV": 0.24971353498355431
+          },
+          {
+            "polarization": "YYY",
+            "periodUm": 0.24232255495082214,
+            "dEffPmPerV": 0.83599748668407314
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "RTA_1064_1064_532_300K",
+      "description": "RTA SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "RTA",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.27356299892487757,
+            "dEffPmPerV": 8.8805762875048924
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.27356299892487757,
+            "dEffPmPerV": 8.8805762875048924
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.27356299892487757,
+            "dEffPmPerV": 2.1782545610861055
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.27356299892487757,
+            "dEffPmPerV": 2.1782545610861055
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.27356299892487757,
+            "dEffPmPerV": 1.2566853237035225
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.27356299892487757,
+            "dEffPmPerV": 1.2566853237035225
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "RTP_1064_1064_532_300K",
+      "description": "RTP SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "RTP",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 6,
+        "results": [
+          {
+            "polarization": "ZZZ-x",
+            "periodUm": 0.27789760520908369,
+            "dEffPmPerV": 8.6792210867730653
+          },
+          {
+            "polarization": "ZZZ-y",
+            "periodUm": 0.27789760520908369,
+            "dEffPmPerV": 8.6792210867730653
+          },
+          {
+            "polarization": "YZY",
+            "periodUm": 0.27789760520908369,
+            "dEffPmPerV": 2.1141692390857467
+          },
+          {
+            "polarization": "YYZ",
+            "periodUm": 0.27789760520908369,
+            "dEffPmPerV": 2.1141692390857467
+          },
+          {
+            "polarization": "XZX",
+            "periodUm": 0.27789760520908369,
+            "dEffPmPerV": 1.112720652150393
+          },
+          {
+            "polarization": "XXZ",
+            "periodUm": 0.27789760520908369,
+            "dEffPmPerV": 1.112720652150393
+          }
+        ],
+        "error": ""
+      }
+    },
+    {
+      "name": "ZNSE_1064_1064_532_300K",
+      "description": "ZNSE SHG 1064 nm",
+      "input": {
+        "selectedCrystal": "ZNSE",
+        "temperatureKelvin": 300,
+        "pumpNm": 1064,
+        "signalNm": 1064,
+        "idlerNm": 532
+      },
+      "expected": {
+        "resultCount": 1,
+        "results": [
+          {
+            "polarization": "ZZZ",
+            "periodUm": 0.19795848897515603,
+            "dEffPmPerV": 19.847840235184513
+          }
+        ],
+        "error": ""
+      }
+    }
+  ]
+}

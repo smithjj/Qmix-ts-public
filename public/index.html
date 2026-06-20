@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qmix — Phase-matching calculator</title>
+<link rel="stylesheet" href="styles/qmix-shared.css">
+<style>
+  .btn-row { display: flex; gap: 0.5rem; }
+  .btn-row button { flex: 1; }
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar sidebar-left">
+  <a class="ad-card" href="https://as-photonics.com/book" target="_blank" rel="noopener">
+    <span class="ad-kicker">Textbook</span>
+    <img src="thebook.webp" alt="The Book">
+    <strong class="ad-title">Crystal Nonlinear Optics</strong>
+    <p><em>Crystal Nonlinear Optics: with SNLO examples (second edition)</em> teaches advanced crystal nonlinear optics from the ground up, so you can get the most out of Qmix.</p>
+    <span class="ad-cta">Learn more</span>
+  </a>
+</div>
+<div class="container">
+  <header class="page-header">
+    <div class="page-kicker">Qmix toolkit</div>
+    <h1>Qmix</h1>
+    <p class="sub">Nonlinear-crystal phase-matching calculator</p>
+    <nav class="module-nav" aria-label="Qmix modules">
+      <span class="nav-current">Qmix</span>
+      <a href="compare.html">Compare crystals</a>
+      <a href="qpm.html">QPM</a>
+      <a href="refractive-index.html">Refractive index</a>
+      <a href="custom.html">Custom crystals</a>
+    </nav>
+  </header>
+
+  <div class="card">
+    <div class="grid">
+      <div class="full">
+        <label for="crystal">Crystal</label>
+        <select id="crystal"><option value="">Loading...</option></select>
+      </div>
+      <div class="full"><div id="transPlot" class="trans-plot" style="display:none"></div></div>
+      <div id="crystalInfo" class="full" style="display:none;margin-top:-0.5rem"></div>
+      <div>
+        <label for="red1">Red 1 (nm)</label>
+        <input id="red1" type="number" value="1064" step="any">
+      </div>
+      <div>
+        <label for="red2">Red 2 (nm)</label>
+        <input id="red2" type="number" value="1064" step="any">
+      </div>
+      <div>
+        <label for="blue">Blue (nm) <span style="font-weight:400"> -  0 to compute</span></label>
+        <input id="blue" type="number" value="0" step="any">
+      </div>
+      <div>
+        <label for="temperature">Temperature (K)</label>
+        <input id="temperature" type="number" value="300" step="any">
+      </div>
+      <div>
+        <label for="plane">Principal plane</label>
+        <select id="plane">
+          <option value="XY">XY</option>
+          <option value="XZ">XZ</option>
+          <option value="YZ">YZ</option>
+        </select>
+      </div>
+      <div>
+        <label for="type">Type</label>
+        <select id="type">
+          <option value="Mix">Mix</option>
+          <option value="OPO">OPO</option>
+        </select>
+      </div>
+      <div class="full"><button id="calc">Calculate</button></div>
+      <div class="full" style="margin-top:0.25rem">
+        <label for="presets">Presets</label>
+        <select id="presets">
+          <option value=""> -  Load a preset  - </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="results" style="display:none"></div>
+  <div id="error" class="card error" style="display:none"></div>
+</div>
+<div class="sidebar sidebar-right">
+  <a class="ad-card" href="https://as-photonics.com/mlSNLO" target="_blank" rel="noopener">
+    <span class="ad-kicker">Software</span>
+    <img src="mlSNLO.webp" alt="mlSNLO">
+    <strong class="ad-title">Automate design scans</strong>
+    <p><strong>mlSNLO</strong> is a versatile MATLAB App for nonlinear optics. Write batch scripts to automate calculations and explore design spaces.</p>
+    <span class="ad-cta">Explore mlSNLO</span>
+  </a>
+</div>
+</div>
+
+<div id="saveModal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>Save preset</h2>
+    <label for="presetName">Preset name</label>
+    <input id="presetName" type="text" placeholder="My preset">
+    <div class="btn-row">
+      <button id="confirmSave">Save</button>
+      <button id="cancelSave" class="secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="manageModal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h2>Manage presets</h2>
+    <div id="presetList"></div>
+    <div class="btn-row"><button id="closeManage" class="secondary">Close</button></div>
+  </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+const BUILT_IN_PRESETS = [
+  { name: "BBO SHG 1064 nm", data: { crystal: "BBO", red1: 1064, red2: 1064, blue: 0, temperature: 300, plane: "XY", type: "Mix" } },
+  { name: "BBO SFG 800 + 1064 nm", data: { crystal: "BBO", red1: 800, red2: 1064, blue: 0, temperature: 300, plane: "XY", type: "Mix" } },
+  { name: "BBO OPO 1064 + 532 nm", data: { crystal: "BBO", red1: 1064, red2: 0, blue: 532, temperature: 300, plane: "XY", type: "OPO" } },
+  { name: "LBO XY SHG 1064 nm", data: { crystal: "LBO", red1: 1064, red2: 1064, blue: 0, temperature: 300, plane: "XY", type: "Mix" } },
+  { name: "LBO YZ SFG 1064 + 1550 nm", data: { crystal: "LBO", red1: 1064, red2: 1550, blue: 0, temperature: 300, plane: "YZ", type: "Mix" } },
+  { name: "LBO XZ SHG 1064 nm (zero d_eff)", data: { crystal: "LBO", red1: 1064, red2: 1064, blue: 0, temperature: 300, plane: "XZ", type: "Mix" } },
+  { name: "LBO XY SFG 800 + 1064 nm", data: { crystal: "LBO", red1: 800, red2: 1064, blue: 0, temperature: 300, plane: "XY", type: "Mix" } },
+  { name: "LBO YZ SFG 800 + 1064 nm", data: { crystal: "LBO", red1: 800, red2: 1064, blue: 0, temperature: 300, plane: "YZ", type: "Mix" } },
+  { name: "BBO SHG at 50\u00B0C", data: { crystal: "BBO", red1: 1064, red2: 1064, blue: 0, temperature: 323, plane: "XY", type: "Mix" } },
+];
+
+const STORAGE_KEY = "qmix-user-presets";
+
+function loadUserPresets() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveUserPresets(presets) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(presets));
+}
+
+function getFormValues() {
+  return {
+    crystal: document.getElementById("crystal").value,
+    red1: parseFloat(document.getElementById("red1").value),
+    red2: parseFloat(document.getElementById("red2").value),
+    blue: parseFloat(document.getElementById("blue").value),
+    temperature: parseFloat(document.getElementById("temperature").value),
+    plane: document.getElementById("plane").value,
+    type: document.getElementById("type").value,
+  };
+}
+function setFormValues(v) {
+  document.getElementById("crystal").value = v.crystal;
+  document.getElementById("red1").value = v.red1;
+  document.getElementById("red2").value = v.red2;
+  document.getElementById("blue").value = v.blue;
+  document.getElementById("temperature").value = v.temperature;
+  document.getElementById("plane").value = v.plane;
+  document.getElementById("type").value = v.type;
+}
+
+function rebuildPresetDropdown(selectedName) {
+  const sel = document.getElementById("presets");
+  sel.innerHTML = "<option value=\"\">\u2014 Load a preset \u2014</option>";
+  const userPresets = loadUserPresets();
+  const hasUser = Object.keys(userPresets).length > 0;
+
+  if (BUILT_IN_PRESETS.length) {
+    const g1 = document.createElement("optgroup");
+    g1.label = "Built-in";
+    for (const p of BUILT_IN_PRESETS) {
+      const o = document.createElement("option");
+      o.value = "__builtin__" + p.name;
+      o.textContent = p.name;
+      if (selectedName === p.name && !hasUser) o.selected = true;
+      g1.appendChild(o);
+    }
+    sel.appendChild(g1);
+  }
+  if (hasUser) {
+    const g2 = document.createElement("optgroup");
+    g2.label = "My Presets";
+    for (const [name] of Object.entries(userPresets)) {
+      const o = document.createElement("option");
+      o.value = "__user__" + name;
+      o.textContent = name;
+      if (selectedName === name) o.selected = true;
+      g2.appendChild(o);
+    }
+    sel.appendChild(g2);
+  }
+
+  const sep = document.createElement("option");
+  sep.disabled = true; sep.textContent = "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500";
+  sel.appendChild(sep);
+
+  const saveOpt = document.createElement("option");
+  saveOpt.value = "__save__";
+  saveOpt.textContent = "\u2606  Save current as preset\u2026";
+  sel.appendChild(saveOpt);
+
+  if (hasUser) {
+    const manageOpt = document.createElement("option");
+    manageOpt.value = "__manage__";
+    manageOpt.textContent = "\u2699  Manage presets\u2026";
+    sel.appendChild(manageOpt);
+  }
+}
+
+function applyPreset(name, data) {
+  setFormValues(data);
+  document.getElementById("results").style.display = "none";
+  document.getElementById("error").style.display = "none";
+  rebuildPresetDropdown(name);
+  loadTransmission(data.crystal);
+  loadCrystalInfo(data.crystal);
+}
+
+function saveCurrentPreset(name) {
+  const v = getFormValues();
+  const presets = loadUserPresets();
+  presets[name] = { crystal: v.crystal, red1: v.red1, red2: v.red2, blue: v.blue, temperature: v.temperature, plane: v.plane, type: v.type };
+  saveUserPresets(presets);
+  rebuildPresetDropdown(name);
+}
+
+function deletePreset(name) {
+  const presets = loadUserPresets();
+  delete presets[name];
+  saveUserPresets(presets);
+  rebuildPresetDropdown();
+}
+
+function showManageModal() {
+  const list = document.getElementById("presetList");
+  const presets = loadUserPresets();
+  const entries = Object.entries(presets);
+  if (entries.length === 0) {
+    list.innerHTML = "<p style=\"color:#6e6e73;text-align:center\">No saved presets.</p>";
+  } else {
+    list.innerHTML = entries.map(([name]) =>
+      `<div class="preset-item"><span>${esc(name)}</span><button class="danger" data-name="${esc(name)}">Delete</button></div>`
+    ).join("");
+    list.querySelectorAll(".preset-item button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        deletePreset(btn.getAttribute("data-name"));
+        showManageModal();
+      });
+    });
+  }
+  document.getElementById("manageModal").style.display = "flex";
+}
+document.getElementById("closeManage").addEventListener("click", () => {
+  document.getElementById("manageModal").style.display = "none";
+});
+
+function showSaveModal() {
+  document.getElementById("presetName").value = "";
+  document.getElementById("saveModal").style.display = "flex";
+  document.getElementById("presetName").focus();
+}
+document.getElementById("cancelSave").addEventListener("click", () => {
+  document.getElementById("saveModal").style.display = "none";
+});
+document.getElementById("confirmSave").addEventListener("click", () => {
+  const name = document.getElementById("presetName").value.trim();
+  if (!name) return;
+  saveCurrentPreset(name);
+  document.getElementById("saveModal").style.display = "none";
+});
+
+async function loadTransmission(crystal) {
+  const container = document.getElementById("transPlot");
+  try {
+    const res = await fetch("/api/transmission/" + encodeURIComponent(crystal));
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.style.display = "block";
+    const trace = {
+      x: data.wavelengthsNm,
+      y: data.transmission,
+      type: "scatter",
+      mode: "lines",
+      line: { color: "#0071e3", width: 2 },
+      fill: "tozeroy",
+      fillcolor: "rgba(0,113,227,0.08)",
+      hovertemplate: "%{x:.0f} nm<br>%{y:.0%}",
+    };
+    const layout = {
+      margin: { t: 36, r: 8, b: 36, l: 54 },
+      xaxis: { title: "Wavelength (nm)", showgrid: true, gridcolor: "#eee" },
+      yaxis: { title: "Transmission", range: [0, 1], showgrid: true, gridcolor: "#eee" },
+      paper_bgcolor: "transparent",
+      plot_bgcolor: "transparent",
+      font: { family: "-apple-system, BlinkMacSystemFont, sans-serif", size: 12, color: "#6e6e73" },
+      hovermode: "x",
+    };
+    const config = { responsive: true, displayModeBar: false };
+
+    if (container.data && container.layout) {
+      Plotly.react(container, [trace], layout, config);
+    } else {
+      Plotly.newPlot(container, [trace], layout, config);
+    }
+  } catch {
+    container.style.display = "none";
+  }
+}
+
+async function loadCrystalInfo(crystal) {
+  const container = document.getElementById("crystalInfo");
+  try {
+    const body = { crystal };
+    const custom = getCustomCrystals();
+    if (custom) body.customCrystals = custom;
+    const res = await fetch("/api/crystal-info/" + encodeURIComponent(crystal));
+    if (!res.ok) throw new Error();
+    const info = await res.json();
+    const lines = [];
+
+    lines.push("Crystal = " + (info.crystal_description || crystal));
+    const type = info.iso_uni_or_bi || "";
+    const cls = info.crystal_class || "";
+    lines.push("(" + type + ") class " + cls);
+    const range = info.wavelength_range;
+    if (range) {
+      const r = Array.isArray(range) ? range.join(" - ") : range;
+      lines.push("Wavelength range = " + r + " nm");
+    }
+    lines.push("");
+
+    if (info.ref_ind_source) lines.push("n ref.: " + info.ref_ind_source);
+    if (info.thermo_optic_source) lines.push("thermo-optic ref.: " + info.thermo_optic_source);
+    lines.push("");
+
+    if (info.d_eff1) lines.push("d_eff(1 e wave)  = " + info.d_eff1);
+    if (info.d_eff2) lines.push("d_eff(2 e waves) = " + info.d_eff2);
+    if (info.d_eff1 || info.d_eff2) lines.push("");
+
+    if (info.d_string) {
+      const ds = info.d_string.split("\\n").join("\n");
+      lines.push(ds);
+      lines.push("");
+    }
+    if (info.d_source) lines.push("d ref. = " + info.d_source);
+    lines.push("");
+
+    if (info.thermal_conductivity) {
+      const raw = Array.isArray(info.thermal_conductivity) ? info.thermal_conductivity : [info.thermal_conductivity];
+      const cleaned = raw.filter(v => v != null && v !== "nan").join(",");
+      if (cleaned) {
+        const tcs = info.thermal_conductivity_source || "";
+        const label = type.includes("biaxial") ? "k[x,y,z]" : "k[perp,parallel]";
+        lines.push("Therm. cond. " + label + " = [" + cleaned + "] W/m-K " + tcs);
+      }
+    }
+    if (info.thermal_expansion) {
+      const raw = Array.isArray(info.thermal_expansion) ? info.thermal_expansion : [info.thermal_expansion];
+      const cleaned = raw.filter(v => v != null && v !== "nan").join(",");
+      if (cleaned) {
+        const tes = info.thermal_expansion_source || "";
+        const label = type.includes("biaxial") ? "alpha[x,y,z]" : "alpha[perp,parallel]";
+        lines.push("Therm. exp.  " + label + " = [" + cleaned + "]E-6 /K " + tes);
+      }
+    }
+    if (info.specific_heat != null && info.specific_heat !== "nan") {
+      const shs = info.specific_heat_source || "";
+      lines.push("Specific heat = " + info.specific_heat + " J/kg-K " + shs);
+    }
+    if (info.density != null && info.density !== "nan") {
+      lines.push("Density = " + info.density + " kg/m^3");
+    }
+    if (info.transmission_source) {
+      lines.push("Transmission ref.: " + info.transmission_source);
+    }
+
+    container.innerHTML = "<pre class=\"crystal-info\">" + esc(lines.join("\n")) + "</pre>";
+    container.style.display = "block";
+  } catch {
+    container.style.display = "none";
+  }
+}
+
+document.getElementById("calc").addEventListener("click", async () => {
+  const btn = document.getElementById("calc");
+  btn.disabled = true; btn.textContent = "Calculating\u2026";
+  document.getElementById("crystalInfo").style.display = "none";
+  document.getElementById("results").style.display = "none";
+  document.getElementById("error").style.display = "none";
+
+  try {
+    const body = getFormValues();
+    const custom = getCustomCrystals();
+    if (Object.keys(custom).length > 0) body.customCrystals = custom;
+    const res = await fetch("/api/calculate", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+    });
+      const data = await res.json();
+
+      if (data.error) {
+      document.getElementById("error").textContent = "Error: " + (data.error || res.statusText);
+      document.getElementById("error").style.display = "block";
+      return;
+    }
+
+    const container = document.getElementById("results");
+    if (data.length === 0) {
+      container.innerHTML = "<div class=\"result\" style=\"text-align:center;color:#6e6e73\">No phase-matching solutions found</div>";
+    } else {
+      container.innerHTML = data.map(r => {
+        const w = r.wavelengthsNm;
+        const first = `${w[0].toFixed(2).padStart(8)}(${r.polarizations[0]}) + ${w[1].toFixed(2).padStart(8)}(${r.polarizations[1]})  = ${w[2].toFixed(2).padStart(8)}(${r.polarizations[2]})`;
+        const angle = `At theta,phi        =  ${r.thetaDeg.toFixed(2).padStart(8)} ${r.phiDeg.toFixed(2).padStart(8)} deg.`;
+        const deff = `d_eff               =  ${fmtExp(r.dEffPmPerV, 12)}    pm/V`;
+        const rest = r.dEffPmPerV !== 0 ? "\n" + fmtExtra(r) : "";
+        return `<div class="result">${esc(first + "\n" + angle + "\n" + deff + rest)}</div>`;
+      }).join("");
+    }
+    container.style.display = "block";
+  } catch (e) {
+    document.getElementById("error").textContent = "Error: " + e.message;
+    document.getElementById("error").style.display = "block";
+  } finally {
+    btn.disabled = false; btn.textContent = "Calculate";
+  }
+});
+
+document.getElementById("crystal").addEventListener("change", function() {
+  loadTransmission(this.value);
+  loadCrystalInfo(this.value);
+  clearResults();
+});
+
+for (const id of ["red1", "red2", "blue", "temperature", "plane", "type"]) {
+  document.getElementById(id).addEventListener("change", clearResults);
+  document.getElementById(id).addEventListener("input", clearResults);
+}
+
+function clearResults() {
+  document.getElementById("results").style.display = "none";
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("error").style.display = "none";
+}
+
+document.getElementById("presets").addEventListener("change", function() {
+  const val = this.value;
+  if (!val) return;
+  this.value = "";
+
+  if (val === "__save__") { showSaveModal(); return; }
+  if (val === "__manage__") { showManageModal(); return; }
+
+  if (val.startsWith("__builtin__")) {
+    const name = val.slice("__builtin__".length);
+    const match = BUILT_IN_PRESETS.find(p => p.name === name);
+    if (match) applyPreset(name, match.data);
+  } else if (val.startsWith("__user__")) {
+    const name = val.slice("__user__".length);
+    const presets = loadUserPresets();
+    if (presets[name]) applyPreset(name, presets[name]);
+  }
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    document.getElementById("saveModal").style.display = "none";
+    document.getElementById("manageModal").style.display = "none";
+  }
+  if (e.key === "Enter") {
+    if (document.getElementById("saveModal").style.display === "flex") {
+      document.getElementById("confirmSave").click();
+    }
+  }
+});
+
+function fmtExtra(r) {
+  const wo = r.walkoffMrad.map(v => v.toFixed(4).padStart(8)).join(" ");
+  const pv = r.phaseVelocityIndex.map(v => v.toFixed(4).padStart(8)).join(" ");
+  const gv = r.groupVelocityIndex.map(v => v.toFixed(4).padStart(8)).join(" ");
+  const gdd = r.gddFs2PerMm.map(v => v.toFixed(2).padStart(8)).join(" ");
+  return `Walkoff [mrad]      =  ${wo}\n` +
+    `Phase velocities    = c/${pv}\n` +
+    `Group velocities    = c/${gv}\n` +
+    `GrpDelDisp(fs^2/mm) =  ${gdd}\n` +
+    `Temperature range   =  ${Math.abs(r.temperatureRangeKCm) > 1000 ? "********" : Math.abs(r.temperatureRangeKCm).toFixed(3).padStart(8)}        K-cm`;
+}
+function fmtExp(v, w) {
+  if (v === 0) return " ".repeat(w) + "0.000E+00";
+  return v.toExponential(3).replace(/e([+-])0?(\d+)$/i, "E$1$2").padStart(w);
+}
+function esc(s) { return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+(async () => {
+  const crystals = await fetch("/api/crystals").then(r => r.json());
+  const custom = getCustomCrystals();
+  const all = [...crystals, ...Object.keys(custom)];
+  const sel = document.getElementById("crystal");
+  sel.innerHTML = all.map(c => `<option value="${c}">${c}${custom[c] ? " \u2606" : ""}</option>`).join("");
+  sel.value = "BBO";
+  rebuildPresetDropdown();
+  loadTransmission("BBO");
+  loadCrystalInfo("BBO");
+})();
+
+function getCustomCrystals() {
+  try { return JSON.parse(localStorage.getItem("qmix-custom-crystals")) || {}; }
+  catch { return {}; }
+}
+</script>
+</body>
+</html>

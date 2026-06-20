@@ -1,0 +1,2460 @@
+{
+  "AAS": {
+    "crystal_description": "Ag_3AsS_3 or Proustite",
+    "wavelength_range": [
+      600,
+      13000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Lucy, Appl. Opt. vol 11, 1329 (1972)",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)*sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0    0      0   0     11.3  -18   |\nd=|-18    18     0   11.3  0      0    |\n  | 11.3  11.3   ?   0     0      0    |",
+    "d_source": "Hulme, Appl. Phys. Lett. v10, p133 (1967); Chemla, Opt. Comm. v7 p225 (1973)",
+    "thermal_conductivity": [
+      0.092,
+      1.11
+    ],
+    "thermal_conductivity_source": "",
+    "thermal_expansion": [
+      16,
+      12
+    ],
+    "thermal_expansion_source": "",
+    "specific_heat": null,
+    "specific_heat_source": "",
+    "density": 5615,
+    "transmission_source": ""
+  },
+  "ADA": {
+    "crystal_description": "NH_4H_2AsO_4 or Ammonium dihydrogen arsenate",
+    "wavelength_range": [
+      220,
+      1200
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72, p95 (1987)",
+    "thermo_optic_source": "Barnes, JOSA v72, p895 (1982)",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta + 2rho)cos(2phi)",
+    "d_string": "  |  0   0   0   0.39  0     0    |\nd=|  0   0   0   0     0.39  0    |\n  |  0   0   0   0     0     0.39 |",
+    "d_source": "estimated",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": "",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": "",
+    "specific_heat": null,
+    "specific_heat_source": "",
+    "density": null,
+    "transmission_source": ""
+  },
+  "ADP": {
+    "crystal_description": "NH_4H_2PO_4 or Ammonium dihydrogen phosphate",
+    "wavelength_range": [
+      184,
+      1500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Ghosh, IEEE JQE v18, p143 (1982)",
+    "thermo_optic_source": "same",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta + 2rho)cos(2phi)",
+    "d_string": "  |  0   0   0   0.55  0     0    |\nd=|  0   0   0   0     0.55  0    |\n  |  0   0   0   0     0     0.55 |",
+    "d_source": "Levine, Appl. Phys. Lett. v20 p272 (1972)",
+    "thermal_conductivity": [
+      1.3,
+      0.7
+    ],
+    "thermal_expansion": [
+      27.2,
+      10.7
+    ],
+    "specific_heat": 508,
+    "density": 1799,
+    "thermal_conductivity_source": " Ref: Krishnan in Progress in crystal physics (1958)",
+    "thermal_expansion_source": " Ref: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat_source": " Ref: Barnes, JOSAB v12, p124 (1995)",
+    "transmission_source": ""
+  },
+  "AGGS": {
+    "crystal_description": "AgGaGeS_4",
+    "wavelength_range": [
+      700,
+      13000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Miyata, Appl. Opt. v46, p5728 (2007)",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  | 15  8  8  0  0  0 |\nd=|  0  0  0  0  0  8 |\n  |  0  0  0  0  8  0 |",
+    "d_source": "Petrov, Opt. Mat. v26, p217 (2004)",
+    "thermal_conductivity": [
+      0.629,
+      0.495,
+      0.336
+    ],
+    "thermal_conductivity_source": " Ref: Wu, Crystal Growth and Design v20, p314 (2020).",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": "",
+    "specific_heat": 448,
+    "specific_heat_source": "",
+    "density": 3800,
+    "transmission_source": "Petrov, Opt. Mat. v26, p217 (2004)."
+  },
+  "AGGSE": {
+    "crystal_description": "AgGaGe5_Se_12",
+    "wavelength_range": [
+      600,
+      16000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Petrov, Appl. Opt. v43 p4590 (2004)",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  |  ?  28  14.5  0    0   0 |\nd=|  0   0    0   0    0  28 |\n  |  0   0    0   0  14.5  0 |",
+    "d_source": "Petrov, Appl. Opt. v43 p4590 (2004)",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": "",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": "",
+    "specific_heat": null,
+    "specific_heat_source": "",
+    "density": 4780,
+    "transmission_source": "Petrov, Appl. Opt. v43 p4590 (2004)."
+  },
+  "AGS": {
+    "crystal_description": "AgGaS_2 Silver thiogallate",
+    "wavelength_range": [
+      500,
+      13000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Kato, Appl. Opt. v62, p6375 (2023).",
+    "thermo_optic_source": "same",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta + 2rho)cos(2phi)",
+    "d_string": "  |  0   0   0   13    0     0    |\nd=|  0   0   0   0     13    0    |\n  |  0   0   0   0     0     13   |",
+    "d_source": "Levine, Appl. Phys. Lett. v20, p272 (1972); Kupecek, IEEE JQE v10, p540 (1974).",
+    "thermal_conductivity": [
+      1.5,
+      1.4
+    ],
+    "thermal_conductivity_source": " Ref: Beasley, Appl. Opt. v33, p1000 (1994)",
+    "thermal_expansion": [
+      12.7,
+      -13.2
+    ],
+    "thermal_expansion_source": " Ref: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": 400,
+    "specific_heat_source": " Ref: Barnes, JOSAB v12, p124 (1995)",
+    "density": 4701,
+    "transmission_source": "Rotermund, Opt. Comm. v185 p177 (2000)."
+  },
+  "AGSE": {
+    "crystal_description": "AgGaSe_2 Silver gallium selenide",
+    "wavelength_range": [
+      710,
+      18000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Roberts, Appl. Opt. v35, p4677 (1996).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta + 2rho)cos(2phi)",
+    "d_string": "  |  0   0   0   33    0     0    |\nd=|  0   0   0   0     33    0    |\n  |  0   0   0   0     0     33   |",
+    "d_source": "Levine, Appl. Phys. Lett. v20, p272 (1972); Boyd, IEEE JQE v8, p900 (1972).",
+    "thermal_conductivity": [
+      1.1,
+      1
+    ],
+    "thermal_conductivity_source": " Ref: Beasley, Appl. Opt. v33, p1000 (1994)",
+    "thermal_expansion": [
+      14,
+      -11.7
+    ],
+    "thermal_expansion_source": " Ref: Aggarwal, Appl. Opt. v44, p2673 (2005).",
+    "specific_heat": 290,
+    "specific_heat_source": " Ref: Barnes, JOSAB v12, p124 (1995)",
+    "density": 5741,
+    "transmission_source": ""
+  },
+  "ASS": {
+    "crystal_description": "Ag_3SbS_3 or Pyrargyrite",
+    "wavelength_range": [
+      700,
+      14000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Feichtner, Appl. Opt. v9, p1716 (1970).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0    0    0  0    8.4   -9.2 |\nd=| -9.2  9.2  0  8.4  0     0    |\n  |  8.4  8.4  ?  0    0     0    |",
+    "d_source": "Levine, Appl. Phys. Lett. v20, p272 (1972); Feichtner, Appl. Opt. v11, p993 (1972); Gandrud, Opt. Comm. v1, p187 (1970). ",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": "",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": "",
+    "specific_heat": null,
+    "specific_heat_source": "",
+    "density": null,
+    "transmission_source": ""
+  },
+  "BBO": {
+    "crystal_description": "beta-BaB_2O_4 or beta-borium borate",
+    "wavelength_range": [
+      185,
+      2600
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Tamosauskas, Opt. Mat. Exp. 8, p1410 (2018)",
+    "thermo_optic_source": "Kato, SPIE v. 11670 (2021)",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0    0     0  0     0.08  2.2  |\nd=| 2.2  -2.2   0  0.08  0     0    |\n  | 0.08  0.08  ?  0     0     0    |",
+    "d_source": "Eckardt, IEEE JQE v26 p922 (1990). ",
+    "thermal_conductivity": [
+      1.2,
+      1.6
+    ],
+    "thermal_conductivity_source": " Ref.: Beasley, Appl. Opt. v33 p1000 (1994).",
+    "thermal_expansion": [
+      0.5,
+      33.3
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": 490,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995).",
+    "density": 3850,
+    "transmission_source": "Bhar, Appl. Phys. Lett. v58 p231 (1991)."
+  },
+  "BBPO": {
+    "crystal_description": "BaBPO_5 or borium borophosphate",
+    "wavelength_range": [
+      180,
+      3300
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Pan, JOSAB v21 p761 (2004). Sellmeier range = 400-1000 nm.",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  | 0.19  -0.19  0  0  0  0     |\nd=| 0     0      0  0  0  -0.19 |\n  | 0     0      0  0  0  0     |",
+    "d_source": "Pan, JOSAB v21 p761 (2004).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Pan, JOSAB v21 p761 (2004)."
+  },
+  "BPO": {
+    "crystal_description": "BPO_4 or boron phosphate",
+    "wavelength_range": [
+      135,
+      3500
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "4(bar)",
+    "ref_ind_source": "Zhang, JOSAB v28 p2236 (2011). Sellmeier range = 250 - 1500 nm.",
+    "thermo_optic_source": " unknown",
+    "d_eff1": "-(d_xyz sin(2phi) + d_zxx cos(2phi))sin(theta+rho)",
+    "d_eff2": "(d_xyz cos(2phi) - d_zxx sin(2phi))sin(2theta + 2rho)",
+    "d_string": "  | 0  0  0  0.76  0     0     |\nd=| 0  0  0  0     0.76  0     |\n  | 0  0  0  0     0     0.76  |",
+    "d_source": "Zhang, JOSAB v28 p2236 (2011).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Zhang, JOSAB v28 p2236 (2011)."
+  },
+  "B2GGS": {
+    "crystal_description": "Ba_2Ga_8GeS_16",
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "6mm",
+    "ref_ind_source": "Kato, JOSAB v40 pA17 (2023).",
+    "wavelength_range": [
+      420,
+      12000
+    ],
+    "thermo_optic_source": "ref_ind_source",
+    "d_eff1": "d_zxx sin(theta+rho)",
+    "d_eff2": "0",
+    "d_string": "  |    0    0  0    0 13.0  0|\nd=|    0    0  0 13.0    0  0|\n  | 13.0 13.0  ?    0    0  0|",
+    "d_source": "Badikov, J. Alloys and Compounds v907 164378 (2022).",
+    "thermal_conductivity": [
+      0,
+      0
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "d_source"
+  },
+  "BGS": {
+    "crystal_description": "BaGa_4S_7 Barium thiogallate",
+    "ref_ind_source": "Kato, AO v60, p6600 (2021).",
+    "wavelength_range": [
+      620,
+      9200
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "thermo_optic_source": "Umemura, SPIE v9347 p93470N-1 (2015).",
+    "d_string": "  |12.6  5.1   5.7   0    0    0   |\nd=| 0     0     0    0    0   5.1  |\n  | 0     0     0    0   5.7   0   |",
+    "d_source": "Badikov, Opt. Mat. Exp. v1 p316 (2011). Lin, Cryst. Growth & Design v9 p1186 (2009).",
+    "thermal_conductivity": [
+      1.68,
+      1.45,
+      1.58
+    ],
+    "thermal_conductivity_source": " Ref: Guo, Opt. Mat. v36 p2007 (2014).",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Badikov, Opt. Mat. Exp. v1 p316 (2011)."
+  },
+  "BGGSE": {
+    "crystal_description": "BaGa_2GeSe_6",
+    "wavelength_range": [
+      580,
+      16000
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "3",
+    "ref_ind_source": "Kato, Appl. Opt. v57 p7440 (2018).",
+    "thermo_optic_source": "Kato, Appl. Opt. v58 p9709 (2019).",
+    "d_eff1": "(d_xxx cos(3phi) - d_yyy sin(3phi))cos(theta + rho) + d_zxx sin(theta + rho)",
+    "d_eff2": "(d_xxx sin(3phi) + d_yyy cos(3phi))cos^2(theta + rho)",
+    "d_string": "  |  23.6  -23.6   0      0  18.3   18.5|\nd=|  18.5  -18.5   0   18.3     0  -23.6|\n  |  18.3   18.3   ?      0     0      0|",
+    "d_source": "Kato, Opt. Lett. v45, p2136 (2020).",
+    "thermal_conductivity": [
+      1.88,
+      2.17
+    ],
+    "thermal_conductivity_source": " Petrov, JOSAB v38, pB46 (2021)",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Badikov, Opt. Mat. Exp. v6 p2933 (2016)."
+  },
+  "BGSE": {
+    "crystal_description": "BaGa_4Se_7 Barium gallium selenate",
+    "wavelength_range": [
+      470,
+      17000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "m",
+    "ref_ind_source": "Kato, Opt. Mat. Exp. v13, p1852 (2023).",
+    "thermo_optic_source": " same",
+    "d_string": "    |    0,    0,     0,     0,  1.5,   5.3 |\nd = |  5.3, -6.2, -14.2,  -5.0,    0,     0 |\n    |  1.5, -5.0,     0, -14.2,    0,     0 |",
+    "d_source": "Guo, Opt. Lett. v47, p842-845 (2022)",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Boursier, Opt. Lett. v41, p2731 (2016)."
+  },
+  "BIBO": {
+    "crystal_description": "BiB_3O_6 or bismuth borate",
+    "wavelength_range": [
+      286,
+      2500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "2",
+    "ref_ind_source": "Umemura, Opt. Mater. v30 p532 (2007).",
+    "thermo_optic_source": " same",
+    "d_string": "  | 2.53  2.93  -1.93  1.63   0     0    |\nd=| 0      0      0     0    1.67  3.48  |\n  | 0      0      0     0   -1.58  1.67  |",
+    "d_source": "Ghotbi, Opt. Exp. v12 p6002 (2004).",
+    "thermal_conductivity": [
+      7.8,
+      6.95,
+      17.3
+    ],
+    "thermal_conductivity_source": " Ref.: Reidel Opt. Exp. v22 p17607 (2014).",
+    "thermal_expansion": [
+      50.4,
+      0,
+      "0 0",
+      -16.1,
+      -7.26,
+      0,
+      -7.26,
+      "-1.7]"
+    ],
+    "thermal_expansion_source": "Ref.: Teng, J. Appl. Phys. v91 p3618 (2002).",
+    "specific_heat": 500,
+    "specific_heat_source": " Ref.: Teng, J. Crystal Growth v233 p282 (2001).",
+    "density": 5033,
+    "transmission_source": "Teng, J. Crystal Growth v233 p282 (2001)."
+  },
+  "CBBF": {
+    "crystal_description": "CsBe_2BO_3F_2 or cesium fluoroboratoberyllate",
+    "wavelength_range": [
+      150,
+      3500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Huang, JOSAB v28 p2186 (2011).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  | 0.5  -0.5  0  0    0     0    |\nd=|  0    0    0  0    0    -0.5  |\n  |  0    0    0  0    0     0    |",
+    "d_source": "Huang, JOSAB v28 p2186 (2011).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Huang, JOSAB v28 p2186 (2011)."
+  },
+  "CBO": {
+    "crystal_description": "CsB_3O_5 or cesium triborate",
+    "wavelength_range": [
+      170,
+      3000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "222",
+    "ref_ind_source": "Kato, IEEE JQE v31 p169 (1995).",
+    "thermo_optic_source": "Zhang, Opt. Lett. v38 p1594 (2013).",
+    "d_string": "  |  0   0   0  1.1  0    0    |\nd=|  0   0   0  0    1.1  0    |\n  |  0   0   0  0    0    1.1  |",
+    "d_source": "Wu, Opt. Lett. v22 p1840 (1997).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Chang, J. Crystal Growth v277 p298 (2005)."
+  },
+  "CDA": {
+    "crystal_description": "CsH_2AsO_4 or cesium dihydrogen arsenate",
+    "wavelength_range": [
+      260,
+      1430
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "Barnes, JOSA v72 p895 (1982).",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.4  0     0    |\nd=|  0  0  0  0    0.4   0    |\n  |  0  0  0  0    0     0.4  |",
+    "d_source": "Kato, IEEE JQE v16 p1288 (1980).",
+    "thermal_conductivity": [
+      1.5,
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 484,
+    "specific_heat_source": " Ref.: Barnes, JOSA v72 p895 (1982).",
+    "density": 3620,
+    "transmission_source": ""
+  },
+  "CDSE": {
+    "crystal_description": "CdSe or cadmium selenide",
+    "wavelength_range": [
+      750,
+      16500
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "6mm",
+    "ref_ind_source": "Miyata, Opt. Mat. Exp. v12, p 963 (2022)",
+    "thermo_optic_source": "Miyata, Opt. Mat. Exp. v12, p 963 (2022)",
+    "d_eff1": "d_xxz sin(theta+rho)",
+    "d_eff2": "0",
+    "d_string": "  |  0   0   0  0   18  0  |\nd=|  0   0   0  18  0   0  |\n  |  18  18  ?  0   0   0  |",
+    "d_source": "Boyd, Appl. Phys. Lett. v18 p446 (1971).",
+    "thermal_conductivity": [
+      6.2,
+      6.9
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      4.4,
+      2.45
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 258,
+    "specific_heat_source": " ",
+    "density": 5672,
+    "transmission_source": "Finsterbusch, Appl. Phys. B v79 p457 (2004)"
+  },
+  "CGA": {
+    "crystal_description": "CdGeAs_2 or cadmium germanium arsenide",
+    "wavelength_range": [
+      2400,
+      18000
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Kato, JOSAB v42 7, A24-A28 (2025)",
+    "thermo_optic_source": "Kato, JOSAB v42 7, A24-A28 (2025)",
+    "d_eff1": "d_xyz sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  235  0     0    |\nd=|  0  0  0  0    235   0    |\n  |  0  0  0  0    0     235  |",
+    "d_source": "Levine, Appl. Phys. Lett. v20 p272 (1972); Boyd, IEEE JQE v8 p900 (1972).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      8.4,
+      0.25
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 5615,
+    "transmission_source": "Vodopyanov, Opt. Comm. v202 p205 (2002)."
+  },
+  "CLBO": {
+    "crystal_description": "CsLiB_6O_10 or cesium lithium borate",
+    "wavelength_range": [
+      180,
+      2750
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Umemura, Opt. Soc. Am. proceedings ASSL p715 (1999).",
+    "thermo_optic_source": "same",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.61  0     0     |\nd=|  0  0  0  0     0.61  0     |\n  |  0  0  0  0     0     0.74  |",
+    "d_source": "Shoji, JOSAB v18 p302 (2001).",
+    "thermal_conductivity": [
+      2,
+      2.2
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      21,
+      -17
+    ],
+    "thermal_expansion_source": "Yamada, Jpn. J. Appl. Phys. v39, p1256 (2000).",
+    "specific_heat": 930,
+    "specific_heat_source": " ",
+    "density": 2461,
+    "transmission_source": ""
+  },
+  "CSP": {
+    "crystal_description": "CdSiP_2 or cadmium silica phosphate",
+    "wavelength_range": [
+      950,
+      9500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Wei, Opt. Mat. Exp. v8 p235 (2018).",
+    "thermo_optic_source": "same",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  84  0   0   |\nd=|  0  0  0  0   84  0   |\n  |  0  0  0  0   0   84  |",
+    "d_source": "Schunemann, Proc. ASSP paper MG6 (2008).",
+    "thermal_conductivity": [
+      13.6,
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      21,
+      -17
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 446,
+    "specific_heat_source": " ",
+    "density": 4700,
+    "transmission_source": "Peremans, Opt. Lett. v43 p3053 (2009)."
+  },
+  "CTA": {
+    "crystal_description": "CsTiOAsO_4 or cesium titanyl arsenate",
+    "wavelength_range": [
+      350,
+      5300
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Mikami, J. Appl. Phys. v109 p23108 (2011).",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0    0    0     0    2.1  0  |\nd=|  0    0    0     3.4  0    0  |\n  |  2.1  3.4  18.1  0    0    0  |",
+    "d_source": "Cheng, Appl. Phys. Lett. v63 p2618 (1993).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "CTW": {
+    "crystal_description": "Cs_2TeW_3O_12",
+    "wavelength_range": [
+      410,
+      5310
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "6",
+    "ref_ind_source": "Zhao, Opt. Mat. Exp. v6 p451 (2016).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_zxx sin(theta+rho)",
+    "d_eff2": "0",
+    "d_string": "  |  0    0    0     0    6.2  0  |\nd=|  0    0    0     6.2  0    0  |\n  |  6.2  6.2  4.3   0    0    0  |",
+    "d_source": "Zhao, Opt. Mat. Exp. v6 p451 (2016).",
+    "thermal_conductivity": [
+      2.33,
+      0.8
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "DADA": {
+    "crystal_description": "ND_4D_2AsO_4 or deuterated ammonium dihydrogen arsenate",
+    "wavelength_range": [
+      220,
+      1200
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.39  0     0     |\nd=|  0  0  0  0     0.39  0     |\n  |  0  0  0  0     0     0.39  |",
+    "d_source": "estimated",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "DADP": {
+    "crystal_description": "ND_4D_2PO_4 or deuterated ammonium dihydrogen phosphate",
+    "wavelength_range": [
+      220,
+      1700
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.52  0     0     |\nd=|  0  0  0  0     0.52  0     |\n  |  0  0  0  0     0     0.52  |",
+    "d_source": "Suvorov, JETP v26 p23 (1968).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 1885,
+    "transmission_source": "Genbo, J. Crystal Growth v242 p129 (2002)."
+  },
+  "DCDA": {
+    "crystal_description": "CsD_2AsO_4 or deuterated cesium dihydrogen arsenate",
+    "wavelength_range": [
+      270,
+      1660
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "Barnes, JOSA v72 p895 (1982).",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.40  0     0     |\nd=|  0  0  0  0     0.40  0     |\n  |  0  0  0  0     0     0.40  |",
+    "d_source": "Kato, IEEE JQE v10 p616 (1974).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 3640,
+    "transmission_source": ""
+  },
+  "DKDP": {
+    "crystal_description": "KD_2PO_4 or deuterated potassium dihydrogen phosphate",
+    "wavelength_range": [
+      200,
+      2000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Kirby, JOSAB v4 p1072 (1987).",
+    "thermo_optic_source": "Ghosh, IEEE JQE v18 p143 (1982).",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.40  0     0     |\nd=|  0  0  0  0     0.40  0     |\n  |  0  0  0  0     0     0.40  |",
+    "d_source": "Levine, Appl. Phys. Lett. v20 p272 1972; Kielich, Opto-electr. v2 p125 (1970).",
+    "thermal_conductivity": [
+      1.9,
+      2.1
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      19,
+      44
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 2355,
+    "transmission_source": "unknown"
+  },
+  "DLAP": {
+    "crystal_description": "L-Arginine phosphate",
+    "wavelength_range": [
+      230,
+      1200
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "2",
+    "ref_ind_source": "Eimerl, IEE JQE v25 p179 (1989).",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0    0     0      -0.58  0     0.4    |\nd=|  0.4  0.37  -0.84  0      -0.58  0     |\n  |  0    0     0      -0.84  0     -0.58  |",
+    "d_source": "Eimerl, IEEE JQE v25 p179 (1989).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Eimerl, IEEE JQE v25 p179 (1989)."
+  },
+  "DRDA": {
+    "crystal_description": "RhD_2AsO_4 or deuterated rubidium dihydrogen arsenate",
+    "wavelength_range": [
+      260,
+      1700
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.39  0     0     |\nd=|  0  0  0  0     0.39  0     |\n  |  0  0  0  0     0     0.39  |",
+    "d_source": "Kato, IEEE JQE v10 p622 (1974).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "DRDP": {
+    "crystal_description": "RhD_2PO_4 or deuterated rubidium dihydrogen phosphate",
+    "wavelength_range": [
+      220,
+      1500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.38  0     0     |\nd=|  0  0  0  0     0.38  0     |\n  |  0  0  0  0     0     0.38  |",
+    "d_source": "estimated",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "GAAS": {
+    "crystal_description": "GaAs or gallium arsenide",
+    "wavelength_range": [
+      997,
+      17000
+    ],
+    "iso_uni_or_bi": "isotropic",
+    "crystal_class": "4(bar)3m",
+    "ref_ind_source": "Skauli, J. Appl. Phys. v94 p6447 (2003).",
+    "thermo_optic_source": "n(T) same",
+    "d_string": "  |  0  0  0  95  0   0   |\nd=|  0  0  0  0   95  0   |\n  |  0  0  0  0   0   95  |",
+    "d_source": "Skauli, J. Appl. Phys. v94 p6447 (2003).",
+    "thermal_conductivity": 46,
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": 5.73,
+    "thermal_expansion_source": " ",
+    "specific_heat": 345,
+    "specific_heat_source": " ",
+    "density": 5317,
+    "transmission_source": "unknown"
+  },
+  "GAP": {
+    "crystal_description": "GaP or gallium phosphide",
+    "wavelength_range": [
+      700,
+      12500
+    ],
+    "iso_uni_or_bi": "isotropic",
+    "crystal_class": "4(bar)3m",
+    "ref_ind_source": "Wei, Opt. Mat. Exp. v8 p485 (2018).",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0  0  0  75  0   0   |\nd=|  0  0  0  0   75  0   |\n  |  0  0  0  0   0   75  |",
+    "d_source": "Shoji, JOSAB v14 p2268 (1997).",
+    "thermal_conductivity": 110,
+    "thermal_conductivity_source": " Muzhdaba, Sov. Phys. Solid State v10 p2265 (1968).",
+    "thermal_expansion": 5.3,
+    "thermal_expansion_source": " ",
+    "specific_heat": 435,
+    "specific_heat_source": " ",
+    "density": 4133,
+    "transmission_source": "unknown"
+  },
+  "GCOB": {
+    "crystal_description": "GdCa_4O(BO_3)_3 or gadolinium calcium oxyborate",
+    "wavelength_range": [
+      320,
+      2700
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "m",
+    "ref_ind_source": "Guo, et al., Opt. Lett. v41 p5290 (2016).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  |  0.28    0.212  -0.58  0     -0.36  0      |\nd=|  0       0      0      1.66  0      0.228  |\n  |  -0.32   1.67   -1.20  0     -0.61  0      |",
+    "d_source": "Pack, JOSAB v22 p417 (2005).",
+    "thermal_conductivity": [
+      2.5,
+      1.2,
+      1.8
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      7,
+      5,
+      11.3
+    ],
+    "thermal_expansion_source": " Ref.: Zhang, J. Crystal Growth, v206 p197 (1999).",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Unknown"
+  },
+  "GEO": {
+    "crystal_description": "GeO_2 alpha-Germanium dioxide",
+    "wavelength_range": [
+      400,
+      5100
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Remark, Opt. Mat. Exp. v11, p3520 (2021).",
+    "thermo_optic_source": "unknown",
+    "d_eff1": "d_eff (1 e wave)= d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_eff (2 e waves)=d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  | 0.79 -0.79  0   0   0  |\nd=| 0     0     0   0 -0.79|\n  | 0     0     0   0   0  |",
+    "d_source": "Remark, Opt. Mat. Exp v11 p3520 (2021)",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": "",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": "",
+    "specific_heat": null,
+    "specific_heat_source": "",
+    "density": null,
+    "transmission_source": "Remat, Opt. Mat. Exp v11, p3520 (2021)"
+  },
+  "GS": {
+    "crystal_description": "GaSe or gallium selenide",
+    "wavelength_range": [
+      650,
+      18000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "6m2",
+    "ref_ind_source": "Kato, Appl. Opt. v52 p2325 (2013).",
+    "thermo_optic_source": "same",
+    "d_eff1": "d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0   0    0  0  0  54  |\nd=|  54  -54  0  0  0  0   |\n  |  0   0    0  0  0  0   |",
+    "d_source": "Levine, Appl. Phys. Lett. v20 p272 (1972); Boyd Appl. Phys. Lett. v18 p301 (1971); Abdullaev, JETP Lett. v16 p90 (1972).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      9,
+      8.25
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 5030,
+    "transmission_source": "Vodopyanov, JOSAB v10 p1723 (1993)"
+  },
+  "HGS": {
+    "crystal_description": "HgGa_2S_4 or mercury thiogallate",
+    "wavelength_range": [
+      500,
+      13000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)",
+    "ref_ind_source": "Kato et al., Appl. Opt. v55 p3145 (2016).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_zxy sin(theta+rho)sin(2phi) + d_zxx sin(theta+rho)cos(2phi)",
+    "d_eff2": "1/2(d_zxy + d_xyz) sin(2theta+2rho)cos(2phi) - 1/2(d_zxx + d_xxz)sin(2theta+2rho)sin(2phi)",
+    "d_string": "  |    0     0  0  22.9    7.6       0  |\nd=|    0     0  0  -7.6   22.9       0  |\n  |  7.6  -7.6  0     0      0    22.9  |",
+    "d_source": "Petrov, Opt. Lett. v27 n.19 p1705 (2002)",
+    "thermal_conductivity": [
+      2.5,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref.: Badikov, Sov. J. Quant. Elec. v9 p1068 (1979).",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 400,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Badikov, Quant. Elec. v34, p451 (2004)"
+  },
+  "HS": {
+    "crystal_description": "HgS or cinnabar",
+    "wavelength_range": [
+      630,
+      13500
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Bhar, Appl. Opt. v15 p305 (1976).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  50  -50  0  0  0  0    |\nd=|  0   0    0  0  0  -50  |\n  |  0   0    0  0  0  0    |",
+    "d_source": "Boyd, IEEE JQE v4 p515 (1964).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "KABO": {
+    "crystal_description": "K_2Al_2B_2O_7 or potassium aluminum borate",
+    "wavelength_range": [
+      180,
+      3600
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Umemura, Appl. Opt. v42 p2716 (2003).",
+    "thermo_optic_source": "same",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  0.45  -0.45  0  0  0  0      |\nd=|  0     0      0  0  0  -0.45  |\n  |  0     0      0  0  0  0      |",
+    "d_source": "Ye.",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      8.4,
+      16.5
+    ],
+    "thermal_expansion_source": " Ref.: Zhang, Opt. Mat. v23 p357 (2003).",
+    "specific_heat": 1000,
+    "specific_heat_source": " ",
+    "density": 2470,
+    "transmission_source": "Chen, Appl. Phys. B v80 p1 (2005)."
+  },
+  "KBBF": {
+    "crystal_description": "KBe_2BO_3F_2 or potassium fluoroboratoberyllate",
+    "wavelength_range": [
+      147,
+      3500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Chen, Appl. Phys. B v97 p9 (2009).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  0.47  -0.47  0  0  0  0      |\nd=|  0     0      0  0  0  -0.47  |\n  |  0     0      0  0  0  0      |",
+    "d_source": "Chen, Appl. Phys. B v97 p9 (2009).",
+    "thermal_conductivity": [
+      2.5,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref.: Chen, Appl. Phys. B v97 p9 (2009).",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Chen, Opt. Lett. v27 p637 (2002)."
+  },
+  "KBO": {
+    "crystal_description": "KB_5O_8:4H_2O or potassium pentaborate tetrahydrate",
+    "wavelength_range": [
+      165,
+      1400
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Umemura, Appl. Opt. v35 p5332 (1996).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  |  0.05  0.003  0.04  0  0     0      |\nd=|  0     0      0     0  0     0.003  |\n  |  0     0      0     0  0.04  0      |",
+    "d_source": "Dmitriev Handbook of nonlinear optical crystals",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "KDA": {
+    "crystal_description": "KH_2AsO_4 or potassium dihydrogen arsenate",
+    "wavelength_range": [
+      216,
+      1700
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "Barnes, JOSA v72 p895 (1982).",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.52  0     0     |\nd=|  0  0  0  0     0.52  0     |\n  |  0  0  0  0     0     0.52  |",
+    "d_source": "Suvarov, Sov. Phys. Crystallog. v11 p711 (1966).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "unknown"
+  },
+  "KDP": {
+    "crystal_description": "KH_2PO_4 or potassium dihydrogen phosphate",
+    "wavelength_range": [
+      177,
+      1700
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Ghosh, IEEE JQE v18 p143 (1983).",
+    "thermo_optic_source": "same",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.39  0     0     |\nd=|  0  0  0  0     0.39  0     |\n  |  0  0  0  0     0     0.39  |",
+    "d_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermal_conductivity": [
+      1.3,
+      1.2
+    ],
+    "thermal_conductivity_source": " Ref: Krishnan (ed.), Progress in crystal physics (1958). ",
+    "thermal_expansion": [
+      26.8,
+      42.4
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 879,
+    "specific_heat_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "density": 2332,
+    "transmission_source": "unknown"
+  },
+  "KNBO3": {
+    "crystal_description": "KNbO_3 or potassium niobate",
+    "wavelength_range": [
+      400,
+      4500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Umemura, Appl. Opt. v38 p991 (1999).",
+    "thermo_optic_source": "Ghosh, Appl. Phys. Lett. v65 p3311 (1995).",
+    "d_string": "  |  21.9  8.9  12.4  0  0     0    |\nd=|  0     0    0     0  0     9.2  |\n  |  0     0    0     0  13.0  0    |",
+    "d_source": "Pack, JOSAB v20 p2109 (2003).",
+    "thermal_conductivity": [
+      4,
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref.: Busse, J. Appl. Phys. v75 p1102 (1994).",
+    "thermal_expansion": [
+      0.5,
+      5,
+      2.5
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 767,
+    "specific_heat_source": " ",
+    "density": 4621,
+    "transmission_source": "Umemura, Appl. Opt. v38 p991 (1999)."
+  },
+  "KTA_1": {
+    "crystal_description": "KTiOAsO_4 or potassium titanyl arsenate",
+    "wavelength_range": [
+      350,
+      4000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Fenemore, JOSAB v12 p794 (1995).",
+    "thermo_optic_source": "unknown;uses KTP data",
+    "d_string": "  |  0    0     0     0     2.3   0  |\nd=|  0    0     0     3.64  0     0  |\n  |  2.3  3.66  15.5  0     0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      1.8,
+      1.9,
+      2.1
+    ],
+    "thermal_conductivity_source": " Ref.: Ebbers, SPIE v2704 (1996).",
+    "thermal_expansion": [
+      7.8,
+      10.8,
+      -0.65
+    ],
+    "thermal_expansion_source": " Ref: Zhong Thermochromica Acta v234 p255 (1994)",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 3454,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "KTA_2": {
+    "crystal_description": "KTiOAsO_4 or potassium titanyl arsenate",
+    "wavelength_range": [
+      350,
+      4000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Feve, JOSAB v17 p775 (2000).",
+    "thermo_optic_source": "unknown;uses KTP data",
+    "d_string": "  |  0    0     0     0     2.3   0  |\nd=|  0    0     0     3.64  0     0  |\n  |  2.3  3.66  15.5  0     0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      1.8,
+      1.9,
+      2.1
+    ],
+    "thermal_conductivity_source": " Ref.: Ebbers, SPIE v2704 (1996).",
+    "thermal_expansion": [
+      7.8,
+      10.8,
+      -0.65
+    ],
+    "thermal_expansion_source": " Ref: Zhong Thermochromica Acta v234 p255 (1994)",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 3454,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "KTA_3": {
+    "crystal_description": "KTiOAsO_4 or potassium titanyl arsenate",
+    "wavelength_range": [
+      350,
+      4000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Kato, CLEO 2004.",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0    0     0     0     2.3   0  |\nd=|  0    0     0     3.64  0     0  |\n  |  2.3  3.66  15.5  0     0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      1.8,
+      1.9,
+      2.1
+    ],
+    "thermal_conductivity_source": " Ref.: Ebbers, SPIE v2704 (1996).",
+    "thermal_expansion": [
+      7.8,
+      10.8,
+      -0.65
+    ],
+    "thermal_expansion_source": " Ref: Zhong Thermochromica Acta v234 p255 (1994)",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 3454,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "KTP_F": {
+    "crystal_description": "KTiOPO_4 or potassium titanyl phosphate (flux grown)",
+    "wavelength_range": [
+      350,
+      4500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Bonnin, unpublished (from Cristal Laser).",
+    "thermo_optic_source": "Weichmann, Opt. Lett. v18 p1208 (1993).",
+    "d_string": "  |  0     0    0     0    1.95  0  |\nd=|  0     0    0     3.9  0     0  |\n  |  1.95  3.9  15.3  0    0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      2,
+      2.3,
+      2.6
+    ],
+    "thermal_conductivity_source": " Ref.: Ebbers, SPIE v2704 (1996).",
+    "thermal_expansion": [
+      7.88,
+      9.48,
+      0.02
+    ],
+    "thermal_expansion_source": " Smith, arxiv 1607.03964 (2016).",
+    "specific_heat": 728,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995).",
+    "density": 3025,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "KTP_H": {
+    "crystal_description": "KTiOPO_4 or potassium titanyl phosphate (hydrothermally grown)",
+    "wavelength_range": [
+      350,
+      4500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Vanherzeele, Appl. Opt. v27 p3314 (1988).",
+    "thermo_optic_source": "Weichmann, Opt. Lett. v18 p1208 (1993).",
+    "d_string": "  |  0     0    0     0    1.95  0  |\nd=|  0     0    0     3.9  0     0  |\n  |  1.95  3.9  15.3  0    0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      2,
+      2.3,
+      2.6
+    ],
+    "thermal_conductivity_source": " Ref.: Ebbers, SPIE v2704 (1996).",
+    "thermal_expansion": [
+      7.88,
+      9.48,
+      0.02
+    ],
+    "thermal_expansion_source": " Smith, arxiv 1607.03964 (2016).",
+    "specific_heat": 728,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995).",
+    "density": 3025,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "KTP_K": {
+    "crystal_description": "KTiOPO_4 or potassium titanyl phosphate (flux grown)",
+    "wavelength_range": [
+      350,
+      4500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Kato, Appl. Opt. v41 p5040 (2002).",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0     0    0     0    1.95  0  |\nd=|  0     0    0     3.9  0     0  |\n  |  1.95  3.9  15.3  0    0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      2,
+      2.3,
+      2.6
+    ],
+    "thermal_conductivity_source": " Ref.: Ebbers, SPIE v2704 (1996).",
+    "thermal_expansion": [
+      7.88,
+      9.48,
+      0.02
+    ],
+    "thermal_expansion_source": " Smith, arxiv 1607.03964 (2016).",
+    "specific_heat": 728,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995).",
+    "density": 3025,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "LB4": {
+    "crystal_description": "Li_2B_4O_7 or lithium tetraborate",
+    "wavelength_range": [
+      160,
+      3500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4mm",
+    "ref_ind_source": "Sugawara, Sol. St. Comm. v107 p233 (1989).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_zxx sin(theta+rho)",
+    "d_eff2": "0",
+    "d_string": "  |  0     0     0  0     0.12  0  |\nd=|  0     0     0  0.12  0     0  |\n  |  0.12  0.12  ?  0     0     0  |",
+    "d_source": "Sugawara, Sol. St. Comm. v107 p233 (1989).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Roy, Appl. Phys. B (2009)."
+  },
+  "LBGO": {
+    "crystal_description": "LaBGeO_5 lanthanum borogermanate",
+    "wavelength_range": [
+      195,
+      2600
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "3",
+    "ref_ind_source": "Umemura, Opt. Mat. Exp. v9 p2159 (2020).",
+    "thermo_optic_source": "same",
+    "d_eff1": " sqrt(d_yyy^2+d_yxx^2)*cos(theta+rho)+|d_zxx|*sin(theta+rho)",
+    "d_eff2": " sqrt(d_yyy^2+d_yxx^2)*cos^2(theta+rho)",
+    "d_string": "  |  0.35   -0.35    0     0    0.18   -0.63  |\nd=| -0.63    0.63    0    0.18   0     -0.35  |\n  |  0.18    0.18   0.70   0     0       0    |",
+    "d_source": "Shoji, OSA Adv. Phot. Cong NoM3J.5 (2018)",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Hirohashi, OSA ASSL AM3A.2 (2013)"
+  },
+  "LBO": {
+    "crystal_description": "LiB_3O_5 or lithium triborate",
+    "wavelength_range": [
+      160,
+      2600
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Kato, IEEE JQE v30 p2950 (1994).",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0     0     0     0     0  -0.67  |\nd=| -0.67  0.04  0.85  0     0     0   |\n  |  0     0     0     0.85  0     0   |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992).",
+    "thermal_conductivity": [
+      2.7,
+      3.1,
+      4.5
+    ],
+    "thermal_conductivity_source": " Ref.: Reidel, Opt. Ex. v22 p17607 (2014).",
+    "thermal_expansion": [
+      58,
+      -53,
+      25
+    ],
+    "thermal_expansion_source": " at 300 K. Ref: Grechin, Quant Elect v40 p509 (2010) ",
+    "specific_heat": 1060,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995).",
+    "density": 2474,
+    "transmission_source": "unknown"
+  },
+  "LCB": {
+    "crystal_description": "La_2CaB_10O_19 or lanthanum calcium borate",
+    "wavelength_range": [
+      180,
+      3300
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "2",
+    "ref_ind_source": "Zhang, Opt. Exp. v19 p16722 (2011).",
+    "thermo_optic_source": "Zhai, Opt. Exp. v21 p20641 (2013).",
+    "d_string": "  | 0     0      0     0.70  0     0.58  |\nd=| 0.58  -1.04  0.25  0     0.70  0     |\n  | 0     0      0     0.25  0     0.70  |",
+    "d_source": "Zhang, Opt. Exp. v19 p16722 (2011).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      8.6,
+      8.4,
+      2.3
+    ],
+    "thermal_expansion_source": " Ref.: Jing, Jap.JAP v44 p1812 (2005).",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Wang, Opt. Comm. v209 p481 (2002)."
+  },
+  "LFM": {
+    "crystal_description": "LiCOOH-H_2O or lithium formate",
+    "wavelength_range": [
+      230,
+      1200
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Naito, Opto-electr. v5 p256 (1973).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  | 0    0      0     0      0.1  0  |\nd=| 0    0      0     -1.16  0    0  |\n  | 0.1  -1.16  1.68  0      0    0  |",
+    "d_source": "Sing, Appl. Phys. Lett. v17 p292 (1970).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "unknown"
+  },
+  "LGN": {
+    "crystal_description": "La_3 Ga_5.5 Nb_0.5 O_14",
+    "wavelength_range": [
+      430,
+      6800
+    ],
+    "iso_uni_or_bi": "positive uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Guo, Opt. Mat. Ex v8 p858 (2018)",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  | 3.0  -3.0    0    0    0       0  |\nd=|   0     0    0    0    0    -3.0  |\n  |   0     0    0    0    0       0  |",
+    "d_source": "Guo, Opt. Mat. Ex v8 p858 (2018).",
+    "d_eff1": "d_xxx cos(theta+rho) cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho) sin(3phi)",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Lu, Op Ex v24 p17603 (2016)."
+  },
+  "LGS": {
+    "crystal_description": "LiGaS_2 or lithium gallium sulfide",
+    "wavelength_range": [
+      320,
+      11600
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Petrov, Appl. Phys. B v78 p543 (2004).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  | 0    0      0      0      5.1  0  |\nd=| 0    0      0      5.8    0    0  |\n  | 5.1  5.8    -10.7  0      0    0  |",
+    "d_source": "Petrov, Appl. Phys. B v78 p543 (2004).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Yelisseyev, JOSA B v29 p1003 (2012)."
+  },
+  "LGSE": {
+    "crystal_description": "LiGaSe_2 or lithium gallium selenide",
+    "wavelength_range": [
+      370,
+      13200
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Myata, Appl. Opt. v56 p6126 (2017).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  | 0    0      0      0      7.7  0  |\nd=| 0    0      0      9.9    0    0  |\n  | 7.7  9.9    -18.2  0      0    0  |",
+    "d_source": "Petrov, Appl. Phys. B v78 p543 (2004).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "LGT": {
+    "crystal_description": "LiGaTe_2 or lithium gallium teluride",
+    "wavelength_range": [
+      500,
+      15000
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Isaenko, Crystal Growth & Design v5 p1325 (2005).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xyz sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  42  0   0   |\nd=|  0  0  0  0   42  0   |\n  |  0  0  0  0   0   42  |",
+    "d_source": "Isaenko, Crystal Growth & Design v5 p1325 (2005).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "unknown"
+  },
+  "LGTO": {
+    "crystal_description": "La_3Ga_5.5Ta_0.5O_14 or langate",
+    "wavelength_range": [
+      500,
+      6000
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Boursier, Opt. Lett. v39 p4033 (2014).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "-d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  2.4  -2.4  0  0   0    0   |\nd=|   0     0   0  0   0  -2.4  |\n  |   0     0   0  0   0    0   |",
+    "d_source": "Boursier, Opt. Lett. v39 p4033 (2014)",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Boursier, Opt. Lett. v39 p4033 (2014)"
+  },
+  "LIIO3": {
+    "crystal_description": "LiIO_3 or lithium iodate",
+    "wavelength_range": [
+      300,
+      6000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "6",
+    "ref_ind_source": "Kato, IEEE QE v21 p119 (1985).",
+    "thermo_optic_source": "Ghosh Opt. Lett. v19 p1391 (1994).",
+    "d_eff1": "d_zxx sin(theta+rho)",
+    "d_eff2": "1/2 d_xyz sin(2theta+2rho)",
+    "d_string": "  |  0    0    0    0.22  4.4    0  |\nd=|  0    0    0    4.4   -0.22  0  |\n  |  4.4  4.4  4.5  0     0      0  |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992); Okada, Phys. Lett. v34A p63 (1971).",
+    "thermal_conductivity": [
+      3.9,
+      3.1
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      28,
+      48
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 4487,
+    "transmission_source": "unknown"
+  },
+  "LIS": {
+    "crystal_description": "LiInS_2 or lithium thioindate",
+    "wavelength_range": [
+      400,
+      12000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Kato, Appl. Opt. v53 p7998 (2014).",
+    "thermo_optic_source": "same",
+    "d_string": "  | 0    0      0    0       5.7  0  |\nd=| 0    0      0    7.25    0    0  |\n  | 5.7  7.25   -16  0       0    0  |",
+    "d_source": "Fossier, JOSAB v21 p1981 (2004).",
+    "thermal_conductivity": [
+      6.2,
+      6,
+      7.6
+    ],
+    "thermal_conductivity_source": " Ref.: Fossier, JOSAB v21 p1981 (2004).",
+    "thermal_expansion": [
+      16.4,
+      9.6,
+      6.8
+    ],
+    "thermal_expansion_source": " Ref.: Fossier, JOSAB v21 p1981 (2004).",
+    "specific_heat": 535,
+    "specific_heat_source": " Ref.: Fossier, JOSAB v21 p1981 (2004).",
+    "density": 3540,
+    "transmission_source": "Fossier, JOSAB v21 p1981 (2004)."
+  },
+  "LISE": {
+    "crystal_description": "LiInSe_2 or lithium selenoindate",
+    "wavelength_range": [
+      500,
+      12000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Kato, Appl. Opt. v53 p1063 (2014).",
+    "thermo_optic_source": "same",
+    "d_string": "  | 0     0    0    0    11.8  0  |\nd=| 0     0    0    8.2  0     0  |\n  | 11.8  8.2  -16  0    0     0  |",
+    "d_source": "Petrov, JOSAB v27 p1902 (2010).",
+    "thermal_conductivity": [
+      4.74,
+      4.68,
+      5.46
+    ],
+    "thermal_conductivity_source": " Ref.: Petrov, JOSAB v27 p1902 (2010).",
+    "thermal_expansion": [
+      17.6,
+      11,
+      8.7
+    ],
+    "thermal_expansion_source": " Ref.: Petrov, JOSAB v27 p1902 (2010).",
+    "specific_heat": 343,
+    "specific_heat_source": " Ref.: Petrov, JOSAB v27 p1902 (2010).",
+    "density": 3540,
+    "transmission_source": "Petrov, JOSAB v27 p1902 (2010)."
+  },
+  "LITA_C": {
+    "crystal_description": "LiTaO_3 congruent, or congruent lithium tantalate",
+    "wavelength_range": [
+      280,
+      5500
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Iwasaki, Jap. J. Appl. Phys. v7 p185 (1968).",
+    "thermo_optic_source": "Meyn, Opt. Lett. v22 p1214 (1997) for n_z(T).",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0     0     0      0     0.85  1.5  |\nd=|  1.5  -1.5   0      0.85  0     0    |\n  |  0.85  0.85  -13.8  0     0     0    |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997); Dolev, Appl. Phys. B v96 p423 (2009).",
+    "thermal_conductivity": [
+      8.4,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref. Yu, Jap. J. Apl. Phys. v43 p1265 (2004).",
+    "thermal_expansion": [
+      16,
+      2.2
+    ],
+    "thermal_expansion_source": " Ref.: Kim, J. Appl. Phys. v40 p4637 (1969). ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Hum, J. Appl. Phys. v101 p09318 (2007)."
+  },
+  "LITA_S": {
+    "crystal_description": "LiTaO_3 stoichiometric, or stoichiometric lithium tantalate",
+    "wavelength_range": [
+      280,
+      5500
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Bruner, Opt. Lett. v28 p194 (2003).",
+    "thermo_optic_source": "same (Caution: QPM temperature tuning is accurate but individual dn/dT values are not.)",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0     0     0      0     0.85  1.5  |\nd=|  1.5  -1.5   0      0.85  0     0    |\n  |  0.85  0.85  -13.8  0     0     0    |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997); Dolev, Appl. Phys. B v96 p423 (2009).",
+    "thermal_conductivity": [
+      8.4,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref. Yu, Jap. J. Apl. Phys. v43 p1265 (2004).",
+    "thermal_expansion": [
+      16,
+      2.2
+    ],
+    "thermal_expansion_source": " Ref.: Kim, J. Appl. Phys. v40 p4637 (1969). ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Hum, J. Appl. Phys. v101 p09318 (2007)."
+  },
+  "LITA_M": {
+    "crystal_description": "0.5% MgO doped LiTaO_3 stoichiometric, or 0.5% MgO doped stoichiometric lithium tantalate",
+    "wavelength_range": [
+      280,
+      5500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Dolev, Appl. Phys. B v96 p423 (2009).",
+    "thermo_optic_source": "same",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0     0      0      0     0.46  1.54  |\nd=|  1.54  -1.54  0      0.46  0     0     |\n  |  0.46  0.46   -12.9  0     0     0     |",
+    "d_source": "Dolev, Appl. Phys. B v96 p423 (2009).",
+    "thermal_conductivity": [
+      8.4,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref. Yu, Jap. J. Apl. Phys. v43 p1265 (2004).",
+    "thermal_expansion": [
+      14.6,
+      2.2
+    ],
+    "thermal_expansion_source": " Ref.: Dolev, Appl. PHys. B v96 p423 (2009). ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Hum, J. Appl. Phys. v101 p09318 (2007)."
+  },
+  "LNB_C": {
+    "crystal_description": "LiNbO_3 congruent or lithium niobate (congruent)",
+    "wavelength_range": [
+      330,
+      5500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Edwards, Opt. Quant. Electron. v16 p373 (1984); Jundt, Opt. Lett. v22 p1553 (1997) for n(e)",
+    "thermo_optic_source": "Edwards, Opt. Quant. Electron. v16 p373 (1984)",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0     0     0    0     -4.6  -2.2  |\nd=|  -2.2  2.2   0    -4.6  0     0     |\n  |  -4.6  -4.6  -25  0     0     0     |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997).",
+    "thermal_conductivity": [
+      5.4,
+      5.3
+    ],
+    "thermal_conductivity_source": " Ref.: OSA Handbook of Optics IV ",
+    "thermal_expansion": [
+      17,
+      1.7
+    ],
+    "thermal_expansion_source": " Ref.: Xu, Opt. Mat. v26 p489 (2004).",
+    "specific_heat": 684,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995). ",
+    "density": 4629,
+    "transmission_source": "Lin, IEEE JQE v32 p124 (1996)."
+  },
+  "LNB_M": {
+    "crystal_description": "LiNbO_3 5% MgO doped congruent lithium niobate",
+    "wavelength_range": [
+      330,
+      5500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Zelmon, JOSAB v14 p3319 (1997).",
+    "thermo_optic_source": "unknown",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0     0     0    0     -4.6  -2.2  |\nd=|  -2.2  2.2   0    -4.6  0     0     |\n  |  -4.6  -4.6  -25  0     0     0     |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997).",
+    "thermal_conductivity": [
+      5.4,
+      5.3
+    ],
+    "thermal_conductivity_source": " Ref.: OSA Handbook of Optics IV ",
+    "thermal_expansion": [
+      14.8,
+      4.1
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": 684,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995). ",
+    "density": 4629,
+    "transmission_source": "Lin, IEEE JQE v32 p124 (1996)."
+  },
+  "LNB_S": {
+    "crystal_description": "stoichiometric LiNbO_3 or stoichiometric lithium niobate",
+    "wavelength_range": [
+      330,
+      5500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Hobden, Phys. Lett. v22 p243 (1966).",
+    "thermo_optic_source": "same",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0     0     0    0     -4.6  -2.2  |\nd=|  -2.2  2.2   0    -4.6  0     0     |\n  |  -4.6  -4.6  -25  0     0     0     |",
+    "d_source": "Roberts, IEEE JQE v28 p2057 (1992); Shoji, JOSAB v14 p2268 (1997).",
+    "thermal_conductivity": [
+      5.4,
+      5.3
+    ],
+    "thermal_conductivity_source": " Ref.: OSA Handbook of Optics IV ",
+    "thermal_expansion": [
+      16.7,
+      2.5
+    ],
+    "thermal_expansion_source": " Ref.: Xu, Opt. Mat. v26 p489 (2004).",
+    "specific_heat": 684,
+    "specific_heat_source": " Ref.: Barnes, JOSAB v12 p124 (1995). ",
+    "density": 4629,
+    "transmission_source": "Lin, IEEE JQE v32 p124 (1996)."
+  },
+  "NLBO": {
+    "crystal_description": "Na_3La_9O_3(BO_3)_8 or sodium lanthanum oxyborate",
+    "wavelength_range": [
+      200,
+      3500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "6m2",
+    "ref_ind_source": "Zhang, Opt. Exp. v18 p237 (2010).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxy cos(theta+rho)sin(3phi)",
+    "d_eff2": "-d_xxy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0    0     0  0  0  2.3  |\nd=|  2.3  -2.3  0  0  0  0    |\n  |  0    0     0  0  0  0    |",
+    "d_source": "Zhang, Opt. Exp. v18 p237 (2010).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Zhang, Opt. Exp. v18 p237 (2010)."
+  },
+  "NTW": {
+    "crystal_description": "Na_2TeW_2O_9 or Sodium tellurium tungstate",
+    "wavelength_range": [
+      450,
+      5000
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "m",
+    "ref_ind_source": "Gao, Opt. Mat. Exp. v6 p106 (2016)",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  2.3  3.7  9.3   0     0  5.8  |\nd=|  5.8  1.9  0.15  0     0  3.7  |\n  |   0    0    0   0.15  9.3  0   |",
+    "d_source": "Gao, Opt. Mat. Exp. v6 p106 (2016).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Gao, Opt. Mat. Exp. v6 p106 (2016)."
+  },
+  "RBBF": {
+    "crystal_description": "RBe_2BO_3F_2 or rubidium fluoroboratoberyllate",
+    "wavelength_range": [
+      165,
+      3500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Chen, JOSAB v26 p1519 (2009).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  0.45  -0.45  0  0  0  0      |\nd=|  0     0      0  0  0  -0.45  |\n  |  0     0      0  0  0  0      |",
+    "d_source": "Chen, JOSAB v26 p1519 (2009).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Chen, JOSAB v26 p1519 (2009)."
+  },
+  "RDA": {
+    "crystal_description": "RbH_2AsO_4 or rubidium dihydrogen arsenate",
+    "wavelength_range": [
+      260,
+      1460
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "Barnes, JOSA v72 p895 (1982).",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.39  0     0     |\nd=|  0  0  0  0     0.39  0     |\n  |  0  0  0  0     0     0.39  |",
+    "d_source": "Kato, IEEE JQE v10 p622 (1974).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "RDP": {
+    "crystal_description": "RbH_2PO_4 or rubidium dihydrogen phosphate",
+    "wavelength_range": [
+      220,
+      1500
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Eimerl, Ferroelectrics v72 p95 (1987).",
+    "thermo_optic_source": "Barnes, JOSA v72 p895 (1982).",
+    "d_eff1": "-d_zxy sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  0.38  0     0     |\nd=|  0  0  0  0     0.38  0     |\n  |  0  0  0  0     0     0.38  |",
+    "d_source": "Pearson, Opt. Comm. v4 p366 (1972).",
+    "thermal_conductivity": [
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      22,
+      46
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "RTA": {
+    "crystal_description": "RbTiOAsO_4 or rubidium titanyl arsenate",
+    "wavelength_range": [
+      350,
+      4500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Kato, Jap. J. Appl. Phys. v42 p6420 (2003).",
+    "thermo_optic_source": "same",
+    "d_string": "  | 0     0    0     0    2.17  0  |\nd=| 0     0    0     3.9  0     0  |\n  | 2.25  3.9  15.9  0    0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      1.6,
+      1.6,
+      1.7
+    ],
+    "thermal_conductivity_source": " Ebbers SPIE v2704 (1996). ",
+    "thermal_expansion": [
+      14.5,
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " Ref.: Yunis, Appl. Phys. B v79 p77 (2004). ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "RTP": {
+    "crystal_description": "RbTiOPO_4 or rubidium titanyl phosphate",
+    "wavelength_range": [
+      350,
+      4500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "mm2",
+    "ref_ind_source": "Mikami, Opt. Mat. v31 p1628 (2009).",
+    "thermo_optic_source": "Mangin, JOSAB v28 p873 (2011).",
+    "d_string": "  | 0    0    0     0    2.0   0  |\nd=| 0    0    0     4.0  0     0  |\n  | 2.0  3.8  15.6  0    0     0  |",
+    "d_source": "Pack, Appl. Opt. v43 p3319 (2004).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      9.44,
+      12.49,
+      -4.16
+    ],
+    "thermal_expansion_source": " Smith arXiv:1607.03964 (2016).",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": 3654,
+    "transmission_source": "Hansson, Appl. Opt. v39 p5058 (2000)."
+  },
+  "SC4H": {
+    "crystal_description": "SiC-4H or silicon carbide 4H polytype",
+    "wavelength_range": [
+      370,
+      5800
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "6mm",
+    "ref_ind_source": "Wang, Las. & Phot. Rev. v7 p831 (2013).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_zxx sin(theta+rho)",
+    "d_eff2": "0",
+    "d_string": "  |  0    0    0      0    6.7  0  |\nd=|  0    0    0      6.7  0    0  |\n  |  6.5  6.5  -11.7  0    0    0  |",
+    "d_source": "Sato, JOSAB v26 p1892 (2009).",
+    "thermal_conductivity": [
+      120,
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      4,
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 750,
+    "specific_heat_source": " ",
+    "density": 3210,
+    "transmission_source": "Fan, Opt. Lett. v39 p6249 (2014)."
+  },
+  "SC6H": {
+    "crystal_description": "SiC-6H or silicon carbide 6H polytype",
+    "wavelength_range": [
+      400,
+      5800
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "6mm",
+    "ref_ind_source": "Wang, Las. & Phot. Rev. v7 p831 (2013).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_zxx sin(theta+rho)",
+    "d_eff2": "0",
+    "d_string": "  |  0    0    0      0    6.5  0  |\nd=|  0    0    0      6.5  0    0  |\n  |  6.7  6.7  -12.5  0    0    0  |",
+    "d_source": "Sato, JOSAB v26 p1892 (2009).",
+    "thermal_conductivity": [
+      120,
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      4,
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": 750,
+    "specific_heat_source": " ",
+    "density": 3210,
+    "transmission_source": "Fan, Opt. Lett. v39 p6249 (2014)."
+  },
+  "TAS": {
+    "crystal_description": "Tl_3AsSe_3",
+    "wavelength_range": [
+      1250,
+      20000
+    ],
+    "iso_uni_or_bi": "neg. uniaxial",
+    "crystal_class": "3m",
+    "ref_ind_source": "Ewbank, J. Appl. Phys. v51 p3848 (1980).",
+    "thermo_optic_source": "same",
+    "d_eff1": "d_zxx sin(theta+rho) - d_yyy cos(theta+rho)sin(3phi)",
+    "d_eff2": "d_yyy cos^2(theta+rho)cos(3phi)",
+    "d_string": "  |  0    0   0  0   20  -32  |\nd=|  -32  32  0  20  0   0    |\n  |  20   20  ?  0   0   0    |",
+    "d_source": "Feichtner, Appl. Opt. v11 p993 (1972).",
+    "thermal_conductivity": [
+      0.35,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "thermal_expansion": [
+      28,
+      18
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": 190,
+    "specific_heat_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "density": 7830,
+    "transmission_source": ""
+  },
+  "TCOB": {
+    "crystal_description": "TbCa_4O(BO_3)_3 or terbium calcium oxyborate",
+    "wavelength_range": [
+      520,
+      1600
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "m",
+    "ref_ind_source": "Yuan, Opt. Exp. v22 p27606 (2014).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_string": "  | 0.52   0.25  -0.69  0     -0.36  0     |\nd=| 0      0     0      1.65  0      0.25  |\n  | -0.36  1.65  -1.27  0     -0.69  0     |",
+    "d_source": "Yuan, Opt. Exp. v22 p27606 (2014).",
+    "thermal_conductivity": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": [
+      "nan",
+      "nan",
+      "nan"
+    ],
+    "thermal_expansion_source": " ",
+    "specific_heat": null,
+    "specific_heat_source": " ",
+    "density": null,
+    "transmission_source": ""
+  },
+  "TE": {
+    "crystal_description": "Te or tellurium",
+    "wavelength_range": [
+      3800,
+      32000
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "32",
+    "ref_ind_source": "Bhar, Appl. Opt. v15 p305 (1976).",
+    "thermo_optic_source": "n(T) unknown",
+    "d_eff1": "d_xxx cos(theta+rho)cos(3phi)",
+    "d_eff2": "d_xxx cos^2(theta+rho)sin(3phi)",
+    "d_string": "  |  600  -600  0  0  0  0     |\nd=|  0    0     0  0  0  -600  |\n  |  0    0     0  0  0  0     |",
+    "d_source": "Sherman, IEEE JQE v9 p403 (1973).",
+    "thermal_conductivity": [
+      6.3,
+      "nan"
+    ],
+    "thermal_conductivity_source": " Ref.: Voronkova, Opt. Mat. for Infrared Technique (1965).",
+    "thermal_expansion": [
+      27.5,
+      -1.6
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": 202,
+    "specific_heat_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "density": null,
+    "transmission_source": ""
+  },
+  "YCOB": {
+    "crystal_description": "YCa_4O(BO_3)_3 or yttrium calcium oxyborate",
+    "wavelength_range": [
+      220,
+      3500
+    ],
+    "iso_uni_or_bi": "biaxial",
+    "crystal_class": "m",
+    "ref_ind_source": "Segonds, Opt. Mat. v29 p975 (2007).",
+    "thermo_optic_source": "Umemura, Jpn. J. Appl. Phys. v42 p5040 (2003).",
+    "d_string": "  | 0.155   0.235  -0.59  0     -0.302  0     |\nd=| 0       0      0      1.62  0       0.24  |\n  | -0.302  1.62   -1.2   0     -0.59   0     |",
+    "d_source": "Pack, JOSAB v22 p417 (2005).",
+    "thermal_conductivity": [
+      2.6,
+      2.33,
+      3.01
+    ],
+    "thermal_conductivity_source": " Ref.: Ye, Opt. Comm v164 p33 (1999).",
+    "thermal_expansion": [
+      10.9,
+      4.2,
+      5.9
+    ],
+    "thermal_expansion_source": " Ref.: Wang, J. Cryst. Grow. v220 p114 (2000).",
+    "specific_heat": 700,
+    "specific_heat_source": "Fang, Opt. Mat. Exp. v9 p1501 (2019)",
+    "density": 3300,
+    "transmission_source": "Segonds, Opt. Mat. v29 p975 (2007)."
+  },
+  "ZGP": {
+    "crystal_description": "ZnGeP_2 or zinc germanium phosphide",
+    "wavelength_range": [
+      740,
+      12000
+    ],
+    "iso_uni_or_bi": "pos. uniaxial",
+    "crystal_class": "4(bar)2m",
+    "ref_ind_source": "Zelmon, JOSAB v17 p1307 (2001).",
+    "thermo_optic_source": "Fischer, J. Appl. Phys. v71 p425 (1997); Ghosh, Appl. Opt. v37 p1205 (1998).",
+    "d_eff1": "d_xyz sin(theta+rho)sin(2phi)",
+    "d_eff2": "d_xyz sin(2theta+2rho)cos(2phi)",
+    "d_string": "  |  0  0  0  75.4  0     0     |\nd=|  0  0  0  0     75.4  0     |\n  |  0  0  0  0     0     75.4  |",
+    "d_source": "Boyd, Appl. Phys. Lett. v18 p301 (1971).",
+    "thermal_conductivity": [
+      35,
+      36
+    ],
+    "thermal_conductivity_source": " Ref.: Beasley, Appl. Opt. v33 p1000 (1994).",
+    "thermal_expansion": [
+      7.8,
+      5
+    ],
+    "thermal_expansion_source": " Ref.: Opt. Soc. Am. Handbook of Optics",
+    "specific_heat": 464,
+    "specific_heat_source": "Tucker, Appl. Opt. v34 p2678 (1995).",
+    "density": 4175,
+    "transmission_source": "Vodopyanov, JOSA B v10 p1723 (1993)."
+  },
+  "ZNSE": {
+    "crystal_description": "ZnSe or zinc selenide",
+    "wavelength_range": [
+      450,
+      18000
+    ],
+    "iso_uni_or_bi": "isotropic",
+    "crystal_class": "4(bar)3m",
+    "ref_ind_source": "Tropf, Opt. Eng. v34 p1369 (1995).",
+    "thermo_optic_source": "same",
+    "d_string": "  |  0  0  0  55  0   0   |\nd=|  0  0  0  0   55  0   |\n  |  0  0  0  0   0   55  |",
+    "d_source": "Shoji, JOSAB v14 p2268 (1997).",
+    "thermal_conductivity": 13,
+    "thermal_conductivity_source": " ",
+    "thermal_expansion": 7.1,
+    "thermal_expansion_source": " ",
+    "specific_heat": 339,
+    "specific_heat_source": " ",
+    "density": 5264,
+    "transmission_source": "Gavruschuk, Inorganic. Mat. v39 p883 (2003)."
+  },
+  "ZZ_B": {
+    "iso_uni_or_bi": "DIY"
+  },
+  "ZZ_U": {
+    "iso_uni_or_bi": "DIY"
+  }
+}

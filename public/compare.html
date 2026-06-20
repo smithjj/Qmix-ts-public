@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qmix — Crystal comparison</title>
+<link rel="stylesheet" href="styles/qmix-shared.css">
+<style>
+  .container { max-width: 1400px; }
+  .row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: end; }
+  .row > div { flex: 1; min-width: 100px; }
+  input:not([type="radio"]):not([type="checkbox"]), select {
+    width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d2d2d7;
+    border-radius: 8px; font-size: 0.9375rem; background: #fff; font-family: inherit;
+  }
+  input:not([type="radio"]):not([type="checkbox"]):focus, select:focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,.2); }
+  input[type="checkbox"] { width: auto; height: auto; margin: 0 0.35rem 0 0; padding: 0; border: 0; flex: 0 0 auto; accent-color: #0071e3; }
+  button.sm { padding: 0.25rem 0.75rem; font-size: 0.8125rem; }
+  button.sec { background: #e8e8ed; color: #1d1d1f; }
+  button.sec:hover { background: #d1d1d6; }
+  .crystal-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.35rem; max-height: 300px; overflow-y: auto;
+    padding: 0.5rem; border: 1px solid #e8e8ed; border-radius: 8px;
+  }
+  .crystal-grid label {
+    font-size: 0.8125rem; font-weight: 400; color: #1d1d1f;
+    display: flex; align-items: center; gap: 0.35rem; cursor: pointer;
+  }
+  .crystal-grid input { width: auto; }
+  .toolbar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .status { font-size: 0.8125rem; color: #6e6e73; margin-left: 0.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; white-space: nowrap; }
+  th, td { padding: 0.35rem 0.5rem; text-align: right; border-bottom: 1px solid #e8e8ed; }
+  th { background: #fafafa; font-weight: 600; color: #6e6e73; position: sticky; top: 0; z-index: 1; cursor: pointer; user-select: none; }
+  th:hover { background: #f0f0f2; }
+  .sort-icon { display: inline-block; width: 0; height: 0; margin-left: 0.3em; vertical-align: middle; }
+  th.asc .sort-icon { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 5px solid #0071e3; }
+  th.desc .sort-icon { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #0071e3; }
+  td:first-child, th:first-child { text-align: left; }
+  td:nth-child(2), th:nth-child(2) { text-align: center; }
+  td:nth-child(3), th:nth-child(3) { text-align: center; }
+  .wrap { width: 100%; overflow-x: auto; }
+  .zero { color: #999; }
+  .export-bar { display: flex; gap: 0.5rem; align-items: center; }
+  @media print {
+    .no-print { display: none !important; }
+    body { padding: 0; background: #fff; }
+    .card { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+    table { font-size: 0.75rem; }
+    th { background: #eee; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<div class="sidebar sidebar-left">
+  <a class="ad-card" href="https://as-photonics.com/book" target="_blank" rel="noopener">
+    <span class="ad-kicker">Textbook</span>
+    <img src="thebook.webp" alt="The Book">
+    <strong class="ad-title">Crystal Nonlinear Optics</strong>
+    <p><em>Crystal Nonlinear Optics: with SNLO examples (second edition)</em> teaches advanced crystal nonlinear optics from the ground up, so you can get the most out of Qmix.</p>
+    <span class="ad-cta">Learn more</span>
+  </a>
+</div>
+<div class="container">
+  <header class="page-header">
+    <div class="page-kicker">Qmix toolkit</div>
+    <h1>Qmix</h1>
+    <p class="sub">Compare phase-matching across multiple crystals at fixed wavelengths</p>
+    <nav class="module-nav" aria-label="Qmix modules">
+      <a href="index.html">Qmix</a>
+      <span class="nav-current">Compare crystals</span>
+      <a href="qpm.html">QPM</a>
+      <a href="refractive-index.html">Refractive index</a>
+      <a href="custom.html">Custom crystals</a>
+    </nav>
+  </header>
+
+<div class="container">
+    <h1>Qmix  -  Crystal comparison</h1>
+  <p class="sub">Compare phase-matching across multiple crystals at fixed wavelengths</p>
+
+  <div class="card">
+    <div class="row">
+      <div><label for="red1">Red 1 (nm)</label><input id="red1" type="number" value="1064" step="any"></div>
+      <div><label for="red2">Red 2 (nm)</label><input id="red2" type="number" value="1064" step="any"></div>
+      <div><label for="blue">Blue (nm)  -  0 to compute</label><input id="blue" type="number" value="0" step="any"></div>
+      <div><label for="temperature">Temperature (K)</label><input id="temperature" type="number" value="300" step="any"></div>
+      <div>
+        <label>&nbsp;</label>
+        <button id="calcBtn">Compare</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="toolbar">
+      <button id="selectAll" class="sm">Select all</button>
+      <button id="deselectAll" class="sm sec">Deselect all</button>
+      <button id="selectUniaxial" class="sm sec">Uniaxial only</button>
+      <button id="selectBiaxial" class="sm sec">Biaxial only</button>
+      <span class="status" id="crystalCount">Loading crystals...</span>
+    </div>
+    <div id="crystalList" class="crystal-grid"></div>
+  </div>
+
+  <div class="card no-print">
+    <div class="export-bar">
+      <button id="exportCsv" class="sm sec">Export CSV</button>
+      <button id="exportJson" class="sm sec">Export JSON</button>
+      <button id="printBtn" class="sm sec">Print</button>
+      <label style="font-size:0.8125rem;display:flex;align-items:center;gap:0.35rem;white-space:nowrap">
+        <input type="checkbox" id="hideZeroDeff" checked> Hide d_eff = 0
+      </label>
+      <span class="status" id="resultCount"></span>
+    </div>
+  </div>
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="wrap">
+      <table id="results">
+        <thead>
+          <tr>
+            <th data-col="crystal">Crystal <span class="sort-icon"></span></th>
+            <th data-col="plane">Plane <span class="sort-icon"></span></th>
+            <th data-col="pol">Pol. <span class="sort-icon"></span></th>
+            <th data-col="theta">&theta; (&deg;) <span class="sort-icon"></span></th>
+            <th data-col="phi">&phi; (&deg;) <span class="sort-icon"></span></th>
+            <th data-col="l1">&lambda;&#8321; <span class="sort-icon"></span></th>
+            <th data-col="l2">&lambda;&#8322; <span class="sort-icon"></span></th>
+            <th data-col="l3">&lambda;&#8323; <span class="sort-icon"></span></th>
+            <th data-col="deff">d_eff <span class="sort-icon"></span></th>
+            <th data-col="gvi">GVI <span class="sort-icon"></span></th>
+            <th data-col="temp">Temp. <span class="sort-icon"></span></th>
+            <th data-col="angtol">Ang. tol. <span class="sort-icon"></span></th>
+            <th data-col="s0l2">S<sub>o</sub>L&sup2; <span class="sort-icon"></span></th>
+            <th data-col="walkoff">Walk-off <span class="sort-icon"></span></th>
+            <th data-col="gdd">GDD <span class="sort-icon"></span></th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const CRYSTAL_TYPES = {};
+let allCrystals = [];
+
+async function init() {
+  const resp = await fetch("/api/crystals/detail");
+  allCrystals = await resp.json();
+  for (const c of allCrystals) CRYSTAL_TYPES[c.name] = c.type;
+
+  // Add custom crystals from localStorage
+  const custom = getCustomCrystals();
+  for (const name of Object.keys(custom)) {
+    allCrystals.push({ name, type: "custom" });
+    CRYSTAL_TYPES[name] = "custom";
+  }
+
+  const list = document.getElementById("crystalList");
+  list.innerHTML = allCrystals.map(c =>
+    `<label><input type="checkbox" class="cbox" data-type="${c.type}" value="${c.name}" checked> ${c.name}${c.type === "custom" ? " \u2606" : ""}</label>`
+  ).join("");
+  document.getElementById("crystalCount").textContent = allCrystals.length + " crystals";
+}
+
+function getCustomCrystals() {
+  try { return JSON.parse(localStorage.getItem("qmix-custom-crystals")) || {}; }
+  catch { return {}; }
+}
+
+document.getElementById("selectAll").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = true);
+});
+document.getElementById("deselectAll").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = false);
+});
+document.getElementById("selectUniaxial").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = cb.dataset.type === "uniaxial");
+});
+document.getElementById("selectBiaxial").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = cb.dataset.type === "biaxial");
+});
+
+let allResults = [];
+
+document.getElementById("calcBtn").addEventListener("click", async () => {
+  const btn = document.getElementById("calcBtn");
+  btn.disabled = true;
+  btn.textContent = "Calculating\u2026";
+
+  const red1 = parseFloat(document.getElementById("red1").value);
+  const red2 = parseFloat(document.getElementById("red2").value);
+  const blue = parseFloat(document.getElementById("blue").value);
+  const temperature = parseFloat(document.getElementById("temperature").value);
+
+  const selected = [...document.querySelectorAll(".cbox:checked")].map(cb => cb.value);
+  const planes = ["XY", "XZ", "YZ"];
+
+  const tbody = document.getElementById("resultsBody");
+  tbody.innerHTML = "<tr><td colspan='15' style='text-align:center;color:#999;padding:2rem'>Calculating...</td></tr>";
+
+  const rows = [];
+
+  for (let ci = 0; ci < selected.length; ci++) {
+    const crystal = selected[ci];
+    const type = CRYSTAL_TYPES[crystal] || "uniaxial";
+    const applicablePlanes = type === "uniaxial" ? ["XY"] : planes;
+
+    for (const plane of applicablePlanes) {
+      try {
+          const req = { crystal, red1, red2, blue, temperature, plane, type: "Mix" };
+          const custom = getCustomCrystals();
+          if (Object.keys(custom).length > 0) req.customCrystals = custom;
+          const res = await fetch("/api/calculate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(req),
+        });
+        const data = await res.json();
+        for (const r of data) {
+          rows.push({
+            crystal,
+            crystalType: type,
+            plane,
+            polarizations: r.polarizations,
+            thetaDeg: r.thetaDeg,
+            phiDeg: r.phiDeg,
+            wavelengthsNm: r.wavelengthsNm,
+            dEffPmPerV: r.dEffPmPerV,
+            s0L2Watt: r.s0L2Watt,
+            temperatureRangeKCm: r.temperatureRangeKCm,
+            angleToleranceMradCm: r.angleToleranceMradCm,
+            walkoffMrad: r.walkoffMrad,
+            gddFs2PerMm: r.gddFs2PerMm,
+            groupVelocityIndex: r.groupVelocityIndex,
+          });
+        }
+      } catch {}
+    }
+  }
+
+  renderTable(rows);
+  allResults = rows;
+  updateResultCount();
+  btn.disabled = false;
+  btn.textContent = "Compare";
+});
+
+document.getElementById("hideZeroDeff").addEventListener("change", () => {
+  renderTable(allResults);
+  updateResultCount();
+});
+
+function updateResultCount() {
+  const visible = document.querySelectorAll("#resultsBody tr").length;
+  document.getElementById("resultCount").textContent = visible + " of " + allResults.length + " results";
+}
+
+function renderTable(rows) {
+  const hideZero = document.getElementById("hideZeroDeff").checked;
+  const filtered = hideZero ? rows.filter(r => r.dEffPmPerV !== 0) : rows;
+  const tbody = document.getElementById("resultsBody");
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = "<tr><td colspan='15' style='text-align:center;color:#999;padding:2rem'>No results</td></tr>";
+    return;
+  }
+
+  // Apply current sort
+  const sorted = sortRows(filtered);
+  renderRows(sorted);
+}
+
+let sortCol = "";
+let sortAsc = true;
+
+function sortRows(rows) {
+  if (!sortCol) return rows;
+  return [...rows].sort((a, b) => {
+    let va = getSortValue(a, sortCol);
+    let vb = getSortValue(b, sortCol);
+    if (typeof va === "string") va = va.toLowerCase();
+    if (typeof vb === "string") vb = vb.toLowerCase();
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+}
+
+function getSortValue(row, col) {
+  switch (col) {
+    case "crystal": return row.crystal;
+    case "plane": return row.plane;
+    case "pol": return row.polarizations;
+    case "theta": return row.thetaDeg;
+    case "phi": return row.phiDeg;
+    case "l1": return row.wavelengthsNm[0];
+    case "l2": return row.wavelengthsNm[1];
+    case "l3": return row.wavelengthsNm[2];
+    case "deff": return row.dEffPmPerV;
+    case "gvi": return row.groupVelocityIndex ? Math.max(...row.groupVelocityIndex) : 0;
+    case "temp": return row.temperatureRangeKCm;
+    case "angtol": return row.angleToleranceMradCm;
+    case "s0l2": return row.s0L2Watt;
+    case "walkoff": return Math.max(...row.walkoffMrad);
+    case "gdd": return Math.max(...row.gddFs2PerMm);
+    default: return "";
+  }
+}
+
+function renderRows(rows) {
+  const tbody = document.getElementById("resultsBody");
+  tbody.innerHTML = rows.map(r => {
+    const w = r.wavelengthsNm;
+    const wo = r.walkoffMrad.map(v => v.toFixed(2)).join(", ");
+    const zeroClass = r.dEffPmPerV === 0 ? "zero" : "";
+    const isUniaxial = r.crystalType === "uniaxial";
+    const planeCell = isUniaxial ? "\u2014" : r.plane;
+    const phiCell = isUniaxial ? "\u2014" : r.phiDeg.toFixed(4);
+    const gvi = r.groupVelocityIndex;
+    const gviCell = gvi ? gvi.map(function(v) { return v.toFixed(4); }).join(", ") : "";
+    return `<tr class="${zeroClass}">
+      <td>${r.crystal}</td>
+      <td>${planeCell}</td>
+      <td>${r.polarizations}</td>
+      <td>${r.thetaDeg.toFixed(4)}</td>
+      <td>${phiCell}</td>
+      <td>${w[0].toFixed(2)}</td>
+      <td>${w[1].toFixed(2)}</td>
+      <td>${w[2].toFixed(2)}</td>
+      <td>${r.dEffPmPerV !== 0 ? r.dEffPmPerV.toExponential(3) : "0"}</td>
+      <td>${gviCell}</td>
+      <td>${r.temperatureRangeKCm > 1e5 ? "\u221E" : r.temperatureRangeKCm.toFixed(2)}</td>
+      <td>${r.angleToleranceMradCm.toFixed(4)}</td>
+      <td>${r.s0L2Watt !== undefined ? r.s0L2Watt.toExponential(3) : ""}</td>
+      <td>${wo}</td>
+      <td>${r.gddFs2PerMm.map(v => v.toFixed(1)).join(", ")}</td>
+    </tr>`;
+  }).join("");
+}
+
+document.getElementById("results").addEventListener("click", (e) => {
+  const th = e.target.closest("th");
+  if (!th) return;
+  const col = th.dataset.col;
+  if (!col) return;
+
+  if (sortCol === col) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = col;
+    sortAsc = true;
+  }
+
+  document.querySelectorAll("#results th").forEach(t => {
+    t.classList.remove("asc", "desc");
+  });
+  th.classList.add(sortAsc ? "asc" : "desc");
+
+  renderTable(allResults);
+});
+
+document.getElementById("exportCsv").addEventListener("click", () => {
+  const rows = getTableData();
+  if (!rows.length) return;
+  const header = "Crystal,Plane,Pol,Theta(deg),Phi(deg),Lambda1(nm),Lambda2(nm),Lambda3(nm),d_eff(pm/V),GVI,Temp(K-cm),AngTol(mrad-cm),S_oL2(W),Walkoff(mrad),GDD(fs2/mm)";
+  const csv = [header, ...rows.map(r => {
+    const isUniaxial = r.crystalType === "uniaxial";
+    return [
+      r.crystal, isUniaxial ? "" : r.plane, r.polarizations, r.thetaDeg.toFixed(4),
+      isUniaxial ? "" : r.phiDeg.toFixed(4),
+      r.wavelengthsNm[0].toFixed(2), r.wavelengthsNm[1].toFixed(2), r.wavelengthsNm[2].toFixed(2),
+      r.dEffPmPerV !== 0 ? r.dEffPmPerV.toExponential(3) : "0",
+      r.groupVelocityIndex ? r.groupVelocityIndex.map(function(v) { return v.toFixed(4); }).join(";") : "",
+      r.temperatureRangeKCm > 1e5 ? "" : r.temperatureRangeKCm.toFixed(2),
+      r.angleToleranceMradCm.toFixed(4),
+      r.s0L2Watt !== undefined ? r.s0L2Watt.toExponential(3) : "",
+      r.walkoffMrad.map(v => v.toFixed(2)).join(";"),
+      r.gddFs2PerMm.map(v => v.toFixed(1)).join(";"),
+    ].join(",");
+  })].join("\n");
+  download(csv, "qmix-comparison.csv", "text/csv");
+});
+
+document.getElementById("exportJson").addEventListener("click", () => {
+  const rows = getTableData();
+  if (!rows.length) return;
+  const json = JSON.stringify(rows, null, 2);
+  download(json, "qmix-comparison.json", "application/json");
+});
+
+document.getElementById("printBtn").addEventListener("click", () => window.print());
+
+function getTableData() {
+  const rows = [];
+  const tbody = document.getElementById("resultsBody");
+  for (const tr of tbody.querySelectorAll("tr")) {
+    const td = tr.querySelectorAll("td");
+    if (td.length < 15) continue;
+    const walkoff = td[13].textContent.split(", ").map(Number);
+    const gdd = td[14].textContent.split(", ").map(Number);
+    rows.push({
+      crystal: td[0].textContent,
+      plane: td[1].textContent,
+      polarizations: td[2].textContent,
+      thetaDeg: parseFloat(td[3].textContent),
+      phiDeg: parseFloat(td[4].textContent),
+      wavelengthsNm: [parseFloat(td[5].textContent), parseFloat(td[6].textContent), parseFloat(td[7].textContent)],
+      dEffPmPerV: parseFloat(td[8].textContent),
+      groupVelocityIndex: td[9].textContent.split(", ").map(Number),
+      s0L2Watt: parseFloat(td[12].textContent) || 0,
+      temperatureRangeKCm: parseFloat(td[10].textContent),
+      angleToleranceMradCm: parseFloat(td[11].textContent),
+      walkoffMrad: walkoff,
+      gddFs2PerMm: gdd,
+    });
+  }
+  return rows;
+}
+
+function download(content, filename, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+init();
+</script>
+</div>
+<div class="sidebar sidebar-right">
+  <a class="ad-card" href="https://as-photonics.com/mlSNLO" target="_blank" rel="noopener">
+    <span class="ad-kicker">Software</span>
+    <img src="mlSNLO.webp" alt="mlSNLO">
+    <strong class="ad-title">Automate design scans</strong>
+    <p><strong>mlSNLO</strong> is a versatile MATLAB App for nonlinear optics. Write batch scripts to automate calculations and explore design spaces.</p>
+    <span class="ad-cta">Explore mlSNLO</span>
+  </a>
+</div>
+</div>
+<script>
+const CRYSTAL_TYPES = {};
+let allCrystals = [];
+
+async function init() {
+  const resp = await fetch("/api/crystals/detail");
+  allCrystals = await resp.json();
+  for (const c of allCrystals) CRYSTAL_TYPES[c.name] = c.type;
+
+  // Add custom crystals from localStorage
+  const custom = getCustomCrystals();
+  for (const name of Object.keys(custom)) {
+    allCrystals.push({ name, type: "custom" });
+    CRYSTAL_TYPES[name] = "custom";
+  }
+
+  const list = document.getElementById("crystalList");
+  list.innerHTML = allCrystals.map(c =>
+    `<label><input type="checkbox" class="cbox" data-type="${c.type}" value="${c.name}" checked> ${c.name}${c.type === "custom" ? " \u2606" : ""}</label>`
+  ).join("");
+  document.getElementById("crystalCount").textContent = allCrystals.length + " crystals";
+}
+
+function getCustomCrystals() {
+  try { return JSON.parse(localStorage.getItem("qmix-custom-crystals")) || {}; }
+  catch { return {}; }
+}
+
+document.getElementById("selectAll").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = true);
+});
+document.getElementById("deselectAll").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = false);
+});
+document.getElementById("selectUniaxial").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = cb.dataset.type === "uniaxial");
+});
+document.getElementById("selectBiaxial").addEventListener("click", () => {
+  document.querySelectorAll(".cbox").forEach(cb => cb.checked = cb.dataset.type === "biaxial");
+});
+
+let allResults = [];
+
+document.getElementById("calcBtn").addEventListener("click", async () => {
+  const btn = document.getElementById("calcBtn");
+  btn.disabled = true;
+  btn.textContent = "Calculating\u2026";
+
+  const red1 = parseFloat(document.getElementById("red1").value);
+  const red2 = parseFloat(document.getElementById("red2").value);
+  const blue = parseFloat(document.getElementById("blue").value);
+  const temperature = parseFloat(document.getElementById("temperature").value);
+
+  const selected = [...document.querySelectorAll(".cbox:checked")].map(cb => cb.value);
+  const planes = ["XY", "XZ", "YZ"];
+
+  const tbody = document.getElementById("resultsBody");
+  tbody.innerHTML = "<tr><td colspan='15' style='text-align:center;color:#999;padding:2rem'>Calculating...</td></tr>";
+
+  const rows = [];
+
+  for (let ci = 0; ci < selected.length; ci++) {
+    const crystal = selected[ci];
+    const type = CRYSTAL_TYPES[crystal] || "uniaxial";
+    const applicablePlanes = type === "uniaxial" ? ["XY"] : planes;
+
+    for (const plane of applicablePlanes) {
+      try {
+          const req = { crystal, red1, red2, blue, temperature, plane, type: "Mix" };
+          const custom = getCustomCrystals();
+          if (Object.keys(custom).length > 0) req.customCrystals = custom;
+          const res = await fetch("/api/calculate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(req),
+        });
+        const data = await res.json();
+        for (const r of data) {
+          rows.push({
+            crystal,
+            crystalType: type,
+            plane,
+            polarizations: r.polarizations,
+            thetaDeg: r.thetaDeg,
+            phiDeg: r.phiDeg,
+            wavelengthsNm: r.wavelengthsNm,
+            dEffPmPerV: r.dEffPmPerV,
+            s0L2Watt: r.s0L2Watt,
+            temperatureRangeKCm: r.temperatureRangeKCm,
+            angleToleranceMradCm: r.angleToleranceMradCm,
+            walkoffMrad: r.walkoffMrad,
+            gddFs2PerMm: r.gddFs2PerMm,
+            groupVelocityIndex: r.groupVelocityIndex,
+          });
+        }
+      } catch {}
+    }
+  }
+
+  renderTable(rows);
+  allResults = rows;
+  updateResultCount();
+  btn.disabled = false;
+  btn.textContent = "Compare";
+});
+
+document.getElementById("hideZeroDeff").addEventListener("change", () => {
+  renderTable(allResults);
+  updateResultCount();
+});
+
+function updateResultCount() {
+  const visible = document.querySelectorAll("#resultsBody tr").length;
+  document.getElementById("resultCount").textContent = visible + " of " + allResults.length + " results";
+}
+
+function renderTable(rows) {
+  const hideZero = document.getElementById("hideZeroDeff").checked;
+  const filtered = hideZero ? rows.filter(r => r.dEffPmPerV !== 0) : rows;
+  const tbody = document.getElementById("resultsBody");
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = "<tr><td colspan='15' style='text-align:center;color:#999;padding:2rem'>No results</td></tr>";
+    return;
+  }
+
+  // Apply current sort
+  const sorted = sortRows(filtered);
+  renderRows(sorted);
+}
+
+let sortCol = "";
+let sortAsc = true;
+
+function sortRows(rows) {
+  if (!sortCol) return rows;
+  return [...rows].sort((a, b) => {
+    let va = getSortValue(a, sortCol);
+    let vb = getSortValue(b, sortCol);
+    if (typeof va === "string") va = va.toLowerCase();
+    if (typeof vb === "string") vb = vb.toLowerCase();
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+}
+
+function getSortValue(row, col) {
+  switch (col) {
+    case "crystal": return row.crystal;
+    case "plane": return row.plane;
+    case "pol": return row.polarizations;
+    case "theta": return row.thetaDeg;
+    case "phi": return row.phiDeg;
+    case "l1": return row.wavelengthsNm[0];
+    case "l2": return row.wavelengthsNm[1];
+    case "l3": return row.wavelengthsNm[2];
+    case "deff": return row.dEffPmPerV;
+    case "gvi": return row.groupVelocityIndex ? Math.max(...row.groupVelocityIndex) : 0;
+    case "temp": return row.temperatureRangeKCm;
+    case "angtol": return row.angleToleranceMradCm;
+    case "s0l2": return row.s0L2Watt;
+    case "walkoff": return Math.max(...row.walkoffMrad);
+    case "gdd": return Math.max(...row.gddFs2PerMm);
+    default: return "";
+  }
+}
+
+function renderRows(rows) {
+  const tbody = document.getElementById("resultsBody");
+  tbody.innerHTML = rows.map(r => {
+    const w = r.wavelengthsNm;
+    const wo = r.walkoffMrad.map(v => v.toFixed(2)).join(", ");
+    const zeroClass = r.dEffPmPerV === 0 ? "zero" : "";
+    const isUniaxial = r.crystalType === "uniaxial";
+    const planeCell = isUniaxial ? "\u2014" : r.plane;
+    const phiCell = isUniaxial ? "\u2014" : r.phiDeg.toFixed(4);
+    const gvi = r.groupVelocityIndex;
+    const gviCell = gvi ? gvi.map(function(v) { return v.toFixed(4); }).join(", ") : "";
+    return `<tr class="${zeroClass}">
+      <td>${r.crystal}</td>
+      <td>${planeCell}</td>
+      <td>${r.polarizations}</td>
+      <td>${r.thetaDeg.toFixed(4)}</td>
+      <td>${phiCell}</td>
+      <td>${w[0].toFixed(2)}</td>
+      <td>${w[1].toFixed(2)}</td>
+      <td>${w[2].toFixed(2)}</td>
+      <td>${r.dEffPmPerV !== 0 ? r.dEffPmPerV.toExponential(3) : "0"}</td>
+      <td>${gviCell}</td>
+      <td>${r.temperatureRangeKCm > 1e5 ? "\u221E" : r.temperatureRangeKCm.toFixed(2)}</td>
+      <td>${r.angleToleranceMradCm.toFixed(4)}</td>
+      <td>${r.s0L2Watt !== undefined ? r.s0L2Watt.toExponential(3) : ""}</td>
+      <td>${wo}</td>
+      <td>${r.gddFs2PerMm.map(v => v.toFixed(1)).join(", ")}</td>
+    </tr>`;
+  }).join("");
+}
+
+document.getElementById("results").addEventListener("click", (e) => {
+  const th = e.target.closest("th");
+  if (!th) return;
+  const col = th.dataset.col;
+  if (!col) return;
+
+  if (sortCol === col) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = col;
+    sortAsc = true;
+  }
+
+  document.querySelectorAll("#results th").forEach(t => {
+    t.classList.remove("asc", "desc");
+  });
+  th.classList.add(sortAsc ? "asc" : "desc");
+
+  renderTable(allResults);
+});
+
+document.getElementById("exportCsv").addEventListener("click", () => {
+  const rows = getTableData();
+  if (!rows.length) return;
+  const header = "Crystal,Plane,Pol,Theta(deg),Phi(deg),Lambda1(nm),Lambda2(nm),Lambda3(nm),d_eff(pm/V),GVI,Temp(K-cm),AngTol(mrad-cm),S_oL2(W),Walkoff(mrad),GDD(fs2/mm)";
+  const csv = [header, ...rows.map(r => {
+    const isUniaxial = r.crystalType === "uniaxial";
+    return [
+      r.crystal, isUniaxial ? "" : r.plane, r.polarizations, r.thetaDeg.toFixed(4),
+      isUniaxial ? "" : r.phiDeg.toFixed(4),
+      r.wavelengthsNm[0].toFixed(2), r.wavelengthsNm[1].toFixed(2), r.wavelengthsNm[2].toFixed(2),
+      r.dEffPmPerV !== 0 ? r.dEffPmPerV.toExponential(3) : "0",
+      r.groupVelocityIndex ? r.groupVelocityIndex.map(function(v) { return v.toFixed(4); }).join(";") : "",
+      r.temperatureRangeKCm > 1e5 ? "" : r.temperatureRangeKCm.toFixed(2),
+      r.angleToleranceMradCm.toFixed(4),
+      r.s0L2Watt !== undefined ? r.s0L2Watt.toExponential(3) : "",
+      r.walkoffMrad.map(v => v.toFixed(2)).join(";"),
+      r.gddFs2PerMm.map(v => v.toFixed(1)).join(";"),
+    ].join(",");
+  })].join("\n");
+  download(csv, "qmix-comparison.csv", "text/csv");
+});
+
+document.getElementById("exportJson").addEventListener("click", () => {
+  const rows = getTableData();
+  if (!rows.length) return;
+  const json = JSON.stringify(rows, null, 2);
+  download(json, "qmix-comparison.json", "application/json");
+});
+
+document.getElementById("printBtn").addEventListener("click", () => window.print());
+
+function getTableData() {
+  const rows = [];
+  const tbody = document.getElementById("resultsBody");
+  for (const tr of tbody.querySelectorAll("tr")) {
+    const td = tr.querySelectorAll("td");
+    if (td.length < 15) continue;
+    const walkoff = td[13].textContent.split(", ").map(Number);
+    const gdd = td[14].textContent.split(", ").map(Number);
+    rows.push({
+      crystal: td[0].textContent,
+      plane: td[1].textContent,
+      polarizations: td[2].textContent,
+      thetaDeg: parseFloat(td[3].textContent),
+      phiDeg: parseFloat(td[4].textContent),
+      wavelengthsNm: [parseFloat(td[5].textContent), parseFloat(td[6].textContent), parseFloat(td[7].textContent)],
+      dEffPmPerV: parseFloat(td[8].textContent),
+      groupVelocityIndex: td[9].textContent.split(", ").map(Number),
+      s0L2Watt: parseFloat(td[12].textContent) || 0,
+      temperatureRangeKCm: parseFloat(td[10].textContent),
+      angleToleranceMradCm: parseFloat(td[11].textContent),
+      walkoffMrad: walkoff,
+      gddFs2PerMm: gdd,
+    });
+  }
+  return rows;
+}
+
+function download(content, filename, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+init();
+</script>
+</body>
+</html>
