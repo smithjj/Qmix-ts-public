@@ -31,7 +31,7 @@ Helpful contributions include:
 - **New test fixtures** that expand the golden-test coverage.
 - **Additional crystal metadata** such as citations, thermal properties, or crystal-class labels for built-in entries.
 - **Documentation** improvements for the README, code comments, or TypeDoc.
-- **Feature enhancements** that do not include MATLAB source code (see restrictions below).
+- **Feature enhancements** that fit within the public-release scope.
 
 ## Submitting changes
 
@@ -47,8 +47,6 @@ Helpful contributions include:
 
 ## Important restrictions
 
-- **Do not include MATLAB source code** (`.m`, `.mat`, `.txt`, or original data files) in pull requests.
-- **Do not modify the MATLAB reference algorithms**. The TypeScript implementation should match reference behavior, not the other way around.
 - **BMix-related code** is intentionally excluded from the public release; please do not add it.
 - Citations added to crystal metadata should point to peer-reviewed literature, manufacturer data sheets, or well-known handbook references. Include enough detail for another developer to locate the original source.
 
