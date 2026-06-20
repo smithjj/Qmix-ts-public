@@ -106,7 +106,7 @@ Options (custom crystal mode):
 
 Utility:
   --list-crystals        List all available crystal names
-  --tui                  Start the interactive text user interface (TUI)
+  --tui                  Start the interactive text user interface (TUI) - requires Bun
   --help                 Show this message`;
 function parseArgs() {
     const args = {};
