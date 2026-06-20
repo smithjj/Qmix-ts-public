@@ -28,7 +28,6 @@ All three checks must pass before a PR can be merged.
 Helpful contributions include:
 
 - **Bug fixes** in phase-matching, Sellmeier evaluation, or QPM calculations.
-- **New test fixtures** that expand the golden-test coverage.
 - **Additional crystal metadata** such as citations, thermal properties, or crystal-class labels for built-in entries.
 - **Documentation** improvements for the README, code comments, or TypeDoc.
 - **Feature enhancements** that fit within the public-release scope.
