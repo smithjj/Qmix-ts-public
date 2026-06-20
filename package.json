@@ -33,6 +33,10 @@
   },
   "license": "GPL-3.0",
   "author": "Jesse Smith <jesse.smith@as-photonics.com>",
+  "contributors": [
+    "Jesse Smith <jesse.smith@as-photonics.com>",
+    "Arlee Smith <arlee.smith@as-photonics.com>"
+  ],
   "files": [
     "bin",
     "dist",
