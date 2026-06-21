@@ -46,7 +46,6 @@ Helpful contributions include:
 
 ## Important restrictions
 
-- **BMix-related code** is intentionally excluded from the public release; please do not add it.
 - Citations added to crystal metadata should point to peer-reviewed literature, manufacturer data sheets, or well-known handbook references. Include enough detail for another developer to locate the original source.
 
 ## Questions?
